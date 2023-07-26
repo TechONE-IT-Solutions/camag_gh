@@ -25,11 +25,11 @@
                 <div class="nav-item dropdown">
                     <a class="btn btn-link" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Donate/Pay Dues</a>
                     <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                        <a href="{{ route('donate') }}" class="dropdown-item">Donate</a>
-                        <a href="{{ route('pay-dues') }}" class="dropdown-item">Pay Dues</a>
-                        
+                        <a href="{{ route('website-donate') }}" class="dropdown-item">Donate</a>
+                        <a href="{{ route('website-pay-dues') }}" class="dropdown-item">Pay Dues</a>
                     </div>
                 </div>
+                <a class="btn btn-link" href="{{ route('login') }}">Login</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Business Hours</h4>
@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Newsletter</h4>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <p>Stay in the loop with our exciting updates, exclusive offers, and the latest trends by subscribing to our newsletter.</p>
                 <div class="position-relative w-100">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                         placeholder="Your email">
@@ -60,7 +60,7 @@
     <div class="container">
     <div class="row">
     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-        &copy; <a class="fw-medium text-light" href="#">CAMAG</a>, All Right Reserved.
+        &copy; <a class="fw-medium text-light" href="{{ route('website-home')}}">CAMAG</a>, All Right Reserved.
     </div>
     <div class="col-md-6 text-center text-md-end">
         Designed By <a class="fw-medium text-light" href="https://techoneitsolutions.com/">Techone IT Solutions</a>

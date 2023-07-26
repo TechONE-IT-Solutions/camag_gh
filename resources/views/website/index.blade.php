@@ -17,8 +17,8 @@
                                     </p>
                                     <h3 class="display-1 text-white  animated slideInRight">Concerned Assembly</h3>
                                     <h4 class="display-1 text-white  animated slideInRight"> Members Association of Ghana</h4>
-                                    <a href=""
-                                        class="btn btn-primary  py-3 px-5 animated slideInRight">Explore More</a>
+                                    <a href="{{ route('website-register') }}"
+                                        class="btn btn-primary  py-3 px-5 animated slideInRight">Register Now</a>
                                 </div>
                             </div>
                         </div>
@@ -35,8 +35,8 @@
                                     </p>
                                     <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
                                     <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                    <a href=""
-                                        class="btn btn-primary  py-3 px-5 animated slideInLeft">Explore More</a>
+                                    <a href="{{ route('website-register') }}"
+                                        class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                                 </div>
                             </div>
                     </div>
@@ -54,8 +54,8 @@
                                 </p>
                                 <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
                                 <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                <a href=""
-                                    class="btn btn-primary  py-3 px-5 animated slideInLeft">Explore More</a>
+                                <a href="{{ route('website-register') }}"
+                                    class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                             </div>
                         </div>
                 </div>
@@ -118,10 +118,6 @@
                                 <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
                                     stet</p>
                         </div>
-                        <div class="service-btn rounded-0 rounded-bottom">
-                            <a class="text-primary fw-medium" href="">Read More<i
-                                    class="bi bi-chevron-double-right ms-2"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -136,11 +132,7 @@
                                 <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
                                     stet</p>
                         </div>
-                        <div class="service-btn rounded-0 rounded-bottom">
-                            <a class="text-primary fw-medium" href="">Read More<i
-                                    class="bi bi-chevron-double-right ms-2"></i></a>
-                        </div>
-                    </div>
+                      </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -153,10 +145,6 @@
                             <h5 class="mb-3">Training and Capacity Building Activities.</h4>
                                 <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
                                     stet</p>
-                        </div>
-                        <div class="service-btn rounded-0 rounded-bottom">
-                            <a class="text-primary fw-medium" href="">Read More<i
-                                    class="bi bi-chevron-double-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -199,7 +187,7 @@
                             <h5 class="mb-3">Organization of platforms for good governance</h4>
                                 <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam
                                     stet</p>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -286,7 +274,7 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 
-                <h1 class=" mb-5">People You May Know</h1>
+                <h1 class=" mb-5">Our Executive Members</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -294,12 +282,6 @@
                         <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-1.jpg') }}" alt="">
                         <h5>Alex Robin</h5>
                         <span class="text-primary">Founder & CEO</span>
-                        <ul class="team-social">
-                            <li><a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -307,12 +289,6 @@
                         <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-2.jpg') }}" alt="">
                         <h5>Adam Crew</h5>
                         <span class="text-primary">Co Founder</span>
-                        <ul class="team-social">
-                            <li><a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -320,12 +296,6 @@
                         <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-3.jpg') }}" alt="">
                         <h5>Boris Johnson</h5>
                         <span class="text-primary">Executive Manager</span>
-                        <ul class="team-social">
-                            <li><a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
@@ -333,12 +303,6 @@
                         <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-4.jpg') }}" alt="">
                         <h5>Robert Jordan</h5>
                         <span class="text-primary">Digital Marketer</span>
-                        <ul class="team-social">
-                            <li><a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a class="btn btn-square" href=""><i class="fab fa-linkedin-in"></i></a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -354,10 +318,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                    
                     <h1 class=" mb-4">For Any Eny Enquiries</h1>
-                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
-                        erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                    <p>"Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
                             <i class="fa fa-phone-alt text-white"></i>

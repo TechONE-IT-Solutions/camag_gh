@@ -10,15 +10,15 @@ class webadminController
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function dashboard()
     {
-        return view('admin.dashboard');
+        return view('admin.index');
         //
     }
 
     public function unitcommittee()
     {
-        return view('admin.unitcommitee');
+        return view('admin.unitcommittee');
         //
     }
     public function assemblymember()
@@ -36,14 +36,14 @@ class webadminController
         return view('admin.paydues');
         //
     }
-    public function register()
+    public function profile()
     {
-        return view('admin.register');
+        return view('admin.profile');
         //
     }
     public function login()
     {
-        return view('admin.login');
+        return view('auth.login');
         //
     }
     public function contact()
@@ -78,7 +78,7 @@ class webadminController
     }
     public function executive()
     {
-        return view('admin.executive');
+        return view('Admin.executives');
         //
     }
     public function charts()

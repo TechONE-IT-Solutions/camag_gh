@@ -21,36 +21,36 @@ Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [App\Http\Controllers\website\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\website\HomeController::class, 'index'])->name('website-home');
 
-Route::get('about', [App\Http\Controllers\website\HomeController::class, 'about'])->name('about');
+Route::get('website-about', [App\Http\Controllers\website\HomeController::class, 'about'])->name('website-about');
 
-Route::get('team', [App\Http\Controllers\website\HomeController::class, 'team'])->name('team');
+Route::get('website-team', [App\Http\Controllers\website\HomeController::class, 'team'])->name('website-team');
 
-Route::get('events', [App\Http\Controllers\website\HomeController::class, 'events'])->name('events');
+Route::get('website-events', [App\Http\Controllers\website\HomeController::class, 'events'])->name('website-events');
 
-Route::get('contact', [App\Http\Controllers\website\HomeController::class, 'contact'])->name('contact');
+Route::get('website-contact', [App\Http\Controllers\website\HomeController::class, 'contact'])->name('website-contact');
 
-Route::get('gallery', [App\Http\Controllers\website\HomeController::class, 'gallery'])->name('gallery');
+Route::get('website-gallery', [App\Http\Controllers\website\HomeController::class, 'gallery'])->name('website-gallery');
 
-Route::get('paydues', [App\Http\Controllers\website\HomeController::class, 'paydues'])->name('pay-dues');
+Route::get('website-paydues', [App\Http\Controllers\website\HomeController::class, 'paydues'])->name('website-pay-dues');
 
-Route::get('register', [App\Http\Controllers\website\HomeController::class, 'register'])->name('register');
+Route::get('website-register', [App\Http\Controllers\website\HomeController::class, 'register'])->name('website-register');
 
-Route::get('donate', [App\Http\Controllers\website\HomeController::class, 'donate'])->name('donate');
+Route::get('website-donate', [App\Http\Controllers\website\HomeController::class, 'donate'])->name('website-donate');
 
 
 
 
 //Admin Routes
 
-Route::get('/', [App\Http\Controllers\Admin\webadminController::class, 'index'])->name('dashboard');
+Route::get('dashboard', [App\Http\Controllers\Admin\webadminController::class, 'dashboard'])->name('dashboard');
 
-Route::get('unitcommitte', [App\Http\Controllers\Admin\webadmindminController::class, 'unitcommittee'])->name('UnitCommittee');
+Route::get('unitcommittee', [App\Http\Controllers\Admin\webadminController::class, 'unitcommittee'])->name('unitcommittee');
 
-Route::get('associatemember', [App\Http\Controllers\Admin\webadmindminController::class, 'associatemember'])->name('associatemember');
+Route::get('associatemember', [App\Http\Controllers\Admin\webadminController::class, 'associatemember'])->name('associatemember');
 
-Route::get('assemblymember', [App\Http\Controllers\Admin\webadmindminController::class, 'assemblymember'])->name('assemblymember');
+Route::get('assemblymember', [App\Http\Controllers\Admin\webadminController::class, 'assemblymember'])->name('assemblymember');
 
 Route::get('homepage', [App\Http\Controllers\Admin\webAdminController::class, 'homepage'])->name('homepage');
 
@@ -58,17 +58,17 @@ Route::get('about', [App\Http\Controllers\Admin\webAdminController::class, 'abou
 
 Route::get('contact', [App\Http\Controllers\Admin\webAdminController::class, 'contact'])->name('contact');
 
-Route::get('register', [App\Http\Controllers\Admin\webAdminController::class, 'register'])->name('register');
+Route::get('profile', [App\Http\Controllers\Admin\webAdminController::class, 'profile'])->name('profile');
 
-Route::get('login', [App\Http\Controllers\Admin\webAdminController::class, 'login'])->name('login');
+// Route::get('login', [App\Http\Controllers\Admin\webAdminController::class, 'login'])->name('login');
 
 Route::get('paydues', [App\Http\Controllers\Admin\webAdminController::class, 'paydues'])->name('paydues');
 
 Route::get('donate', [App\Http\Controllers\Admin\webAdminController::class, 'donate'])->name('donate');
 
-Route::get('executive', [App\Http\Controllers\Admin\webAdminController::class, 'executive'])->name('executives');
+Route::get('executive', [App\Http\Controllers\Admin\webAdminController::class, 'executive'])->name('executive');
 
-Route::get('register', [App\Http\Controllers\Admin\webAdminController::class, 'register'])->name('register');
+//Route::get('register', [App\Http\Controllers\Admin\webAdminController::class, 'register'])->name('register');
 
 Route::get('payment', [App\Http\Controllers\Admin\webAdminController::class, 'payment'])->name('payment');
 

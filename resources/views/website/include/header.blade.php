@@ -1,3 +1,5 @@
+<Doctype html>
+<html>
 <head>
     <meta charset="utf-8">
     <title>CAMAG</title>
@@ -43,9 +45,10 @@
     <div class="container-fluid bg-white sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <div class="d-flex log">
-                    <img src="{{asset('CAMAG/img/logo.png') }}" alt="Image"  style="width: 210px; height: 70px;">
-                    <a href="index.html" class="nav-item nav-link fs-4 fw-bolder mt-3  "></a>
+                <div class=" log">
+                    <a href="{{ route('website-home') }}" class="nav-item nav-link fs-4 fw-bolder mt-3  ">
+                        <img src="{{asset('CAMAG/img/logo.png') }}" alt="Image"  style="width: 210px; height: 70px;">
+                    </a>
                 </div>
                 
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
@@ -58,25 +61,25 @@
                     <div class="navbar-nav ms-auto me-0">
                        
                         
-                        <a href="{{ route('home') }}" class="nav-item nav-link active ">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ route('team') }}" class="nav-item nav-link">Executive Members</a>
+                        <a href="{{ route('website-home') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ route('website-about') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ route('website-team') }}" class="nav-item nav-link">Executive Members</a>
                         
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Donate/Pay Dues</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="{{ route('register') }}" class="dropdown-item">Register</a>
-                                <a href="{{ route('donate') }}" class="dropdown-item">Donate</a>
-                                <a href="{{ route('pay-dues') }}" class="dropdown-item ">Pay Dues</a>
+                                <a href="{{ route('website-register') }}" class="dropdown-item">Register</a>
+                                <a href="{{ route('website-donate') }}" class="dropdown-item">Donate</a>
+                                <a href="{{ route('website-pay-dues') }}" class="dropdown-item ">Pay Dues</a>
                                 
                             </div>
                         </div>
-                        <a href="{{ route('events') }}" class="nav-item nav-link">Events & Program</a>
-                        <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
-                        <a href="{{ route('contact') }}" class="nav-item nav-link">Contact </a>
+                        <a href="{{ route('website-events') }}" class="nav-item nav-link">Events & Program</a>
+                        <a href="{{ route('website-gallery') }}" class="nav-item nav-link">Gallery</a>
+                        <a href="{{ route('website-contact') }}" class="nav-item nav-link">Contact </a>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
-                        <a href="{{ route('register') }}" class="btn btn-primary  py-2 px-3 fw-bold">Register Now</a>
+                        <a href="{{ route('website-register') }}" class="btn btn-primary  py-2 px-3 fw-bold">Register Now</a>
                     </div>
                 </div>
             </nav>

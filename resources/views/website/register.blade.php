@@ -8,7 +8,7 @@
         <h1 class="display-2 text-white mb-4 animated slideInDown">Register</h1>
         <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('home')">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('website-home') }}">Home</a></li>
                     <li class="breadcrumb-item text-primary" aria-current="page">Register</li>
                 </ol>
             </nav>
@@ -18,11 +18,19 @@
 
 <!--Registration form start-->
 <div class="container ">
-    <div class="row justify-content-center  ">
-        <div class="col-md-8 ">
+    <div class="row justify-content-center container">
+        <div class=" col-sm-11 col-lg-9">
             
              <form class="row g-3 needs-validation shadow-lg rounded" novalidate>
-                <div class="h3 fw-light text-center  ">Please Fill in The Form To Register</div>
+                <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
+                        <div class="col-md-4">
+                          <label for="passportPicture" class="form-label">Passport Picture</label>
+                          <input type="file" class="form-control" id="passportPicture" required>
+                          <div class="invalid-feedback">
+                            Insert Your Passport Picture
+                          </div>
+                        </div>
+
                         <div class="form-floating col-md-12">
                             <input type="text" class="form-control" id="name" required>
                             <label for="name" class="form-label"> Name</label>
@@ -70,7 +78,7 @@
                         </div>
         
                           
-                        <div class="form-floating col-12">
+                          <div class="form-floating col-12">
                             <input type="text" class="form-control" id="electoralArea" required>
                             <label for="electoralArea" class="form-label">Electoral Area</label>
                             <div class="invalid-feedback">
@@ -235,24 +243,21 @@
                                           TRUE AND CORRECT AND I SHALL BEAR ANY CONSEQUENCY AS A RESULT OF 
                                           ANY MISLEADING INFORMATION PROVIDED HEREIN.
                                           </P>
-                                          <div class="col-md-6">
-                                              APPLICANT'S SIGNATURE.........................................................
-                                          </div>
+                                          
               
-                                          <div class="form-floating col-md-6">
-                                              <input type="text" class="form-control" id="validationCustom02" required>
-                                              <label for="validationCustom02" class="form-label">Name</label>
-                                              <div class="invalid-feedback">
-                                                Please provide the Name!
-                                              </div>
-                                            </div> 
-                                    
-                        <div class="row justify-content-center">
-                            <div>
+                                              <div class="form-floating col-md-6">
+                                                <input type="text" class="form-control" id="validationCustom02" required>
+                                                <label for="validationCustom02" class="form-label">Name</label>
+                                                <p>By typing your name you have signed.</p>
+                                                <div class="invalid-feedback">
+                                                  Please provide the Name!
+                                                </div>
+                                              </div> 
+                                    <div class="col-12 d-flex justify-content-center">
                                 <button class="btn btn-primary m-3" type="submit">Submit form</button>
                             </div>
+                        
                         </div>
-                    </div>
                       </form>
                     </div>
                     </div>
