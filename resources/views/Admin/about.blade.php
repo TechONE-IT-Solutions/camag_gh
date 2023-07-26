@@ -5,14 +5,12 @@
 
 <div class="row">
     <div class="col-5">
-        <div class="card">
-            <div class="card-body p-5">
+        <form class="form-control p-5">
                 <label for="aboutImage">About Image</label>
                 <input type="file" name="aboutImage" id="aboutImage" class="form-control">
                 <button type="button" class="btn btn-primary px-4 m-3">Add</button>
-            </div>
+            </form>
         </div>
-    </div>
     <div class="col 7">
         <div class="row">
             <div class="col-6">
