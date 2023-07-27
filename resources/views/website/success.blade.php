@@ -3,6 +3,7 @@
 @section('content')
 
 hi
-Hello
+Hello 
+heii
 
 @endsection
