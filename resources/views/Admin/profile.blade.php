@@ -60,6 +60,11 @@
                   <h5 class="card-title">Profile Details</h5>
 
                   <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Membership ID</div>
+                    <div class="col-lg-9 col-md-8">000000</div>
+                  </div>
+
+                  <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
                     <div class="col-lg-9 col-md-8">Kevin Anderson</div>
                   </div>
@@ -70,18 +75,8 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Job</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Country</div>
-                    <div class="col-lg-9 col-md-8">Ghana</div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                    <div class="col-lg-3 col-md-4 label">Membership Type</div>
+                    <div class="col-lg-9 col-md-8">Assembly Member</div>
                   </div>
 
                   <div class="row">
@@ -92,6 +87,66 @@
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
                     <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Residential Address</div>
+                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Hometown</div>
+                    <div class="col-lg-9 col-md-8">Kyeremasu</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Place Of Birth</div>
+                    <div class="col-lg-9 col-md-8">Kyeremasu</div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Electoral Area</div>
+                    <div class="col-lg-9 col-md-8">KT</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">District</div>
+                    <div class="col-lg-9 col-md-8">Dormaa West</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Region</div>
+                    <div class="col-lg-9 col-md-8">Bono Region</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Nationality</div>
+                    <div class="col-lg-9 col-md-8">Ghanaian</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Marital Status</div>
+                    <div class="col-lg-9 col-md-8">Single</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Educational Level</div>
+                    <div class="col-lg-9 col-md-8">S.H.S</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Emergency Contact</div>
+                    <div class="col-lg-9 col-md-8">Lorem ipsum.</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Emergency Contact Phone</div>
+                    <div class="col-lg-9 col-md-8">020 0000 000</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Emergency Contact Relation</div>
+                    <div class="col-lg-9 col-md-8">Father</div>
                   </div>
 
                 </div>
@@ -204,7 +259,7 @@
 
                 <div class="tab-pane fade pt-3" id="profile-settings">
 
-                  <!-- Settings Form -->
+                  <!-- Settings Form 
                   <form>
 
                     <div class="row mb-3">
@@ -240,7 +295,7 @@
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
-                  </form><!-- End settings Form -->
+                  </form> End settings Form -->
 
                 </div>
 

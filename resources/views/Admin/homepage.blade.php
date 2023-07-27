@@ -9,21 +9,24 @@
 
               <!-- Vertical Pills Tabs -->
                 <div class="">
-
-                <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm mb-4" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
-                <li class="nav-item">
-                    <button class="nav-link active rounded-5" id="pills-start-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-start" data-bs-target="#pills-start">Home</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link rounded-5" id="pills-stats-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-stats" data-bs-target="#pills-stats">Numbers</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link rounded-5" id="pills-news-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-news" data-bs-target="#pills-news">News</button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link rounded-5" id="pills-team-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-team" data-bs-target="#pills-team">Team</button>
-                </li>
-                </ul>
+                <div class="row justify-content-end">
+                    <div class="col-6">
+                        <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm mb-4" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+                        <li class="nav-item">
+                            <button class="nav-link active rounded-5" id="pills-start-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-start" data-bs-target="#pills-start">Home</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rounded-5" id="pills-stats-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-stats" data-bs-target="#pills-stats">Numbers</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rounded-5" id="pills-news-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-news" data-bs-target="#pills-news">News</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link rounded-5" id="pills-team-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-team" data-bs-target="#pills-team">Team</button>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
 
                  <div class="tab-content" id="pills-tabContent">
                     <!-- Start Start -->
@@ -151,21 +154,20 @@
                         <div class="row">
                             <div class="col-6">
                                 <form class="form-control">
-                                        <div class="m-3">
-                                            <label for="newsImage" class="form-label">News Image</label>
-                                            <input type="file" name="newsImage" id="newsImage" class="form-control">
-                                        </div>
-                                        <div class="m-3">
-                                            <label for="newsHeadline" class="form-label">News Headline</label>
-                                            <input type="text" name="newsHeadline" id="newsHeadline" class="form-control">
-                                        </div>
-                                        <div class="m-3">
-                                            <label for="newsDescription" class="form-label">News Description</label>
-                                            <textarea name="" id="newsDescription" style="height: 120px;" class="form-control" "></textarea>
-                                        </div>
+                                    <div class="m-3">
+                                        <label for="newsImage" class="form-label">News Image</label>
+                                        <input type="file" name="newsImage" id="newsImage" class="form-control">
+                                    </div>
+                                    <div class="m-3">
+                                        <label for="newsHeadline" class="form-label">News Headline</label>
+                                        <input type="text" name="newsHeadline" id="newsHeadline" class="form-control">
+                                    </div>
+                                    <div class="m-3">
+                                        <label for="newsDescription" class="form-label">News Description</label>
+                                        <textarea name="" id="newsDescription" style="height: 120px;" class="form-control" "></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
-                                        <button type="button" class="btn btn-primary m-3 px-4">Add</button>
+                                            <button type="button" class="btn btn-primary m-3 px-4">Add</button>
                                     </div>
                                 </form>    
                             </div>
@@ -216,7 +218,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
+                                </div>  
                             </div>
                         </div>
                     </div>
@@ -226,22 +229,20 @@
                     <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
                         <div class="row">
                             <div class="col-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="m-3">
-                                            <label for="teamImage" class="form-label">Team Member's Image</label>
-                                            <input type="file" name="teamImage" id="teamImage" class="form-control">
-                                        </div>
-                                        <div class="m-3">
-                                            <label for="teamName" class="form-label">Name</label>
-                                            <input type="text" name="teamName" id="teamName" class="form-control">
-                                        </div>
-                                        <div class="m-3">
-                                            <label for="teamTitle" class="form-label">Title</label>
-                                            <input name="teamTitle" id="teamTitle" class="form-control">
-                                        </div>
+                                <form class="form-control">
+                                    <div class="m-3">
+                                        <label for="teamImage" class="form-label">Team Member's Image</label>
+                                        <input type="file" name="teamImage" id="teamImage" class="form-control">
                                     </div>
-                                </div>
+                                    <div class="m-3">
+                                        <label for="teamName" class="form-label">Name</label>
+                                        <input type="text" name="teamName" id="teamName" class="form-control">
+                                    </div>
+                                    <div class="m-3">
+                                        <label for="teamTitle" class="form-label">Title</label>
+                                        <input name="teamTitle" id="teamTitle" class="form-control">
+                                    </div>
+                                </form>
                             </div>
 
                             <div class="col-6">

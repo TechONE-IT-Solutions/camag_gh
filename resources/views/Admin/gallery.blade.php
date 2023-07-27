@@ -2,8 +2,9 @@
 
 
 @section('content')
-<div class="wrapper bg-white">
+<div class="wrapper bg-white p-4">
     <div class="row">
+        <h3 class="page-title">Gallery</h3>
         <!-- Gallery Form start -->
         <div class="col-5">
             <form class="form-control p-3" action="">
