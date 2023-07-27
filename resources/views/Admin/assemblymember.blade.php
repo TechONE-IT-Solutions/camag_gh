@@ -41,14 +41,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($assemblymen as $assemblyman)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Antwi Brian</td>
-                                    <td>Male</td>
-                                    <td>Kwabenya Agyemankata</td>
-                                    <td>054 449 6780</td>
-                                    <td>info@camaghana.com</td>
+                                    <th scope="row"></th>
+                                    <td>{{ $assemblyman['name'] }}</td>
+                                    <td>{{ $assemblyman['gender'] }}</td>
+                                    <td>{{ $assemblyman['electoral_area'] }}</td>
+                                    <td>{{ $assemblyman['telephone_number'] }}</td>
+                                    <td>{{ $assemblyman['email_address'] }}</td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                         
