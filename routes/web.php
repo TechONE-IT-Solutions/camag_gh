@@ -39,6 +39,8 @@ Route::get('website-register', [App\Http\Controllers\website\HomeController::cla
 
 Route::get('website-donate', [App\Http\Controllers\website\HomeController::class, 'donate'])->name('website-donate');
 
+Route::get('success', [App\Http\Controllers\website\HomeController::class, 'success'])->name('success');
+
 
 
 

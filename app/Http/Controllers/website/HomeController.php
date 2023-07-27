@@ -64,6 +64,12 @@ class HomeController extends Controller
         //
     }
 
+    public function success()
+    {
+         return view("website.success");
+        //
+    }
+
 
 
     /**
