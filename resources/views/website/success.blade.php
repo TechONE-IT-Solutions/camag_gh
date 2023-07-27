@@ -2,5 +2,6 @@
 
 @section('content')
 hi
+Hello
 
 @endsection

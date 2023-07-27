@@ -23,20 +23,13 @@
             
              <form class="row g-3 needs-validation shadow-lg rounded" novalidate>
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
-                        <div class="col-md-4">
-                          <label for="passportPicture" class="form-label">Passport Picture</label>
-                          <input type="file" class="form-control" id="passportPicture" required>
-                          <div class="invalid-feedback">
-                            Insert Your Passport Picture
-                          </div>
-                        </div>
-
+                       
                         <div class="form-floating col-md-12">
-                            <input type="text" class="form-control" id="name" required>
-                            <label for="name" class="form-label"> Name</label>
-                            <div class="invalid-feedback">
-                              Enter your Name!
-                            </div>
+                          <input type="text" class="form-control" id="name" required>
+                          <label for="name" class="form-label"> Name</label>
+                          <div class="invalid-feedback">
+                            Enter your Name!
+                          </div>
                         </div>
         
                         <div class="form-floating col-md-6">
@@ -62,7 +55,7 @@
                             </div>
                         </div>
         
-                        <div class="col-md-5">
+                        <div class="col-md-5 my-3">
                             <label for="sexRadioOptions">Sex:</label>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="sexRadioOptions" id="sexRadio1" value="Male">
@@ -78,13 +71,21 @@
                         </div>
         
                           
-                          <div class="form-floating col-12">
+                          <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="electoralArea" required>
                             <label for="electoralArea" class="form-label">Electoral Area</label>
                             <div class="invalid-feedback">
                               Please provide a valid Electoral Area.
                             </div>
                           </div>
+
+                          <div class="col-md-6">
+                          <label for="passportPicture" class="form-label">Passport Picture</label>
+                          <input type="file" class="form-control" id="passportPicture" required>
+                          <div class="invalid-feedback">
+                            Insert Your Passport Picture
+                          </div>
+                        </div>
                          
         
                         <div class="form-floating col-md-6">
@@ -96,9 +97,9 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <select class="form-select" id="region" required>
-                                <option selected disabled value="">Region</option>
-                                <option>Greater Accra Region</option>
+                          <select class="form-select" id="region" required>
+                            <option selected disabled value="">Region</option>
+                            <option>Greater Accra Region</option>
                             <option>Central Region</option>
                             <option>Western North Region</option>
                             <option>Western Region</option>
@@ -114,12 +115,12 @@
                             <option>Upper West Region</option>
                             <option>Savannah Region</option>
                             <option>North East Region</option>
-                        </select>
-                        <label for="region" class="form-label">Region</label> 
-                          <div class="invalid-feedback">
-                              Please select Your Region.
-                            </div>
-                        </div>
+                          </select>
+                          <label for="region" class="form-label">Region</label> 
+                            <div class="invalid-feedback">
+                                Please select Your Region.
+                              </div>
+                          </div>
         
                         <div class="form-floating col-12">
                             <input type="text" class="form-control" id="validationCustom05" required>
@@ -159,7 +160,7 @@
                                 <input class="form-check-input" type="radio" name="maritalRadioOptions" id="maritalRadio3" value="Divorced">
                                 <label class="form-check-label" for="maritalRadio3">Divorced</label>
                             </div>
-                        </div>
+                          </div>
         
         
                             <div class="form-floating col-12">
