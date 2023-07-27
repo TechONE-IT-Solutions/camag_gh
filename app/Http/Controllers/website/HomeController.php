@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
+use App\Models\website\homepage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -88,7 +89,7 @@ class HomeController extends Controller
         $destinationPath = 'myImages';
         $myimage = time() . '.' . $request->image->getClientOriginalName();
         $request->image->move(public_path($destinationPath),$myimage);
-        
+
         $postData = [
             'name' => $request->input('name'),
             'hometown' => $request->input('hometown'),
@@ -96,7 +97,7 @@ class HomeController extends Controller
             'date_of_birth' => $request->input('date_of_birth'),
             'sex' => $request->input('male') ?: $request->input('female'), // Choose one based on the selected radio
             'electoral_area' => $request->input('electoral_area'),
-            'photo' => $request->file('photo'), // Assuming you are using Laravel's file handling for uploads
+            'photo' => $request->file('image'), // Assuming you are using Laravel's file handling for uploads
             'district' => $request->input('district'),
             'region' => $request->input('region'),
             'nationality' => $request->input('nationality'),
@@ -112,6 +113,8 @@ class HomeController extends Controller
             'emergency_contact' => $request->input('emergency_contact'),
             'name_signature' => $request->input('name_signature'),
         ];
+        homepage::create($postData);
+        return redirect('/success')->with(['message' => 'Registration successful!!', 'status'=> 'success']);
     
     }
 

@@ -21,7 +21,7 @@
     <div class="row justify-content-center container">
         <div class=" col-sm-11 col-lg-9">
             
-             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" action="{{ route('send') }}" novalidate>
+             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" novalidate>
               @csrf
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
                        
@@ -59,11 +59,11 @@
                         <div class="col-md-5 my-3">
                             <label for="sexRadioOptions">Sex:</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="male" id="sexRadio1" value="Male">
+                                <input class="form-check-input" type="radio" name="sex" id="sexRadio1" value="Male">
                                 <label class="form-check-label" for="sexRadio1">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="female" id="sexRadio2" value="Female" required>
+                                <input class="form-check-input" type="radio" name="sex" id="sexRadio2" value="Female" required>
                                 <label class="form-check-label" for="sexRadio2">Female</label>
                             </div>
                             <div class="invalid-feedback">
@@ -82,7 +82,7 @@
 
                           <div class="col-md-6">
                           <label for="passportPicture" class="form-label">Passport Picture</label>
-                          <input type="file" class="form-control" id="passportPicture" required name="photo">
+                          <input type="file" class="form-control" id="passportPicture" required name="image">
                           <div class="invalid-feedback">
                             Insert Your Passport Picture
                           </div>
@@ -150,15 +150,15 @@
                           <div class="col-12">
                             <label for="">Marital Status:</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="single" id="maritalRadio1" value="Single" required>
+                                <input class="form-check-input" type="radio" name="ms" id="maritalRadio1" value="Single" required>
                                 <label class="form-check-label" for="maritalRadio1">Single</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="maried" id="sexRadio2" value="Married">
+                                <input class="form-check-input" type="radio" name="ms" id="sexRadio2" value="Married">
                                 <label class="form-check-label" for="maritalRadio2">Married</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="Divorced" id="maritalRadio3" value="Divorced">
+                                <input class="form-check-input" type="radio" name="ms" id="maritalRadio3" value="Divorced">
                                 <label class="form-check-label" for="maritalRadio3">Divorced</label>
                             </div>
                           </div>
@@ -183,19 +183,19 @@
                               <div>
                                 <label for="">Educational Level:</label>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="None" id="eduLevel1" value="None" required>
+                                        <input class="form-check-input" type="radio" name="edu" id="eduLevel1" value="None" required>
                                         <label class="form-check-label" for="eduLevel1">None</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="J.H.S/M.S.L.C" id="eduLevel2" value="J.H.S/M.S.L.C">
+                                        <input class="form-check-input" type="radio" name="edu" id="eduLevel2" value="J.H.S/M.S.L.C">
                                         <label class="form-check-label" for="eduLevel2">J.H.S/M.S.L.C</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="S.H.S" id="eduLevel3" value="S.H.S">
+                                        <input class="form-check-input" type="radio" name="edu" id="eduLevel3" value="S.H.S">
                                         <label class="form-check-label" for="eduLevel3">S.H.S</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="Tertiary" id="eduLevel4" value="Tertiary">
+                                        <input class="form-check-input" type="radio" name="edu" id="eduLevel4" value="Tertiary">
                                         <label class="form-check-label" for="eduLevel4">Tertiary</label>
                                       </div>
                                 </div>
@@ -203,15 +203,15 @@
                                 <div>
                                     <label for="">Type Of Membership:</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="assemblymember" id="assemblymember" value="None" required>
+                                            <input class="form-check-input" type="radio" name="pos" id="assemblymember" value="None" required>
                                             <label class="form-check-label" for="assemblymember">Assembly Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="unitCommiteemember" id="unitCommiteemember" value="unitCommiteemember">
+                                            <input class="form-check-input" type="radio" name="pos" id="unitCommiteemember" value="unitCommiteemember">
                                             <label class="form-check-label" for="unitCommiteemember">Unit Commitee Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="Associate Member" id="associatemember" value="Associate Member">
+                                            <input class="form-check-input" type="radio" name="pos" id="associatemember" value="Associate Member">
                                             <label class="form-check-label" for="associatemember">Associate Member</label>
                                           </div>
                                         </div>
