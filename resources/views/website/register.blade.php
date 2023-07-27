@@ -26,7 +26,7 @@
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
                        
                         <div class="form-floating col-md-12">
-                          <input type="text" class="form-control" id="name" required name="name">
+                          <input type="text" class="form-control" id="name" required name="name" value="{{ old('name') }}">
                           <label for="name" class="form-label"> Name</label>
                           <div class="invalid-feedback">
                             Enter your Name!
@@ -34,7 +34,7 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="hometown" required name="hometown">
+                            <input type="text" class="form-control" id="hometown" required name="hometown" value="{{ old('hometown') }}">
                             <label for="hometown" class="form-label">Hometown</label>
                           <div class="invalid-feedback">
                             Provide a valid town!
@@ -42,14 +42,14 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="placeofbirth"  required name="place_of_birth">
+                            <input type="text" class="form-control" id="placeofbirth"  required name="place_of_birth" value="{{ old('place_of_birth') }}">
                             <label for="placeofbirth" class="form-label">Place Of Birth</label>
                             <div class="invalid-feedback">
                               Enter your Place of Birth!
                             </div>
                         </div>
                         <div class="form-floating col-md-7">
-                            <input type="date" class="form-control" id="dateofbirth" required name="date_of_birth">
+                            <input type="date" class="form-control" id="dateofbirth" required name="date_of_birth" value="{{ old('date_of_birth') }}">
                             <label for="dateofbirth" class="form-label">Date Of Birth</label>
                             <div class="invalid-feedback">
                                 Enter your Date of Birth!
@@ -63,7 +63,7 @@
                                 <label class="form-check-label" for="sexRadio1">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="sexRadio2" value="Female" required>
+                                <input class="form-check-input" type="radio" name="sex" id="sexRadio2" value="Female">
                                 <label class="form-check-label" for="sexRadio2">Female</label>
                             </div>
                             <div class="invalid-feedback">
@@ -73,7 +73,7 @@
         
                           
                           <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="electoralArea" required name="electoral_area">
+                            <input type="text" class="form-control" id="electoralArea" required name="electoral_area" value="{{ old('electoral_area') }}">
                             <label for="electoralArea" class="form-label">Electoral Area</label>
                             <div class="invalid-feedback">
                               Please provide a valid Electoral Area.
@@ -90,7 +90,7 @@
                          
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="district" required name="district">
+                            <input type="text" class="form-control" id="district" required name="district" value="{{ old('district') }}">
                             <label for="district" class="form-label">District</label>
                           <div class="invalid-feedback">
                             Please provide a valid District.
@@ -98,8 +98,8 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                          <select class="form-select" id="region" required>
-                            <option selected disabled value="">Region</option>
+                          <select class="form-select" name="region" id="region" required value="{{ old('region') }}">
+
                             <option>Greater Accra Region</option>
                             <option>Central Region</option>
                             <option>Western North Region</option>
@@ -124,7 +124,7 @@
                           </div>
         
                         <div class="form-floating col-12">
-                            <input type="text" class="form-control" id="validationCustom05" required name="nationality">
+                            <input type="text" class="form-control" id="validationCustom05" required name="nationality" value="{{ old('nationality') }}">
                             <label for="validationCustom05" class="form-label">Nationality</label>
                           <div class="invalid-feedback">
                             Please provide your Nationality.
@@ -132,7 +132,7 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="validationCustom02" required name="residential_address">
+                            <input type="text" class="form-control" id="validationCustom02" required name="residential_address" value="{{ old('residential_address') }}">
                             <label for="validationCustom02" class="form-label">Residential Address</label>
                             <div class="invalid-feedback">
                               Please enter your Residential Address!
@@ -140,7 +140,7 @@
                           </div>
         
                           <div class="form-floating col-md-6">
-                              <input type="text" class="form-control" id="validationCustom02" required name="digital_address">
+                              <input type="text" class="form-control" id="validationCustom02" required name="digital_address" value="{{ old('digital_address') }}">
                               <label for="validationCustom02" class="form-label">Digital Address</label>
                             <div class="invalid-feedback">
                               Please provide your valid Digital Address!
@@ -165,7 +165,7 @@
         
         
                             <div class="form-floating col-12">
-                                <input type="tel" class="form-control" id="validationCustom02" required name="marital_status">
+                                <input type="tel" class="form-control" id="validationCustom02" required name="telephone_number"  value="{{ old('telephone_number') }}">
                                 <label for="validationCustom02" class="form-label">Telephone Number</label>
                                 <div class="invalid-feedback">
                                   Provide your Telephone number!
@@ -173,11 +173,14 @@
                               </div>
         
                               <div class="form-floating col-12">
-                                  <input type="email" class="form-control" id="validationCustom02" required name="email">
+                                  <input type="email" class="form-control" id="validationCustom02" name="email_address" value="{{ old('email_address') }}">
                                   <label for="validationCustom02" class="form-label">Email Address</label>
                                 <div class="invalid-feedback">
                                   Please provide your Email Address!
                                 </div>
+                                @if($errors->has('email_address'))
+                                <span style="color: red">{{ $errors->first('email_address') }}</span>
+                                @endif
                               </div>
         
                               <div>
@@ -203,7 +206,7 @@
                                 <div>
                                     <label for="">Type Of Membership:</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="pos" id="assemblymember" value="None" required>
+                                            <input class="form-check-input" type="radio" name="pos" id="assemblymember" value="Assembly member" required>
                                             <label class="form-check-label" for="assemblymember">Assembly Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
@@ -218,21 +221,21 @@
                                 
                                     <p><b><i><u>IN CASE OF EMERGENCY</u></i></b></p>
                                     <div class="form-floating col-12">
-                                        <input type="text" class="form-control" id="emergencyname" required name="emergency_name">
+                                        <input type="text" class="form-control" id="emergencyname" required name="emergency_name" value="{{ old('emergency_name') }}">
                                         <label for="emergencyname" class="form-label">Name</label>
                                         <div class="invalid-feedback">
                                           Please provide a Name!
                                         </div>
                                       </div>
                                       <div class="form-floating col-md-6">
-                                          <input type="text" class="form-control" id="emergencyrelation" required name="emergency_relation">
+                                          <input type="text" class="form-control" id="emergencyrelation" required name="emergency_relation" value="{{ old('emergency_relation') }}">
                                           <label for="emergencyrelation" class="form-label">Relation</label>
                                         <div class="valid-feedback">
                                           Looks good!
                                         </div>
                                       </div>
                                       <div class="form-floating col-md-6">
-                                          <input type="tel" class="form-control" id="emergencynumber" required name="emergency_contact">
+                                          <input type="tel" class="form-control" id="emergencynumber" required name="emergency_contact" value="{{ old('emergency_contact') }}">
                                           <label for="emergencynumber" class="form-label">Contact</label>
                                         <div class="valid-feedback">
                                           Looks good!
@@ -248,7 +251,7 @@
                                           
               
                                               <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="validationCustom02" required name="signature">
+                                                <input type="text" class="form-control" id="validationCustom02" required name="signature" value="{{ old('signature') }}">
                                                 <label for="validationCustom02" class="form-label">Name</label>
                                                 <p>By typing your name you have signed.</p>
                                                 <div class="invalid-feedback">

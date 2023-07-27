@@ -86,6 +86,9 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'email_address'=> 'required|email|unique:registers'
+        ]);
         $destinationPath = 'myImages';
         $myimage = time() . '.' . $request->image->getClientOriginalName();
         $request->image->move(public_path($destinationPath),$myimage);
@@ -95,7 +98,7 @@ class HomeController extends Controller
             'hometown' => $request->input('hometown'),
             'place_of_birth' => $request->input('place_of_birth'),
             'date_of_birth' => $request->input('date_of_birth'),
-            'sex' => $request->input('male') ?: $request->input('female'), // Choose one based on the selected radio
+            'gender' => $request->input('sex') === 'Single' ? 'Single' : 'Male', // Choose one based on the selected radio
             'electoral_area' => $request->input('electoral_area'),
             'photo' => $request->file('image'), // Assuming you are using Laravel's file handling for uploads
             'district' => $request->input('district'),
@@ -103,15 +106,15 @@ class HomeController extends Controller
             'nationality' => $request->input('nationality'),
             'residential_address' => $request->input('residential_address'),
             'digital_address' => $request->input('digital_address'),
-            'marital_status' => $request->input('single') ?: $request->input('married') ?: $request->input('divorced'), // Choose one based on the selected radio
+            'marital_status' => $request->input('ms') === 'Single' ? 'Single' : ($request->input('ms') === 'Married' ? 'Married' : 'Divorced'), // Choose one based on the selected radio
             'telephone_number' => $request->input('telephone_number'),
-            'email' => $request->input('email'),
-            'educational_level' => $request->input('None') ?: $request->input('J.H.S/M.S.L.C') ?: $request->input('S.H.S') ?: $request->input('Tertiary'), // Choose one based on the selected radio
-            'type_of_membership' => $request->input('assemblymember') ?: $request->input('unitCommiteemember') ?: $request->input('Associate Member'), // Choose one based on the selected radio
+            'email_address' => $request->input('email_address'),
+            'educational_level' => $request->input('edu') === 'None' ? 'None' : ($request->input('edu') === 'J.H.S/M.S.L.C' ? 'J.H.S/M.S.L.C' : ($request->input('edu') === 'S.H.S' ? 'S.H.S' : 'Tertiary')), // Choose one based on the selected radio
+            'type_of_membership' => $request->input('pos') === 'Assembly member' ? 'Assembly member' : ($request->input('pos') === 'unitCommiteemember' ? 'Unit Commitee Member' : 'Associate Member'), // Choose one based on the selected radio
             'emergency_name' => $request->input('emergency_name'),
             'emergency_relation' => $request->input('emergency_relation'),
             'emergency_contact' => $request->input('emergency_contact'),
-            'name_signature' => $request->input('name_signature'),
+            'signature' => $request->input('signature'),
         ];
         homepage::create($postData);
         return redirect('/success')->with(['message' => 'Registration successful!!', 'status'=> 'success']);
