@@ -21,7 +21,8 @@
     <div class="row justify-content-center container">
         <div class=" col-sm-11 col-lg-9">
             
-             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" action="{{route('send')}}" novalidate>
+             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" action="{{ route('send') }}" novalidate>
+              @csrf
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
                        
                         <div class="form-floating col-md-12">
