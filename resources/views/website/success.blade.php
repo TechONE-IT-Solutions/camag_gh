@@ -1,6 +1,6 @@
 @extends('layouts.website')
 
 @section('content')
-hi
+hi bhim
 
 @endsection
