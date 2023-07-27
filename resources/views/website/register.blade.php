@@ -21,11 +21,11 @@
     <div class="row justify-content-center container">
         <div class=" col-sm-11 col-lg-9">
             
-             <form class="row g-3 needs-validation shadow-lg rounded" novalidate>
+             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" action="{{route('send')}}" novalidate>
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
                        
                         <div class="form-floating col-md-12">
-                          <input type="text" class="form-control" id="name" required>
+                          <input type="text" class="form-control" id="name" required name="name">
                           <label for="name" class="form-label"> Name</label>
                           <div class="invalid-feedback">
                             Enter your Name!
@@ -33,7 +33,7 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="hometown" required>
+                            <input type="text" class="form-control" id="hometown" required name="hometown">
                             <label for="hometown" class="form-label">Hometown</label>
                           <div class="invalid-feedback">
                             Provide a valid town!
@@ -41,14 +41,14 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="placeofbirth"  required>
+                            <input type="text" class="form-control" id="placeofbirth"  required name="place_of_birth">
                             <label for="placeofbirth" class="form-label">Place Of Birth</label>
                             <div class="invalid-feedback">
                               Enter your Place of Birth!
                             </div>
                         </div>
                         <div class="form-floating col-md-7">
-                            <input type="date" class="form-control" id="dateofbirth" required>
+                            <input type="date" class="form-control" id="dateofbirth" required name="date_of_birth">
                             <label for="dateofbirth" class="form-label">Date Of Birth</label>
                             <div class="invalid-feedback">
                                 Enter your Date of Birth!
@@ -58,11 +58,11 @@
                         <div class="col-md-5 my-3">
                             <label for="sexRadioOptions">Sex:</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexRadioOptions" id="sexRadio1" value="Male">
+                                <input class="form-check-input" type="radio" name="male" id="sexRadio1" value="Male">
                                 <label class="form-check-label" for="sexRadio1">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sexRadioOptions" id="sexRadio2" value="Female" required>
+                                <input class="form-check-input" type="radio" name="female" id="sexRadio2" value="Female" required>
                                 <label class="form-check-label" for="sexRadio2">Female</label>
                             </div>
                             <div class="invalid-feedback">
@@ -72,7 +72,7 @@
         
                           
                           <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="electoralArea" required>
+                            <input type="text" class="form-control" id="electoralArea" required name="electoral_area">
                             <label for="electoralArea" class="form-label">Electoral Area</label>
                             <div class="invalid-feedback">
                               Please provide a valid Electoral Area.
@@ -81,7 +81,7 @@
 
                           <div class="col-md-6">
                           <label for="passportPicture" class="form-label">Passport Picture</label>
-                          <input type="file" class="form-control" id="passportPicture" required>
+                          <input type="file" class="form-control" id="passportPicture" required name="photo">
                           <div class="invalid-feedback">
                             Insert Your Passport Picture
                           </div>
@@ -89,7 +89,7 @@
                          
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="district" required>
+                            <input type="text" class="form-control" id="district" required name="district">
                             <label for="district" class="form-label">District</label>
                           <div class="invalid-feedback">
                             Please provide a valid District.
@@ -123,7 +123,7 @@
                           </div>
         
                         <div class="form-floating col-12">
-                            <input type="text" class="form-control" id="validationCustom05" required>
+                            <input type="text" class="form-control" id="validationCustom05" required name="nationality">
                             <label for="validationCustom05" class="form-label">Nationality</label>
                           <div class="invalid-feedback">
                             Please provide your Nationality.
@@ -131,7 +131,7 @@
                         </div>
         
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="validationCustom02" required>
+                            <input type="text" class="form-control" id="validationCustom02" required name="residential_address">
                             <label for="validationCustom02" class="form-label">Residential Address</label>
                             <div class="invalid-feedback">
                               Please enter your Residential Address!
@@ -139,7 +139,7 @@
                           </div>
         
                           <div class="form-floating col-md-6">
-                              <input type="text" class="form-control" id="validationCustom02" required>
+                              <input type="text" class="form-control" id="validationCustom02" required name="digital_address">
                               <label for="validationCustom02" class="form-label">Digital Address</label>
                             <div class="invalid-feedback">
                               Please provide your valid Digital Address!
@@ -149,22 +149,22 @@
                           <div class="col-12">
                             <label for="">Marital Status:</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="maritalRadioOptions" id="maritalRadio1" value="Single" required>
+                                <input class="form-check-input" type="radio" name="single" id="maritalRadio1" value="Single" required>
                                 <label class="form-check-label" for="maritalRadio1">Single</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="maritalRadioOptions" id="sexRadio2" value="Married">
+                                <input class="form-check-input" type="radio" name="maried" id="sexRadio2" value="Married">
                                 <label class="form-check-label" for="maritalRadio2">Married</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="maritalRadioOptions" id="maritalRadio3" value="Divorced">
+                                <input class="form-check-input" type="radio" name="Divorced" id="maritalRadio3" value="Divorced">
                                 <label class="form-check-label" for="maritalRadio3">Divorced</label>
                             </div>
                           </div>
         
         
                             <div class="form-floating col-12">
-                                <input type="tel" class="form-control" id="validationCustom02" required>
+                                <input type="tel" class="form-control" id="validationCustom02" required name="marital_status">
                                 <label for="validationCustom02" class="form-label">Telephone Number</label>
                                 <div class="invalid-feedback">
                                   Provide your Telephone number!
@@ -172,7 +172,7 @@
                               </div>
         
                               <div class="form-floating col-12">
-                                  <input type="email" class="form-control" id="validationCustom02" required>
+                                  <input type="email" class="form-control" id="validationCustom02" required name="email">
                                   <label for="validationCustom02" class="form-label">Email Address</label>
                                 <div class="invalid-feedback">
                                   Please provide your Email Address!
@@ -182,19 +182,19 @@
                               <div>
                                 <label for="">Educational Level:</label>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="eduLevel1" value="None" required>
+                                        <input class="form-check-input" type="radio" name="None" id="eduLevel1" value="None" required>
                                         <label class="form-check-label" for="eduLevel1">None</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="eduLevel2" value="J.H.S/M.S.L.C">
+                                        <input class="form-check-input" type="radio" name="J.H.S/M.S.L.C" id="eduLevel2" value="J.H.S/M.S.L.C">
                                         <label class="form-check-label" for="eduLevel2">J.H.S/M.S.L.C</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="eduLevel3" value="S.H.S">
+                                        <input class="form-check-input" type="radio" name="S.H.S" id="eduLevel3" value="S.H.S">
                                         <label class="form-check-label" for="eduLevel3">S.H.S</label>
                                       </div>
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="eduLevel4" value="Tertiary">
+                                        <input class="form-check-input" type="radio" name="Tertiary" id="eduLevel4" value="Tertiary">
                                         <label class="form-check-label" for="eduLevel4">Tertiary</label>
                                       </div>
                                 </div>
@@ -202,36 +202,36 @@
                                 <div>
                                     <label for="">Type Of Membership:</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="membershipradio" id="assemblymember" value="None" required>
+                                            <input class="form-check-input" type="radio" name="assemblymember" id="assemblymember" value="None" required>
                                             <label class="form-check-label" for="assemblymember">Assembly Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="membershipradio" id="unitCommiteemember" value="unitCommiteemember">
+                                            <input class="form-check-input" type="radio" name="unitCommiteemember" id="unitCommiteemember" value="unitCommiteemember">
                                             <label class="form-check-label" for="unitCommiteemember">Unit Commitee Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="membershipradio" id="associatemember" value="S.H.S">
+                                            <input class="form-check-input" type="radio" name="Associate Member" id="associatemember" value="Associate Member">
                                             <label class="form-check-label" for="associatemember">Associate Member</label>
                                           </div>
                                         </div>
                                 
                                     <p><b><i><u>IN CASE OF EMERGENCY</u></i></b></p>
                                     <div class="form-floating col-12">
-                                        <input type="text" class="form-control" id="emergencyname" required>
+                                        <input type="text" class="form-control" id="emergencyname" required name="emergency_name">
                                         <label for="emergencyname" class="form-label">Name</label>
                                         <div class="invalid-feedback">
                                           Please provide a Name!
                                         </div>
                                       </div>
                                       <div class="form-floating col-md-6">
-                                          <input type="text" class="form-control" id="emergencyrelation" required>
+                                          <input type="text" class="form-control" id="emergencyrelation" required name="emergency_relation">
                                           <label for="emergencyrelation" class="form-label">Relation</label>
                                         <div class="valid-feedback">
                                           Looks good!
                                         </div>
                                       </div>
                                       <div class="form-floating col-md-6">
-                                          <input type="tel" class="form-control" id="emergencynumber" required>
+                                          <input type="tel" class="form-control" id="emergencynumber" required name="emergency_contact">
                                           <label for="emergencynumber" class="form-label">Contact</label>
                                         <div class="valid-feedback">
                                           Looks good!
@@ -247,7 +247,7 @@
                                           
               
                                               <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="validationCustom02" required>
+                                                <input type="text" class="form-control" id="validationCustom02" required name="signature">
                                                 <label for="validationCustom02" class="form-label">Name</label>
                                                 <p>By typing your name you have signed.</p>
                                                 <div class="invalid-feedback">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\website\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,6 @@ Route::get('gallery', [App\Http\Controllers\Admin\webAdminController::class, 'ga
 Route::get('charts', [App\Http\Controllers\Admin\webAdminController::class, 'charts'])->name('charts');
 
 Route::get('events', [App\Http\Controllers\Admin\webAdminController::class, 'events'])->name('events');
+
+//post route
+Route::post('post', [HomeController::class, 'store'])->name('send');
