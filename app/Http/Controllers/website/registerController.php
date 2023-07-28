@@ -33,7 +33,7 @@ class registerController extends Controller
         $request->validate([
             'email_address'=> 'required|email|unique:registers'
         ]);
-        $destinationPath = 'myImages';
+        $destinationPath = 'images/members';
         $myimage = time() . '.' . $request->image->getClientOriginalName();
         $request->image->move(public_path($destinationPath),$myimage);
 

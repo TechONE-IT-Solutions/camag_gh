@@ -72,7 +72,7 @@
                         </div>
         
                           
-                          <div class="form-floating col-md-6">
+                         <div class="form-floating col-md-4">
                             <input type="text" class="form-control" id="electoralArea" required name="electoral_area" value="{{ old('electoral_area') }}">
                             <label for="electoralArea" class="form-label">Electoral Area</label>
                             <div class="invalid-feedback">
@@ -80,7 +80,7 @@
                             </div>
                           </div>
 
-                          <div class="col-md-6">
+                          <div class="col-md-4">
                           <label for="passportPicture" class="form-label">Passport Picture</label>
                           <input type="file" class="form-control" id="passportPicture" required name="image">
                           <div class="invalid-feedback">
@@ -88,6 +88,10 @@
                           </div>
                         </div>
                          
+
+                        <div class="image-preview mt-2 col-md-4">
+                            <img id="imagePreview" src="#" alt="Preview" style="max-width:150">
+                         </div>
         
                         <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="district" required name="district" value="{{ old('district') }}">
@@ -165,7 +169,7 @@
         
         
                             <div class="form-floating col-12">
-                                <input type="tel" class="form-control" id="validationCustom02" required name="telephone_number"  value="{{ old('telephone_number') }}">
+                                <input type="tel" class="form-control" id="validationCustom02" pattern="[0-9]{9,}" maxlength="15" required name="telephone_number"  value="{{ old('telephone_number') }}">
                                 <label for="validationCustom02" class="form-label">Telephone Number</label>
                                 <div class="invalid-feedback">
                                   Provide your Telephone number!
@@ -235,7 +239,7 @@
                                         </div>
                                       </div>
                                       <div class="form-floating col-md-6">
-                                          <input type="tel" class="form-control" id="emergencynumber" required name="emergency_contact" value="{{ old('emergency_contact') }}">
+                                          <input type="tel" class="form-control" id="emergencynumber" pattern="[0-9]{9,}" maxlength="15" required name="emergency_contact" value="{{ old('emergency_contact') }}">
                                           <label for="emergencynumber" class="form-label">Contact</label>
                                         <div class="valid-feedback">
                                           Looks good!

@@ -107,4 +107,20 @@
   })()
 
 
+  document.getElementById('passportPicture').addEventListener('change', function () {
+    var fileInput = this;
+    var imagePreview = document.getElementById('imagePreview');
+    var file = fileInput.files[0];
 
+    if (file) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        imagePreview.src = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      imagePreview.src = "#";
+    }
+  });
