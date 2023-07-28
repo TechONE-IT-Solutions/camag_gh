@@ -25,7 +25,7 @@
                                 <a href="{{ route('profile') }}">
                                     <div class="card">
                                         <div class="card-image">
-                                            <img src="{{ asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset($assemblyman['photo']) }}" alt="" class="img-fluid">
                                         </div>
                                         <div class="card-body p-3">
                                             <div class="row">
@@ -48,18 +48,18 @@
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Gender</th>
                                     <th scope="col">Electoral Area</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Email Address</th>
+                                    <th scope="col" style="color:red">CLEAR</th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach($assemblymen as $assemblyman)
-                                <tr>
-                                    <th scope="row"></th>
+                            
+                                <tr >
                                     <td>{{ $assemblyman['name'] }}</td>
                                     <td>{{ $assemblyman['gender'] }}</td>
                                     <td>{{ $assemblyman['electoral_area'] }}</td>
@@ -69,6 +69,7 @@
                                         <button class="btn btn-danger me-2">Delete</button>
                                     </td>
                                 </tr>
+                           
                             @endforeach
                             </tbody>
                         </table>

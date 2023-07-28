@@ -100,7 +100,7 @@ class HomeController extends Controller
             'date_of_birth' => $request->input('date_of_birth'),
             'gender' => $request->input('sex') === 'Single' ? 'Single' : 'Male', // Choose one based on the selected radio
             'electoral_area' => $request->input('electoral_area'),
-            'photo' => $request->file('image'), // Assuming you are using Laravel's file handling for uploads
+            'photo' => $destinationPath . '/' . $myimage, // Assuming you are using Laravel's file handling for uploads
             'district' => $request->input('district'),
             'region' => $request->input('region'),
             'nationality' => $request->input('nationality'),
