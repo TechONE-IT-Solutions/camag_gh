@@ -13,7 +13,7 @@
                     <div class="col-6">
                         <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm mb-4" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
                         <li class="nav-item">
-                            <button class="nav-link active rounded-5" id="pills-start-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-start" data-bs-target="#pills-start">Home</button>
+                            <button class="nav-link active rounded-5" id="pills-start-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-start" data-bs-target="#pills-start">Banner</button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-link rounded-5" id="pills-stats-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-stats" data-bs-target="#pills-stats">Numbers</button>
@@ -34,64 +34,40 @@
                         <div class="row">
 
                                 <div class="col-6">
-                                    <form class="form-control p-3">
+                                    <form method="POST" action="{{ route('h_banner') }}" enctype="multipart/form-data" class="form-control p-3">
+                                        @csrf
                                         <div class="my-3">
                                             <label for="startImage" class="form-label">Start Image</label>
-                                            <input type="file" name="Start Image" id="startImage" class="form-control">
+                                            <input type="file" name="image" id="startImage" class="form-control">
                                         </div>
                                         <div class="my-3">
                                             <label for="startText" class="form-label">Start Text</label>
-                                            <input type="text" name="startText" class="form-control" id="startText">
+                                            <input type="text" name="text" class="form-control" id="startText">
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
-                                            <button type="button" class="px-4 btn btn-primary">Add</button>
+                                            <button type="submit" class="px-4 btn btn-primary">Add</button>
                                         </div>
                                     </form>
                                 </div>
 
                             <div class="col-6">
                                 <div class="row">
+                                    @foreach($h_banner as $banner)
                                     <div class="col-6">
                                         <div class="card">
                                             <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" class="img-fluid" alt="">
+                                                <img src="{{ asset($banner['image']) }}" class="img-fluid" alt="">
                                             </div>
                                             <div class="card-body p-3">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, neque?
+                                                {{$banner['text']}}
                                             </div>
                                             <div class="col-12 d-flex justify-content-center">
                                                 <button type="button" class="btn btn-primary mb-2">Delete</button>
                                             </div>
                                         </div>
                                     </div>
+                                    @endforeach
 
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-2.jpg') }}" class="img-fluid" alt="">
-                                            </div>
-                                            <div class="card-body p-3">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, neque?
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-primary mb-2">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-3.jpg') }}" class="img-fluid" alt="">
-                                            </div>
-                                            <div class="card-body p-3">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, neque?
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-primary mb-2">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

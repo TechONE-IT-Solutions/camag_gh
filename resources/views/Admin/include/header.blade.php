@@ -12,6 +12,7 @@
   <!-- Favicons -->
   <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="icon">
   <link href="{{asset('CAMAGADMIN/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">

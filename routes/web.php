@@ -83,6 +83,11 @@ Route::get('associatemember', [adminAssociatememberController::class, 'index'])-
 Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
 
 Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
+Route::post('h_banner', [adminHomepageController::class, 'banner_store'])->name('h_banner');
+Route::post('number', [adminHomepageController::class, 'number_store'])->name('number');
+Route::post('news', [adminHomepageController::class, 'news_store'])->name('news');
+Route::post('banner', [adminHomepageController::class, 'team_store'])->name('team');
+
 
 Route::get('about', [adminAboutController::class, 'index'])->name('about');
 

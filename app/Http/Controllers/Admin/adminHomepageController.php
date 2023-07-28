@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +13,8 @@ class adminHomepageController extends Controller
      */
     public function index()
     {
-        return view('admin.homepage');
+        $h_banner = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
+        return view('admin.homepage', ['h_banner'=>$h_banner]);
         //
     }
 
@@ -28,9 +29,24 @@ class adminHomepageController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function banner_store(Request $request)
     {
         //
+        $destinationPath = 'CAMAG/img/';
+        $myimage = time() . '.' . $request->image->getClientOriginalName();
+        $request->image->move(public_path($destinationPath),$myimage);
+
+
+        $postdata = [
+            'meta_key'=>'hBanner',
+            'text'=>$request->input('text'),
+            'textarea'=>'',
+            'number'=>'',
+            'image'=>$destinationPath . '/' . $myimage
+        ];
+        Admin::create($postdata);
+        return redirect('admin.homepage')->with(['message' => 'Registration successful!!', 'status'=> 'success']);
+
     }
 
     /**
@@ -39,6 +55,9 @@ class adminHomepageController extends Controller
     public function show(string $id)
     {
         //
+    }
+    public function h_banner_show(){
+        
     }
 
     /**
