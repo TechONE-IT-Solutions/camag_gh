@@ -153,9 +153,9 @@ class HomeController extends Controller
         //
     }
     public function getassembly(){
-        dd('Controller method called!');
-        $assemblymen = homepage::select('name', 'gender', 'electoral_area', 'telephone_number', 'email_address')->where('type_of_membership', 'Assembly member')->get()->toArray();
-        return view('Admin.assemblymember', compact('assemblymen'));
+        // 
+        $assemblymen = homepage::select('name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'Assembly member')->get()->toArray();
+        return view('admin.assemblymember', compact('assemblymen'));
     }
 
     // public function getassembly()

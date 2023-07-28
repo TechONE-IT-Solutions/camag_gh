@@ -83,4 +83,4 @@ Route::get('events', [App\Http\Controllers\Admin\webAdminController::class, 'eve
 
 //post route
 Route::post('post', [HomeController::class, 'store'])->name('send');
-Route::get('/assemblyTable', [HomeController::class, 'getassembly'])->name('assemblyTable');
+Route::get('assemblymember', [HomeController::class, 'getassembly'])->name('assemblymember');

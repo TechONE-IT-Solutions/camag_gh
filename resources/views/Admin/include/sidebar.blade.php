@@ -52,27 +52,7 @@
           <i class="bi bi-circle"></i><span>Gallery</span>
         </a>
       </li>
-      <!-- <li>
-        <a href="{{ route('paydues') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>Pay-Dues</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ route('donate') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>Donate</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ route('register') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>Register</span>
-        </a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('login') }}">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li>End Login Page Nav -->
+
     </ul>
   </li>
   <!-- End Website -->

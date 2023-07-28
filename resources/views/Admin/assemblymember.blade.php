@@ -4,25 +4,41 @@
 @section('content')
 
 
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-secondary">Assembly Members</h5>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-secondary">Assembly Members</h5>
 
               <!-- Vertical Pills Tabs -->
-                <div class="">
+            <div class="">
 
-                @component('components.members_view_button')
-                       
-                @endcomponent
+                    @component('components.members_view_button')
+                        
+                    @endcomponent
 
-                    <div class="tab-content" id="pills-tabContent">
+                <div class="tab-content" id="pills-tabContent">
                     <!-- Grid View Start -->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
 
-                        @component('components.members_view_cards')
+                        <div class="row">
+                            @foreach($assemblymen as $assemblyman)    
+                            <div class="col-3">
+                                <a href="{{ route('profile') }}">
+                                    <div class="card">
+                                        <div class="card-image">
+                                            <img src="{{ asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="row">
+                                                <p class="col label">Name:</p>
+                                                <p class="col">{{ $assemblyman['name'] }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
 
-                        @endcomponent
-                
                     </div>
                     <!-- Grid View end -->
 
@@ -49,6 +65,9 @@
                                     <td>{{ $assemblyman['electoral_area'] }}</td>
                                     <td>{{ $assemblyman['telephone_number'] }}</td>
                                     <td>{{ $assemblyman['email_address'] }}</td>
+                                    <td>
+                                        <button class="btn btn-danger me-2">Delete</button>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -58,10 +77,11 @@
                     <!-- Tables end -->
 
                 </div>
-              </div>
+            </div>
+            
               <!-- End Vertical Pills Tabs -->
 
-            </div>
-        </div>
+    </div>
+</div>
 
 @endsection
