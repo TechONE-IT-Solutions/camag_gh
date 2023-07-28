@@ -25,9 +25,9 @@ use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
 use App\Http\Controllers\Admin\adminExecutivesController;
-use App\Http\Controllers\Admin\adminUnitcommitteeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
 use App\Http\Controllers\Admin\adminAssociatememberController;
+use App\Http\Controllers\Admin\adminUnitcommitteememberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ Route::get('success', [successController::class, 'success'])->name('success');
 
 Route::get('dashboard', [webadminController::class, 'index'])->name('dashboard');
 
-Route::get('unitcommittee', [adminUnitcommitteeController::class, 'index'])->name('unitcommittee');
+Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
 
 Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
 
