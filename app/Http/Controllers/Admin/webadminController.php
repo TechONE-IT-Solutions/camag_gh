@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Admin\webadminController;
+use Illuminate\Routing\Controller;
 
-class webadminController
+
+class webadminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,7 +37,7 @@ class webadminController
     /**
      * Display the specified resource.
      */
-    public function show(Admin $admin)
+    public function show(string $admin)
     {
         //
     }
@@ -44,7 +45,7 @@ class webadminController
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Admin $admin)
+    public function edit(string $admin)
     {
         //
     }
@@ -52,7 +53,7 @@ class webadminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, string $admin)
     {
         //
     }
@@ -60,7 +61,7 @@ class webadminController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Admin $admin)
+    public function destroy(string $admin)
     {
         //
     }
