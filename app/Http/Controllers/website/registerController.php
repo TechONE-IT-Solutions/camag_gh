@@ -54,7 +54,7 @@ class registerController extends Controller
             'telephone_number' => $request->input('telephone_number'),
             'email_address' => $request->input('email_address'),
             'educational_level' => $request->input('edu') === 'None' ? 'None' : ($request->input('edu') === 'J.H.S/M.S.L.C' ? 'J.H.S/M.S.L.C' : ($request->input('edu') === 'S.H.S' ? 'S.H.S' : 'Tertiary')), // Choose one based on the selected radio
-            'type_of_membership' => $request->input('pos') === 'Assembly member' ? 'Assembly member' : ($request->input('pos') === 'unitCommiteemember' ? 'Unit Commitee Member' : 'Associate Member'), // Choose one based on the selected radio
+            'type_of_membership' => $request->input('pos') === 'AssemblyMember' ? 'AssemblyMember' : ($request->input('pos') === 'UnitCommiteeMember' ? 'UnitCommiteeMember' : 'AssociateMember'), // Choose one based on the selected radio
             'emergency_name' => $request->input('emergency_name'),
             'emergency_relation' => $request->input('emergency_relation'),
             'emergency_contact' => $request->input('emergency_contact'),

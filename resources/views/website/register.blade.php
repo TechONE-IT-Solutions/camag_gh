@@ -206,15 +206,15 @@
                                 <div>
                                     <label for="">Type Of Membership:</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="pos" id="assemblymember" value="Assembly member" required>
+                                            <input class="form-check-input" type="radio" name="pos" id="assemblymember" value="AssemblyMember" required>
                                             <label class="form-check-label" for="assemblymember">Assembly Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="pos" id="unitCommiteemember" value="unitCommiteemember">
+                                            <input class="form-check-input" type="radio" name="pos" id="unitCommiteemember" value="UnitCommiteeMember">
                                             <label class="form-check-label" for="unitCommiteemember">Unit Commitee Member</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="pos" id="associatemember" value="Associate Member">
+                                            <input class="form-check-input" type="radio" name="pos" id="associatemember" value="AssociateMember">
                                             <label class="form-check-label" for="associatemember">Associate Member</label>
                                           </div>
                                         </div>
