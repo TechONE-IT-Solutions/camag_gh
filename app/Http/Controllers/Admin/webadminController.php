@@ -10,87 +10,14 @@ class webadminController
     /**
      * Display a listing of the resource.
      */
-    public function dashboard()
+    public function index()
     {
         return view('admin.index');
         //
     }
-
-    public function unitcommittee()
-    {
-        return view('admin.unitcommittee');
-        //
-    }
-    public function assemblymember()
-    {
-        return view('admin.assemblymember');
-        //
-    }
-    public function donate()
-    {
-        return view('admin.donate');
-        //
-    }
-    public function paydues()
-    {
-        return view('admin.paydues');
-        //
-    }
-    public function profile()
-    {
-        return view('admin.profile');
-        //
-    }
-    public function login()
-    {
-        return view('auth.login');
-        //
-    }
-    public function contact()
-    {
-        return view('admin.contact');
-        //
-    }
-    public function gallery()
-    {
-        return view('admin.gallery');
-        //
-    }
-    public function homepage()
-    {
-        return view('admin.homepage');
-        //
-    }
-    public function about()
-    {
-        return view('admin.about');
-        //
-    }
-    public function events()
-    {
-        return view('admin.events');
-        //
-    }
-    public function payment()
-    {
-        return view('admin.payment');
-        //
-    }
-    public function executive()
-    {
-        return view('Admin.executives');
-        //
-    }
-    public function charts()
-    {
-        return view('admin.charts');
-        //
-    }
-    public function associatemember()
-    {
-        return view('admin.associatemember');
-        //
-    }
+    
+    
+    
     
 
     /**
