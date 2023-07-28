@@ -2,6 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\website\HomeController;
+use App\Http\Controllers\website\teamController;
+use App\Http\Controllers\website\aboutController;
+use App\Http\Controllers\website\donateController;
+use App\Http\Controllers\website\eventsController;
+use App\Http\Controllers\website\contactController;
+use App\Http\Controllers\website\galleryController;
+use App\Http\Controllers\website\payduesController;
+use App\Http\Controllers\website\successController;
+use App\Http\Controllers\website\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,25 +31,26 @@ Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [App\Http\Controllers\website\HomeController::class, 'index'])->name('website-home');
+// FRONT-END ROUTES
+Route::get('/', [HomeController::class, 'index'])->name('website-home');
 
-Route::get('website-about', [App\Http\Controllers\website\HomeController::class, 'about'])->name('website-about');
+Route::get('website-about', [aboutController::class, 'about'])->name('website-about');
 
-Route::get('website-team', [App\Http\Controllers\website\HomeController::class, 'team'])->name('website-team');
+Route::get('website-team', [teamController::class, 'team'])->name('website-team');
 
-Route::get('website-events', [App\Http\Controllers\website\HomeController::class, 'events'])->name('website-events');
+Route::get('website-events', [eventsController::class, 'events'])->name('website-events');
 
-Route::get('website-contact', [App\Http\Controllers\website\HomeController::class, 'contact'])->name('website-contact');
+Route::get('website-contact', [contactController::class, 'contact'])->name('website-contact');
 
-Route::get('website-gallery', [App\Http\Controllers\website\HomeController::class, 'gallery'])->name('website-gallery');
+Route::get('website-gallery', [galleryController::class, 'gallery'])->name('website-gallery');
 
-Route::get('website-paydues', [App\Http\Controllers\website\HomeController::class, 'paydues'])->name('website-pay-dues');
+Route::get('website-paydues', [payduesController::class, 'paydues'])->name('website-pay-dues');
 
-Route::get('website-register', [App\Http\Controllers\website\HomeController::class, 'register'])->name('website-register');
+Route::get('website-register', [registerController::class, 'register'])->name('website-register');
 
-Route::get('website-donate', [App\Http\Controllers\website\HomeController::class, 'donate'])->name('website-donate');
+Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
 
-Route::get('success', [App\Http\Controllers\website\HomeController::class, 'success'])->name('success');
+Route::get('success', [successController::class, 'success'])->name('success');
 
 
 
@@ -81,6 +91,7 @@ Route::get('charts', [App\Http\Controllers\Admin\webAdminController::class, 'cha
 
 Route::get('events', [App\Http\Controllers\Admin\webAdminController::class, 'events'])->name('events');
 
+
 //post route
-Route::post('post', [HomeController::class, 'store'])->name('send');
+Route::post('post', [registerController::class, 'store'])->name('send');
 Route::get('assemblymember', [HomeController::class, 'getassembly'])->name('assemblymember');

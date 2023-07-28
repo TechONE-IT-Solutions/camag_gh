@@ -66,32 +66,19 @@
                                     <td>{{ $assemblyman['telephone_number'] }}</td>
                                     <td>{{ $assemblyman['email_address'] }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger me-2" data-toggle="modal" data-target="#exampleModalCenter"><i class="bi bi-trash"></i></button>
+                                        <form action="" method="" class="delete_form">
+                                            {{csrf_field()}}
+                                                <!-- <input type="hidden" name="_method" value="DELETE" /> -->
+                                                <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
+
+                                        </form>
                                     </td>
                                 </tr>
                            
                             @endforeach
                             </tbody>
                         </table>
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header bg-primary text-white">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body bg-info text-white">
-                                        This member will be deleted permanently from the database, Are you sure you want to continue the process?
-                                    </div>
-                                    <div class="modal-footer bg-primary">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                        <button type="button" class="btn btn-danger">Yes</button>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
+                        
                         
                     </div>
                     <!-- Tables end -->
@@ -103,5 +90,17 @@
 
     </div>
 </div>
-
+<script>
+    $(document).ready(function(){
+        $('.delete_form').on('submit',function(e){
+            e.preventDefault();
+            if(confirm('Are you sure you want to trash this member permanently?')){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+    });
+</script>
 @endsection

@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
-use App\Models\website\homepage;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class teamController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function team()
     {
-         return view("website.index");
+         return view("website.team");
         //
     }
     /**
@@ -23,6 +22,15 @@ class HomeController extends Controller
     {
         //
     }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
     /**
      * Display the specified resource.
      */
@@ -54,20 +62,4 @@ class HomeController extends Controller
     {
         //
     }
-    public function getassembly(){
-        // 
-        $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'Assembly member')->get()->toArray();
-        return view('admin.assemblymember', compact('assemblymen'));
-    }
-
-    // public function getassembly()
-    // {
-    //     $assemblymen = homepage::select('name', 'gender', 'electoral_area', 'telephone_number', 'email_address')
-    //         ->where('type_of_membership', 'Assembly member')
-    //         ->get()
-    //         ->toArray();
-
-    //     return view('Admin.assemblymember', compact('assemblymen'));
-    // }
-
 }
