@@ -1,11 +1,23 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\website\HomeController;
+use App\Http\Controllers\website\teamController;
+use App\Http\Controllers\website\aboutController;
 use App\Http\Controllers\Admin\webadminController;
+use App\Http\Controllers\website\donateController;
+use App\Http\Controllers\website\eventsController;
+use App\Http\Controllers\website\contactController;
+use App\Http\Controllers\website\galleryController;
+use App\Http\Controllers\website\payduesController;
+use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
+use App\Http\Controllers\website\registerController;
 use App\Http\Controllers\Admin\adminChartsController;
 use App\Http\Controllers\Admin\adminDonateController;
+
+use App\Http\Controllers\Admin\adminEventsController;
 use App\Http\Controllers\Admin\adminContactController;
 use App\Http\Controllers\Admin\adminGalleryController;
 use App\Http\Controllers\Admin\adminPayduesController;
@@ -16,16 +28,6 @@ use App\Http\Controllers\Admin\adminExecutivesController;
 use App\Http\Controllers\Admin\adminUnitcommitteeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
 use App\Http\Controllers\Admin\adminAssociatememberController;
-
-use App\Http\Controllers\website\teamController;
-use App\Http\Controllers\website\aboutController;
-use App\Http\Controllers\website\donateController;
-use App\Http\Controllers\website\eventsController;
-use App\Http\Controllers\website\contactController;
-use App\Http\Controllers\website\galleryController;
-use App\Http\Controllers\website\payduesController;
-use App\Http\Controllers\website\successController;
-use App\Http\Controllers\website\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,7 +106,7 @@ Route::get('gallery', [adminGalleryController::class, 'index'])->name('gallery')
 
 Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
 
-Route::get('events', [adminEController::class, 'index'])->name('events');
+Route::get('events', [adminEventsController::class, 'index'])->name('events');
 
 //post route
 Route::post('post', [HomeController::class, 'store'])->name('send');
