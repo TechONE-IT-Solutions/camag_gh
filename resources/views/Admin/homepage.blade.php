@@ -238,59 +238,8 @@
               <!-- End Vertical Pills Tabs -->
             </div>
         </div>
-<script>
-    $(document).ready(function(){
-        $('.delete_form').on('submit',function(){
-            if(confirm('Are you sure you want to delete?')){
-                return true;
-            }
-            else{
-                return false;
-            }
-        });
-    });
-</script>
 
-<script>
-    $(document).ready(function(){
-        $('.clear_form').on('submit',function(){
-            if(confirm('Are you sure you want to delete?')){
-                return true;
-            }
-            else{
-                return false;
-            }
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $('.cut_form').on('submit',function(){
-            if(confirm('Are you sure you want to delete?')){
-                return true;
-            }
-            else{
-                return false;
-            }
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function(){
-        $('.eliminate_form').on('submit',function(){
-            if(confirm('Are you sure you want to delete?')){
-                return true;
-            }
-            else{
-                return false;
-            }
-        });
-    });
-</script>
-
-
-
+        
 @endsection
 
 

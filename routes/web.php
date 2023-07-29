@@ -121,5 +121,5 @@ Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
 Route::get('events', [adminEventsController::class, 'index'])->name('events');
 
 //post route
-Route::post('post', [HomeController::class, 'store'])->name('send');
+Route::post('post', [registerController::class, 'store'])->name('send');
 Route::get('assemblymember', [HomeController::class, 'getassembly'])->name('assemblymember');
