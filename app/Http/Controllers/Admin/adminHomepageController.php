@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,8 +15,14 @@ class adminHomepageController extends Controller
     public function index()
     {
         $h_banner = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
-        return view('admin.homepage', ['h_banner'=>$h_banner]);
-        //
+        
+        $number = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hCounter')->get()->toArray();
+
+        $news = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hNews')->get()->toArray();
+
+        $teams = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hTeam')->get()->toArray();
+
+        return view('admin.homepage', ['h_banner' => $h_banner, 'number' => $number, 'news' => $news, 'teams'=> $teams]);
     }
 
     /**
@@ -45,10 +52,59 @@ class adminHomepageController extends Controller
             'image'=>$destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('admin.homepage')->with(['message' => 'Registration successful!!', 'status'=> 'success']);
+        return redirect('homepage')->with(['message' => 'Image Inserted in the Carousel successfully!!', 'status'=> 'success']);
+
+    }
+    public function number_store(Request $request)
+    {
+        //
+        $postdata = [
+            'meta_key'=>'hCounter',
+            'text'=>$request->input('text'),
+            'textarea'=>'',
+            'number'=>$request->input('number'),
+            'image'=>''
+        ];
+        Admin::create($postdata);
+        return redirect('homepage')->with(['message' => 'Counter inserted successfullu!!', 'status'=> 'success']);
 
     }
 
+    public function news_store(Request $request)
+    {
+        $destinationPath = 'CAMAG/img/';
+        $myimage = time() . '.' . $request->newsImage->getClientOriginalName();
+        $request->newsImage->move(public_path($destinationPath),$myimage);
+        //
+        $postdata = [
+            'meta_key'=>'hNews',
+            'text'=>$request->input('newsHeadline'),
+            'textarea'=>$request->input('newsBody'),
+            'number'=>'',
+            'image'=> $destinationPath . '/' . $myimage
+        ];
+        Admin::create($postdata);
+        return redirect('homepage')->with(['message' => 'News Posted successfully!!', 'status'=> 'success']);
+
+    }
+
+    public function team_store(Request $request)
+    {
+        $destinationPath = 'CAMAG/img/';
+        $myimage = time() . '.' . $request->teamImage->getClientOriginalName();
+        $request->teamImage->move(public_path($destinationPath),$myimage);
+        //
+        $postdata = [
+            'meta_key'=>'hTeam',
+            'text'=>$request->input('teamName'),
+            'textarea'=>$request->input('teamTitle'),
+            'number'=>'',
+            'image'=> $destinationPath . '/' . $myimage
+        ];
+        Admin::create($postdata);
+        return redirect('homepage')->with(['message' => 'Team member added successfully!!', 'status'=> 'success']);
+
+    }
     /**
      * Display the specified resource.
      */
@@ -79,8 +135,10 @@ class adminHomepageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $HomeBannerElement = Admin::find($id);
+        $HomeBannerElement->delete();
+        return redirect('homepage')->with(['message' => 'Banner deleted successfully!!', 'status'=> 'success']);
     }
 }

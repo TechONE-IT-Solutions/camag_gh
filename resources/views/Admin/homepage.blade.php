@@ -2,7 +2,11 @@
 
 
 @section('content')
-  
+        @if(session('message'))
+            <div class="alert alert-{{ session('status') }}">
+                {{ session('message') }}
+            </div>
+        @endif
         <div class="card">
             <div class="card-body">
               <h5 class="card-title">Home Page</h5>
@@ -62,7 +66,11 @@
                                                 {{$banner['text']}}
                                             </div>
                                             <div class="col-12 d-flex justify-content-center">
-                                                <button type="button" class="btn btn-primary mb-2">Delete</button>
+                                                <form method="post" class="delete_form" action="{{ route('homepage.destroy', $banner['id']) }}">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger mb-2">Delete</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -79,46 +87,37 @@
                     <div class="tab-pane fade" id="pills-stats" role="tabpanel" aria-labelledby="pills-Stats-tab">
                         <div class="row">
                             <div class="col-5">
-                                <form class="form-control p-3">
+                                <form class="form-control p-3" method="POST" action="{{ route('number') }}" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="my-3">
                                         <label for="statsText" class="form-label">Counter Text</label>
-                                        <input type="number" name="statsNumber" id="statNumber" class="form-control">
+                                        <input type="text" name="text" id="statNumber" class="form-control">
                                     </div>
                                     <div class="my-3">
                                         <label for="statsNumber" class="form-label">Counter Number</label>
-                                        <input type="number" name="statsText" id="statsText" class="form-control">
+                                        <input type="number" name="number" id="statsText" class="form-control">
                                     </div>
                                     <div class="col-12">
-                                        <button type="button" class="btn btn-primary px-3">Add</button>
+                                        <button type="submit" class="btn btn-primary px-3">Add</button>
                                     </div>
                                 </form>
                             </div>
 
                             <div class="col-7">
                                 <div class="row justify-content-end">
+                                    @foreach($number as $numdata)
                                     <div class="col-6 text-center">
                                         <div class="card p-4">
                                             <div class="card-body">
-                                                <h2>6</h2>
-                                                <p class="lead">Years Of Establishment</p>
+                                                <h2>{{$numdata['number']}}</h2>
+                                                <p class="lead">{{$numdata['text']}}</p>
                                             </div>
                                             <div class="col-12">
-                                                <button type="button" class=" btn btn-primary">Delete</button>
+                                                <button type="submit" class=" btn btn-danger">Delete</button>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-6 text-center">
-                                        <div class="card p-4">
-                                            <div class="card-body">
-                                                <h2>118</h2>
-                                                <p class="lead">Municipal Assemblies</p>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="button" class="btn btn-primary">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -129,7 +128,8 @@
                     <div class="tab-pane fade" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab">
                         <div class="row">
                             <div class="col-6">
-                                <form class="form-control">
+                                <form class="form-control" method="POST" action="{{ route('news') }}" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="m-3">
                                         <label for="newsImage" class="form-label">News Image</label>
                                         <input type="file" name="newsImage" id="newsImage" class="form-control">
@@ -140,62 +140,33 @@
                                     </div>
                                     <div class="m-3">
                                         <label for="newsDescription" class="form-label">News Description</label>
-                                        <textarea name="" id="newsDescription" style="height: 120px;" class="form-control" "></textarea>
+                                        <textarea name="newsBody" id="newsDescription" style="height: 120px;" class="form-control"></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
-                                            <button type="button" class="btn btn-primary m-3 px-4">Add</button>
+                                            <button type="submit" class="btn btn-primary m-3 px-4">Add</button>
                                     </div>
                                 </form>    
                             </div>
 
                             <div class="col-6">
                                 <div class="row">
+                                    @foreach($news as $new)
                                     <div class="col-6">
                                         <div class="card">
                                             <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                                <img src="{{ asset($new['image']) }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="card-body">
-                                                <h4>CAMAG AWARDS</h4>
-                                                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui.</P>
+                                                <h4>{{$new['text']}}</h4>
+                                                <P>{{$new['textarea']}}</P>
                                             </div>
                                             <div class="col-12 justify-content-center d-flex">
                                                 <button type="button" class="btn btn-primary mb-3 px-4">Delete</button>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
-                                            </div>
-                                            <div class="card-body">
-                                                <h4>CAMAG AWARDS</h4>
-                                                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui.</P>
-                                            </div>
-                                            <div class="col-12 justify-content-center d-flex">
-                                                <button type="button" class="btn btn-primary mb-3 px-4">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
-                                            </div>
-                                            <div class="card-body">
-                                                <h4>CAMAG AWARDS</h4>
-                                                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui.</P>
-                                            </div>
-                                            <div class="col-12 justify-content-center d-flex">
-                                                <button type="button" class="btn btn-primary mb-3 px-4">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>  
+                                    @endforeach
+                                </div> 
                             </div>
                         </div>
                     </div>
@@ -205,7 +176,8 @@
                     <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
                         <div class="row">
                             <div class="col-6">
-                                <form class="form-control">
+                                <form class="form-control" method="POST" action="{{ route('team') }}" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="m-3">
                                         <label for="teamImage" class="form-label">Team Member's Image</label>
                                         <input type="file" name="teamImage" id="teamImage" class="form-control">
@@ -216,37 +188,29 @@
                                     </div>
                                     <div class="m-3">
                                         <label for="teamTitle" class="form-label">Title</label>
-                                        <input name="teamTitle" id="teamTitle" class="form-control">
+                                        <textarea name="teamTitle" id="teamTitle" style="height: 120px;" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center">
+                                            <button type="submit" class="btn btn-primary m-3 px-4">Add</button>
                                     </div>
                                 </form>
                             </div>
 
                             <div class="col-6">
                                 <div class="row">
+                                    @foreach($teams as $team)
                                     <div class="col-4">
                                         <div class="card">
                                             <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                                <img src="{{ asset($team['image']) }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="card-body">
-                                                <h3>John Doe</h3>
-                                                <p>Chief Executive Officer</p>
+                                                <h3>{{$team['text']}}</h3>
+                                                <p>{{$team['textarea']}}</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-4">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
-                                            </div>
-                                            <div class="card-body">
-                                                <h3>John Doe</h3>
-                                                <p>Chief Executive Officer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
 
                             </div>
@@ -259,8 +223,19 @@
               <!-- End Vertical Pills Tabs -->
             </div>
         </div>
+<script>
+    $(document).ready(function(){
+        $('.delete_form').on('submit',function(){
+            if(confirm('Are you sure you want to delete?')){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+    });
+</script>
 
-         
 
 
 @endsection

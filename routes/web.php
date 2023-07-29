@@ -45,7 +45,7 @@ use App\Http\Controllers\Admin\adminUnitcommitteememberController;
 // });
 
 Auth::routes();
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // FRONT-END ROUTES
@@ -69,10 +69,8 @@ Route::get('website-donate', [donateController::class, 'donate'])->name('website
 
 Route::get('success', [successController::class, 'success'])->name('success');
 
-
-
-
-//Admin Routes
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Admin Routes {
 
 Route::get('dashboard', [webadminController::class, 'index'])->name('dashboard');
 
@@ -82,12 +80,18 @@ Route::get('associatemember', [adminAssociatememberController::class, 'index'])-
 
 Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
 
+//Home routes Both GET and POST
 Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
+Route::get('get-counter', [adminHomepageController::class, 'counter'])->name('getNumber'); //not in use
+Route::get('get-news', [adminHomepageController::class, 'news'])->name('getNews'); //not in use
+Route::get('get-teams', [adminHomepageController::class, 'teams'])->name('getTeams'); //not in use
+
 Route::post('h_banner', [adminHomepageController::class, 'banner_store'])->name('h_banner');
 Route::post('number', [adminHomepageController::class, 'number_store'])->name('number');
 Route::post('news', [adminHomepageController::class, 'news_store'])->name('news');
-Route::post('banner', [adminHomepageController::class, 'team_store'])->name('team');
+Route::post('team', [adminHomepageController::class, 'team_store'])->name('team');
 
+Route::delete('homepage/{id}', [adminHomepageController::class, 'destroy'])->name('homepage.destroy');
 
 Route::get('about', [adminAboutController::class, 'index'])->name('about');
 
