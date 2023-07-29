@@ -92,6 +92,9 @@ Route::post('news', [adminHomepageController::class, 'news_store'])->name('news'
 Route::post('team', [adminHomepageController::class, 'team_store'])->name('team');
 
 Route::delete('homepage/{id}', [adminHomepageController::class, 'destroy'])->name('homepage.destroy');
+Route::delete('homepage/clear/{id}', [adminHomepageController::class, 'clear'])->name('homepage.clear');
+Route::delete('homepage/cut/{id}', [adminHomepageController::class, 'cut'])->name('homepage.cut');
+Route::delete('homepage/eliminate/{id}', [adminHomepageController::class, 'eliminate'])->name('homepage.eliminate');
 
 Route::get('about', [adminAboutController::class, 'index'])->name('about');
 

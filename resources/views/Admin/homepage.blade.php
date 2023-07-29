@@ -113,7 +113,11 @@
                                                 <p class="lead">{{$numdata['text']}}</p>
                                             </div>
                                             <div class="col-12">
-                                                <button type="submit" class=" btn btn-danger">Delete</button>
+                                                <form method="post" class="clear_form" action="{{ route('homepage.clear', $numdata['id']) }}">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class=" btn btn-danger">Delete</button>
+                                                </form>    
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +165,11 @@
                                                 <P>{{$new['textarea']}}</P>
                                             </div>
                                             <div class="col-12 justify-content-center d-flex">
-                                                <button type="button" class="btn btn-primary mb-3 px-4">Delete</button>
+                                                <form method="post" class="cut_form" action="{{ route('homepage.cut', $new['id']) }}">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class=" btn btn-danger px-4">Delete</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -208,6 +216,13 @@
                                                 <h3>{{$team['text']}}</h3>
                                                 <p>{{$team['textarea']}}</p>
                                             </div>
+                                            <div class="col-12 justify-content-center d-flex">
+                                                <form method="post" class="eliminate_form" action="{{ route('homepage.eliminate', $team['id']) }}">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class=" btn btn-danger px-4">Delete</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                     @endforeach
@@ -226,6 +241,44 @@
 <script>
     $(document).ready(function(){
         $('.delete_form').on('submit',function(){
+            if(confirm('Are you sure you want to delete?')){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('.clear_form').on('submit',function(){
+            if(confirm('Are you sure you want to delete?')){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $('.cut_form').on('submit',function(){
+            if(confirm('Are you sure you want to delete?')){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('.eliminate_form').on('submit',function(){
             if(confirm('Are you sure you want to delete?')){
                 return true;
             }

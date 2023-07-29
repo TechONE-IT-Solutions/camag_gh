@@ -141,4 +141,22 @@ class adminHomepageController extends Controller
         $HomeBannerElement->delete();
         return redirect('homepage')->with(['message' => 'Banner deleted successfully!!', 'status'=> 'success']);
     }
+    public function clear($id)
+    {
+        $HomeBannerElement = Admin::find($id);
+        $HomeBannerElement->delete();
+        return redirect('homepage')->with(['message' => 'Number-card deleted successfully!!', 'status'=> 'success']);
+    }
+    public function cut($id)
+    {
+        $HomeBannerElement = Admin::find($id);
+        $HomeBannerElement->delete();
+        return redirect('homepage')->with(['message' => 'Blog deleted successfully!!', 'status'=> 'success']);
+    }
+    public function eliminate($id)
+    {
+        $HomeBannerElement = Admin::find($id);
+        $HomeBannerElement->delete();
+        return redirect('homepage')->with(['message' => 'A member from the team was Removed', 'status'=> 'success']);
+    }
 }
