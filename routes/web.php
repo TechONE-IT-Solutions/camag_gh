@@ -69,6 +69,9 @@ Route::get('website-donate', [donateController::class, 'donate'])->name('website
 
 Route::get('success', [successController::class, 'success'])->name('success');
 
+Route::post('post', [registerController::class, 'store'])->name('send');
+Route::get('assemblymember', [HomeController::class, 'getassembly'])->name('assemblymember');
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
 
@@ -79,22 +82,24 @@ Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index']
 Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
 
 Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
-
-//Home routes Both GET and POST
+//HOME
+//Home GET Routes
 Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
 Route::get('get-counter', [adminHomepageController::class, 'counter'])->name('getNumber'); //not in use
 Route::get('get-news', [adminHomepageController::class, 'news'])->name('getNews'); //not in use
 Route::get('get-teams', [adminHomepageController::class, 'teams'])->name('getTeams'); //not in use
-
+//Home POST Routes
 Route::post('h_banner', [adminHomepageController::class, 'banner_store'])->name('h_banner');
 Route::post('number', [adminHomepageController::class, 'number_store'])->name('number');
 Route::post('news', [adminHomepageController::class, 'news_store'])->name('news');
 Route::post('team', [adminHomepageController::class, 'team_store'])->name('team');
-
+//Home DELETE Routes
 Route::delete('homepage/{id}', [adminHomepageController::class, 'destroy'])->name('homepage.destroy');
 Route::delete('homepage/clear/{id}', [adminHomepageController::class, 'clear'])->name('homepage.clear');
 Route::delete('homepage/cut/{id}', [adminHomepageController::class, 'cut'])->name('homepage.cut');
 Route::delete('homepage/eliminate/{id}', [adminHomepageController::class, 'eliminate'])->name('homepage.eliminate');
+
+
 
 Route::get('about', [adminAboutController::class, 'index'])->name('about');
 
@@ -114,12 +119,13 @@ Route::get('executive', [adminExecutivesController::class, 'index'])->name('exec
 
 Route::get('payment', [adminPaymentController::class, 'index'])->name('payment');
 
+// Admin Gallery routes
 Route::get('gallery', [adminGalleryController::class, 'index'])->name('gallery');
+Route::post('post-gallery', [adminGalleryController::class, 'store'])->name('post-gallery');
+Route::delete('gallery/destroy/{id}', [adminGalleryController::class, 'destroy'])->name('delete-gallery');
 
 Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
 
 Route::get('events', [adminEventsController::class, 'index'])->name('events');
 
 //post route
-Route::post('post', [registerController::class, 'store'])->name('send');
-Route::get('assemblymember', [HomeController::class, 'getassembly'])->name('assemblymember');

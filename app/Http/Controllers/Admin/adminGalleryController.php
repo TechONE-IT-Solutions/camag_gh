@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +14,8 @@ class adminGalleryController extends Controller
      */
     public function index()
     {
-        return view('admin.gallery');
+        $Gallery = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'Agallery')->get()->toArray();
+        return view('admin.gallery', ['Gallery' => $Gallery]);
         //
     }
 
@@ -31,6 +33,19 @@ class adminGalleryController extends Controller
     public function store(Request $request)
     {
         //
+        $destinationPath = 'CAMAG/img/';
+        $myimage = time() . '.' . $request->galleryImage->getClientOriginalName();
+        $request->galleryImage->move(public_path($destinationPath),$myimage);
+        //
+        $postdata = [
+            'meta_key'=>'Agallery',
+            'text'=>$request->input('galleryText'),
+            'textarea'=>'',
+            'number'=>'',
+            'image'=> $destinationPath . '/' . $myimage
+        ];
+        Admin::create($postdata);
+        return redirect('gallery')->with(['message' => 'Picture Inserted Successfully!!', 'status'=> 'success']);
     }
 
     /**
@@ -60,8 +75,10 @@ class adminGalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $picture = Admin::find($id);
+        $picture->delete();
+        return redirect('gallery')->with(['message' => 'Picture deleted', 'status'=> 'danger']);
     }
 }

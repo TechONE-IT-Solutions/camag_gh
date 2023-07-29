@@ -363,3 +363,14 @@ $(document).ready(function(){
       }
   });
 });
+
+$(document).ready(function() {
+  $('.delete_pic').on('submit', function(){
+      if(confirm('Are you sure you want to delete this picture from your Gallery?')){
+          return true;
+      }
+      else{
+          return false;
+      }
+  });
+});
