@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('registers', function (Blueprint $table) {
-            $table->string('membership_id')->default('NULL')->change();
-            $table->string('paid')->default('NULL')->change();
+        Schema::table('members', function (Blueprint $table) {
+            $table->string('residential_address')->nullable()->after('residential address');
+            $table->dropColumn('residential address');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('column', function (Blueprint $table) {
+        Schema::table('members', function (Blueprint $table) {
             //
         });
     }

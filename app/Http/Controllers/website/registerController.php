@@ -68,9 +68,10 @@ class registerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'Assembly member')->get()->toArray();
+        return view('assemblymember', compact('assemblymen'));
     }
 
     /**

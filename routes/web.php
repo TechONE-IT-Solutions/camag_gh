@@ -70,7 +70,7 @@ Route::get('website-donate', [donateController::class, 'donate'])->name('website
 Route::get('success', [successController::class, 'success'])->name('success');
 
 Route::post('post', [registerController::class, 'store'])->name('send');
-Route::get('assemblymember', [HomeController::class, 'getassembly'])->name('assemblymember');
+Route::get('assemblymember', [registerController::class, 'show'])->name('assemblymember');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
@@ -126,6 +126,9 @@ Route::delete('gallery/destroy/{id}', [adminGalleryController::class, 'destroy']
 
 Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
 
+//Admin Events routes
 Route::get('events', [adminEventsController::class, 'index'])->name('events');
+Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
+Route::delete('events_destroy/{id}', [adminEventsController::class, 'destroy'])->name('events_destroy');
 
 //post route
