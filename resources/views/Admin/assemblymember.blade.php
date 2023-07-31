@@ -69,7 +69,7 @@
                                     <td>{{ $assemblyman['telephone_number'] }}</td>
                                     <td>{{ $assemblyman['email_address'] }}</td>
                                     <td>
-                                        <form action="{{ route('assemblymember_destroy', $assemblyman['id']) }}" method="POST" class="delete_assembly">
+                                        <form action="{{ route('assemblymember_destroy', $assemblyman['id']) }}" method="POST" id="delete_assembly" class="assembly">
                                             {{csrf_field()}}
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>

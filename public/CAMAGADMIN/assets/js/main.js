@@ -376,8 +376,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $('.delete_assembly').on('submit', function(){
-      if(confirm('Are you sure you want to delete this picture from your Gallery?')){
+  $('.assembly').on('submit', function(){
+      if(confirm('Are you sure you want to delete?')){
           return true;
       }
       else{

@@ -65,6 +65,6 @@ class adminAssemblymemberController extends Controller
     {
         $assemblyman = homepage::find($id);
         $assemblyman->delete();
-        return redirect('admin.assemblymember')->with(['message'=> 'Assembly Member deleted', 'status'=> 'danger']);
+        return redirect('assemblymember')->with(['message'=> 'Assembly Member deleted', 'status'=> 'danger']);
     }
 }
