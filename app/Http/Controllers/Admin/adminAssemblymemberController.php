@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Models\website\homepage;
 use App\Http\Controllers\Controller;
 
 class adminAssemblymemberController extends Controller
@@ -12,7 +13,8 @@ class adminAssemblymemberController extends Controller
      */
     public function index()
     {
-        return view('admin.assemblymember');
+        $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'AssemblyMember')->get()->toArray();
+        return view('admin.assemblymember', ['assemblymen'=> $assemblymen]);
         //
     }
 

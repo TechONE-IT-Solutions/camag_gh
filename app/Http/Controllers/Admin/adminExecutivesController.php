@@ -76,6 +76,8 @@ class adminExecutivesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $executive = Admin::find($id);
+        $executive->delete();
+        return redirect('executive')->with(['message'=> 'Executive member deleted', 'status' => 'danger' ]);
     }
 }

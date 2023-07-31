@@ -70,8 +70,7 @@ class registerController extends Controller
      */
     public function show()
     {
-        $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'Assembly member')->get()->toArray();
-        return view('assemblymember', compact('assemblymen'));
+       ;
     }
 
     /**

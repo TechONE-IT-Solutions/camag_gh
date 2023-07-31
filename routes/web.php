@@ -80,8 +80,11 @@ Route::get('dashboard', [webadminController::class, 'index'])->name('dashboard')
 Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
 
 Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
-
+//Admin Assembly member routes
 Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
+Route::delete('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
+
+
 //HOME
 //Home GET Routes
 Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
@@ -115,6 +118,7 @@ Route::get('donate', [adminDonateController::class, 'index'])->name('donate');
 //Admin Executive routes
 Route::get('executive', [adminExecutivesController::class, 'index'])->name('executive');
 Route::post('post-executive', [adminExecutivesController::class, 'store'])->name('post-executive');
+Route::delete('executive.destroy/{id}', [adminExecutivesController::class, 'destroy'])->name('executive.destroy');
 
 
 Route::get('payment', [adminPaymentController::class, 'index'])->name('payment');

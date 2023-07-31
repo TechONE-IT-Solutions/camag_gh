@@ -41,14 +41,18 @@
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                    <img src="{{asset($executive['image']) }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center p-3">
                                     <h4>{{$executive['text']}}</h4>
                                     <p>{{$executive['textarea']}}</p>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary px-4 m-2">Delete</button>
+                                    <form method="post" class="delete_form" action="{{ route('executive.destroy', $executive['id']) }}">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger mb-2">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

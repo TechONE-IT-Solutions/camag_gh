@@ -66,11 +66,10 @@
                                     <td>{{ $assemblyman['telephone_number'] }}</td>
                                     <td>{{ $assemblyman['email_address'] }}</td>
                                     <td>
-                                        <form action="" method="" class="delete_form">
+                                        <form action="{{ route('assemblymember_destroy') }}" method="POST" class="delete_form">
                                             {{csrf_field()}}
-                                                <!-- <input type="hidden" name="_method" value="DELETE" /> -->
+                                                <input type="hidden" name="_method" value="DELETE" />
                                                 <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
-
                                         </form>
                                     </td>
                                 </tr>
