@@ -14,7 +14,8 @@ class adminExecutivesController extends Controller
      */
     public function index()
     {
-        return view('admin.executives');
+        $executives = Admin::select('id','meta_key','text','number', 'textarea', 'image')->where('meta_key', 'AExecutive')->get()->toArray();
+        return view('admin.executives',['executives'=>$executives]);
         //
     }
 
@@ -49,7 +50,7 @@ class adminExecutivesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
         //
     }

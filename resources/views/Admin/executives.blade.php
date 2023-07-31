@@ -37,20 +37,22 @@
     
                 <div class="col-7">
                     <div class="row">
+                        @foreach($executives as $executive)
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center p-3">
-                                    <h4>Prem Kumar</h4>
-                                    <p>Facilitator</p>
+                                    <h4>{{$executive['text']}}</h4>
+                                    <p>{{$executive['textarea']}}</p>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">
                                     <button type="button" class="btn btn-primary px-4 m-2">Delete</button>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
