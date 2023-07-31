@@ -61,8 +61,10 @@ class adminAssemblymemberController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $assemblyman = homepage::find($id);
+        $assemblyman->delete();
+        return redirect('admin.assemblymember')->with(['message'=> 'Assembly Member deleted', 'status'=> 'danger']);
     }
 }

@@ -2,8 +2,11 @@
 
 
 @section('content')
-
-
+@if(session('message'))
+            <div class="alert alert-{{ session('status') }}">
+                {{ session('message') }}
+            </div>
+@endif
 <div class="card">
     <div class="card-body">
         <h5 class="card-title text-secondary">Assembly Members</h5>
@@ -66,10 +69,10 @@
                                     <td>{{ $assemblyman['telephone_number'] }}</td>
                                     <td>{{ $assemblyman['email_address'] }}</td>
                                     <td>
-                                        <form action="{{ route('assemblymember_destroy') }}" method="POST" class="delete_form">
+                                        <form action="{{ route('assemblymember_destroy', $assemblyman['id']) }}" method="POST" class="delete_form">
                                             {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="DELETE" />
-                                                <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
