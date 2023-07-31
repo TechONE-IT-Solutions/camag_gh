@@ -2,29 +2,35 @@
 
 
 @section('content')
+        @if(session('message'))
+            <div class="alert alert-{{ session('status') }}">
+                {{ session('message') }}
+            </div>
+        @endif
 <div class="wrapper bg-white p-4 rounded">
     <div class="row">
         <h3 class="page-title">Executives</h3>
 
             <div class="row">
                 <div class="col-5">
-                    <form action="" class="form-control p-3">
+                    <form action="{{ route('post-executive') }}" class="form-control p-3" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="m-3">
                             <label class="form-label"  for="events">Executive's Image</label>
-                            <input type="file" class="form-control" name="event" id="events">
+                            <input type="file" class="form-control" name="executive_pic" id="events">
                         </div>
 
                         <div class="m-3">
                             <label class="form-label"  for="executiveName">Executive's Name</label>
-                            <input type="text" class="form-control" name="eventTitle" id="executiveName">
+                            <input type="text" class="form-control" name="executive_name" id="executiveName">
                         </div>
 
                         <div class="m-3">
                             <label  class="form-label" for="executiveTitle">Executive's Title</label>
-                            <input type="text" class="form-control" name="eventText" id="eventTitle">
+                            <input type="text" class="form-control" name="executive_title" id="eventTitle">
                         </div>
 
-                        <button type="button" class="btn btn-primary px-4 m-4">Add</button>
+                        <button type="submit" class="btn btn-primary px-4 m-4">Add</button>
                     </form>
                 </div>
 

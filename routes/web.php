@@ -114,6 +114,7 @@ Route::get('paydues', [adminPayduesController::class, 'index'])->name('paydues')
 Route::get('donate', [adminDonateController::class, 'index'])->name('donate');
 
 Route::get('executive', [adminExecutivesController::class, 'index'])->name('executive');
+Route::post('post-executive', [adminExecutivesController::class, 'store'])->name('post-executive');
 
 //Route::get('register', [App\Http\Controllers\Admin\webAdminController::class, 'register'])->name('register');
 

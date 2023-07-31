@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,7 +31,19 @@ class adminExecutivesController extends Controller
      */
     public function store(Request $request)
     {
+        $destinationPath = 'CAMAG/img/';
+        $myimage = time() . '.' . $request->executive_pic->getClientOriginalName();
+        $request->executive_pic->move(public_path($destinationPath),$myimage);
         //
+        $postdata = [
+            'meta_key'=>'AExecutive',
+            'text'=>$request->input('executive_name'),
+            'textarea'=>$request->input('executive_title'),
+            'number'=>'',
+            'image'=> $destinationPath . '/' . $myimage
+        ];
+        Admin::create($postdata);
+        return redirect('executive')->with(['message' => 'Executive added successfully!!', 'status'=> 'success']);
     }
 
     /**
