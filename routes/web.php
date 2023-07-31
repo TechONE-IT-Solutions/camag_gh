@@ -135,4 +135,3 @@ Route::get('events', [adminEventsController::class, 'index'])->name('events');
 Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
 Route::delete('events_destroy/{id}', [adminEventsController::class, 'destroy'])->name('events_destroy');
 
-//post route

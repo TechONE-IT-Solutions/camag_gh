@@ -69,7 +69,7 @@
                                     <td>{{ $assemblyman['telephone_number'] }}</td>
                                     <td>{{ $assemblyman['email_address'] }}</td>
                                     <td>
-                                        <form action="{{ route('assemblymember_destroy', $assemblyman['id']) }}" method="POST" class="delete_form">
+                                        <form action="{{ route('assemblymember_destroy', $assemblyman['id']) }}" method="POST" class="delete_assembly">
                                             {{csrf_field()}}
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
@@ -92,17 +92,5 @@
 
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $('.delete_form').on('submit',function(e){
-            e.preventDefault();
-            if(confirm('Are you sure you want to trash this member permanently?')){
-                return true;
-            }
-            else{
-                return false;
-            }
-        });
-    });
-</script>
+
 @endsection
