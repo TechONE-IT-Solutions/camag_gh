@@ -23,6 +23,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="card-body pt-3">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="card-body pt-3">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

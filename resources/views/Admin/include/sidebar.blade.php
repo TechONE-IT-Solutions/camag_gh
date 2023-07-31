@@ -52,7 +52,11 @@
           <i class="bi bi-circle"></i><span>Gallery</span>
         </a>
       </li>
-
+      <li class="nav-item">
+        <a href="{{ route('contact') }}" class="nav-link collapsed">
+          <i class="bi bi-circle"></i><span>Contact</span>
+        </a>
+      </li>
     </ul>
   </li>
   <!-- End Website -->
