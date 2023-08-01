@@ -52,7 +52,7 @@ class adminHomepageController extends Controller
             'image'=>$destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('homepage')->with(['message' => 'Image Inserted in the Carousel successfully!!', 'status'=> 'success']);
+        return redirect('admin/homepage')->with(['message' => 'Image Inserted in the Carousel successfully!!', 'status'=> 'success']);
 
     }
     public function number_store(Request $request)
@@ -66,7 +66,7 @@ class adminHomepageController extends Controller
             'image'=>''
         ];
         Admin::create($postdata);
-        return redirect('homepage')->with(['message' => 'Counter inserted successfullu!!', 'status'=> 'success']);
+        return redirect('admin/homepage')->with(['message' => 'Counter inserted successfullu!!', 'status'=> 'success']);
 
     }
 
@@ -84,7 +84,7 @@ class adminHomepageController extends Controller
             'image'=> $destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('homepage')->with(['message' => 'News Posted successfully!!', 'status'=> 'success']);
+        return redirect('admin/homepage')->with(['message' => 'News Posted successfully!!', 'status'=> 'success']);
 
     }
 
@@ -102,7 +102,7 @@ class adminHomepageController extends Controller
             'image'=> $destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('homepage')->with(['message' => 'Team member added successfully!!', 'status'=> 'success']);
+        return redirect('admin/homepage')->with(['message' => 'Team member added successfully!!', 'status'=> 'success']);
 
     }
     /**
@@ -139,24 +139,24 @@ class adminHomepageController extends Controller
     {
         $HomeBannerElement = Admin::find($id);
         $HomeBannerElement->delete();
-        return redirect('homepage')->with(['message' => 'Banner deleted successfully!!', 'status'=> 'danger']);
+        return redirect('admin/homepage')->with(['message' => 'Banner deleted successfully!!', 'status'=> 'danger']);
     }
     public function clear($id)
     {
         $HomeBannerElement = Admin::find($id);
         $HomeBannerElement->delete();
-        return redirect('homepage')->with(['message' => 'Number-card deleted successfully!!', 'status'=> 'danger']);
+        return redirect('admin/homepage')->with(['message' => 'Number-card deleted successfully!!', 'status'=> 'danger']);
     }
     public function cut($id)
     {
         $HomeBannerElement = Admin::find($id);
         $HomeBannerElement->delete();
-        return redirect('homepage')->with(['message' => 'Blog deleted successfully!!', 'status'=> 'danger']);
+        return redirect('admin/homepage')->with(['message' => 'Blog deleted successfully!!', 'status'=> 'danger']);
     }
     public function eliminate($id)
     {
         $HomeBannerElement = Admin::find($id);
         $HomeBannerElement->delete();
-        return redirect('homepage')->with(['message' => 'A member from the team was Removed', 'status'=> 'danger']);
+        return redirect('admin/homepage')->with(['message' => 'A member from the team was Removed', 'status'=> 'danger']);
     }
 }
