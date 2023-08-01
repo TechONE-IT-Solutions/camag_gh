@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('registers', function (Blueprint $table) {
+        Schema::table('members', function (Blueprint $table) {
             $table->string('membership_id')->default('NULL')->change();
             $table->string('paid')->default('NULL')->change();
         });
