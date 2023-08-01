@@ -88,6 +88,15 @@
             
               <!-- End Vertical Pills Tabs -->
 
+                <div class="row">
+                    <div class="col-4">
+                        <div class="button-group">
+                            <button class="btn btn-secondary">Move</button>
+                            <button class="btn btn-danger">Danger</button>
+                        </div>
+                    </div>
+                </div>
+
     </div>
 </div>
 <script>

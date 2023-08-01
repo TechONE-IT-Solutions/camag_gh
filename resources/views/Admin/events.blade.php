@@ -19,7 +19,7 @@
                         </div>
                         <div class="m-3">
                             <label  class="form-label" for="eventText">Event Description</label>
-                            <input type="text" class="form-control" name="eventText" id="eventText">
+                            <textarea name="eventText" id="eventText" class="form-control"></textarea>
                         </div>
                         <div class="col-12">
                             <button type="button" class="btn btn-primary px-4 m-4">Add</button>

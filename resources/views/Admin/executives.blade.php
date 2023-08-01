@@ -10,18 +10,18 @@
                 <div class="col-5">
                     <form action="" class="form-control p-3">
                         <div class="m-3">
-                            <label class="form-label"  for="events">Executive's Image</label>
-                            <input type="file" class="form-control" name="event" id="events">
+                            <label class="form-label"  for="executive">Executive's Image</label>
+                            <input type="file" class="form-control" name="executive" id="executive">
                         </div>
 
                         <div class="m-3">
                             <label class="form-label"  for="executiveName">Executive's Name</label>
-                            <input type="text" class="form-control" name="eventTitle" id="executiveName">
+                            <input type="text" class="form-control" name="executivesName" id="executiveName">
                         </div>
 
                         <div class="m-3">
                             <label  class="form-label" for="executiveTitle">Executive's Title</label>
-                            <input type="text" class="form-control" name="eventText" id="eventTitle">
+                            <textarea name="executiveTitle" id="executiveTitle" class="form-control"></textarea>
                         </div>
 
                         <button type="button" class="btn btn-primary px-4 m-4">Add</button>

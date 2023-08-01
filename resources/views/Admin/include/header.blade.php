@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="icon">
-  <link href="{{asset('CAMAGADMIN/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <!-- <link href="{{asset('CAMAGADMIN/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -215,6 +215,14 @@
           <h6>Kevin Anderson</h6>
           <span>Web Designer</span>
         </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li class="dropdown-item">
+        <i class="bi bi-person-fill-add"></i>
+            <a href="{{ route('register') }}" class="text-secondary">Register</a>
+        </li>
+
         <li>
           <hr class="dropdown-divider">
         </li>

@@ -107,6 +107,16 @@
                     <!-- Counter end -->
 
                 </div>
+
+                    <div class="row justify-content-end m-3">
+                        <div class="col-3">
+                            <div class="button-group">
+                                <button class="btn btn-secondary">Move</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+
               </div>
               <!-- End Vertical Pills Tabs -->
 
