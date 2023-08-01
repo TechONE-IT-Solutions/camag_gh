@@ -79,7 +79,7 @@
     <div class="container py-7 mt-5">
         <div class="row rounded bg-light text-center py-4 g-4 counter-RANDOMID text-primary">
             @foreach($number as $count)
-            <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="col">
                 <span class="fw-bold  display-5 mb-5" data-vanilla-counter="" data-start-at="0" data-end-at="{{$count['number']}}" data-time="1000" data-delay="60" data-format="{}"></span>
                 <p class="lead" editable="inline"><span><b>{{$count['text']}}</b></span></p>
             </div>

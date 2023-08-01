@@ -8,8 +8,8 @@
     <meta content="" name="description">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="favicon">
-
+    <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="icon">
+    
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
