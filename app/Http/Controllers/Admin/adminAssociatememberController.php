@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\website\homepage;
+use App\Http\Controllers\Controller;
 
 class adminAssociatememberController extends Controller
 {
@@ -12,7 +13,8 @@ class adminAssociatememberController extends Controller
      */
     public function index()
     {
-        return view('admin.associatemember');
+        $associates = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'AssociateMember')->get()->toArray();
+        return view('admin.associatemember',['associates'=>$associates]);
     }
 
     /**
@@ -60,6 +62,8 @@ class adminAssociatememberController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $associateMember = homepage::find($id);
+        $associateMember->delete();
+        return redirect('associatemember')->with(['message'=> 'Associate Member deleted', 'status'=> 'danger']);
     }
 }

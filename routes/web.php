@@ -41,13 +41,10 @@ use App\Http\Controllers\Admin\adminUnitcommitteememberController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Auth::routes();
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // FRONT-END ROUTES
 Route::get('/', [HomeController::class, 'index'])->name('website-home');
@@ -71,67 +68,70 @@ Route::get('website-donate', [donateController::class, 'donate'])->name('website
 Route::get('success', [successController::class, 'success'])->name('success');
 
 Route::post('post', [registerController::class, 'store'])->name('send');
-Route::get('assemblymember', [registerController::class, 'show'])->name('assemblymember');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
 
-Route::get('dashboard', [webadminController::class, 'index'])->name('dashboard');
+Route::prefix('admin')->middleware('auth')->group(function() {
+    Route::get('/dashboard', [webadminController::class, 'index'])->name('dashboard');
 
-Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
+    Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
+    //Admin Associate members routes
+    Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
+    Route::delete('associate_destroy/{id}', [adminAssociatememberController::class, 'destroy'])->name('associate_destroy');
+    
+    //Admin Assembly member routes
+    Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
+    Route::delete('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
+    
+    //HOME
+    //Home GET Routes
+    Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
+    Route::get('get-counter', [adminHomepageController::class, 'counter'])->name('getNumber'); //not in use
+    Route::get('get-news', [adminHomepageController::class, 'news'])->name('getNews'); //not in use
+    Route::get('get-teams', [adminHomepageController::class, 'teams'])->name('getTeams'); //not in use
+    //Home POST Routes
+    Route::post('h_banner', [adminHomepageController::class, 'banner_store'])->name('h_banner');
+    Route::post('number', [adminHomepageController::class, 'number_store'])->name('number');
+    Route::post('news', [adminHomepageController::class, 'news_store'])->name('news');
+    Route::post('team', [adminHomepageController::class, 'team_store'])->name('team');
+    //Home DELETE Routes
+    Route::delete('homepage/{id}', [adminHomepageController::class, 'destroy'])->name('homepage.destroy');
+    Route::delete('homepage/clear/{id}', [adminHomepageController::class, 'clear'])->name('homepage.clear');
+    Route::delete('homepage/cut/{id}', [adminHomepageController::class, 'cut'])->name('homepage.cut');
+    Route::delete('homepage/eliminate/{id}', [adminHomepageController::class, 'eliminate'])->name('homepage.eliminate');
+    
+    
+    
+    Route::get('about', [adminAboutController::class, 'index'])->name('about');
+    
+    Route::get('contact', [adminContactController::class, 'index'])->name('contact');
+    
+    Route::get('profile', [adminProfileController::class, 'index'])->name('profile');
+    
+    Route::get('paydues', [adminPayduesController::class, 'index'])->name('paydues');
+    
+    Route::get('donate', [adminDonateController::class, 'index'])->name('donate');
+    //Admin Executive routes
+    Route::get('executive', [adminExecutivesController::class, 'index'])->name('executive');
+    Route::post('post-executive', [adminExecutivesController::class, 'store'])->name('post-executive');
+    Route::delete('executive.destroy/{id}', [adminExecutivesController::class, 'destroy'])->name('executive.destroy');
+    
+    
+    Route::get('payment', [adminPaymentController::class, 'index'])->name('payment');
+    
+    // Admin Gallery routes
+    Route::get('gallery', [adminGalleryController::class, 'index'])->name('gallery');
+    Route::post('post-gallery', [adminGalleryController::class, 'store'])->name('post-gallery');
+    Route::delete('gallery/destroy/{id}', [adminGalleryController::class, 'destroy'])->name('delete-gallery');
+    
+    Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
+    
+    //Admin Events routes
+    Route::get('events', [adminEventsController::class, 'index'])->name('events');
+    Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
+    Route::delete('events_destroy/{id}', [adminEventsController::class, 'destroy'])->name('events_destroy');
+});
 
-Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
-//Admin Assembly member routes
-Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
-Route::get('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
-
-//HOME
-//Home GET Routes
-Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
-Route::get('get-counter', [adminHomepageController::class, 'counter'])->name('getNumber'); //not in use
-Route::get('get-news', [adminHomepageController::class, 'news'])->name('getNews'); //not in use
-Route::get('get-teams', [adminHomepageController::class, 'teams'])->name('getTeams'); //not in use
-//Home POST Routes
-Route::post('h_banner', [adminHomepageController::class, 'banner_store'])->name('h_banner');
-Route::post('number', [adminHomepageController::class, 'number_store'])->name('number');
-Route::post('news', [adminHomepageController::class, 'news_store'])->name('news');
-Route::post('team', [adminHomepageController::class, 'team_store'])->name('team');
-//Home DELETE Routes
-Route::delete('homepage/{id}', [adminHomepageController::class, 'destroy'])->name('homepage.destroy');
-Route::delete('homepage/clear/{id}', [adminHomepageController::class, 'clear'])->name('homepage.clear');
-Route::delete('homepage/cut/{id}', [adminHomepageController::class, 'cut'])->name('homepage.cut');
-Route::delete('homepage/eliminate/{id}', [adminHomepageController::class, 'eliminate'])->name('homepage.eliminate');
-
-
-
-Route::get('about', [adminAboutController::class, 'index'])->name('about');
-
-Route::get('contact', [adminContactController::class, 'index'])->name('contact');
-
-Route::get('profile', [adminProfileController::class, 'index'])->name('profile');
-
-// Route::get('login', [App\Http\Controllers\Admin\webAdminController::class, 'login'])->name('login');
-
-Route::get('paydues', [adminPayduesController::class, 'index'])->name('paydues');
-
-Route::get('donate', [adminDonateController::class, 'index'])->name('donate');
-//Admin Executive routes
-Route::get('executive', [adminExecutivesController::class, 'index'])->name('executive');
-Route::post('post-executive', [adminExecutivesController::class, 'store'])->name('post-executive');
-Route::delete('executive.destroy/{id}', [adminExecutivesController::class, 'destroy'])->name('executive.destroy');
-
-
-Route::get('payment', [adminPaymentController::class, 'index'])->name('payment');
-
-// Admin Gallery routes
-Route::get('gallery', [adminGalleryController::class, 'index'])->name('gallery');
-Route::post('post-gallery', [adminGalleryController::class, 'store'])->name('post-gallery');
-Route::delete('gallery/destroy/{id}', [adminGalleryController::class, 'destroy'])->name('delete-gallery');
-
-Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
-
-//Admin Events routes
-Route::get('events', [adminEventsController::class, 'index'])->name('events');
-Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
-Route::delete('events_destroy/{id}', [adminEventsController::class, 'destroy'])->name('events_destroy');
+Auth::routes();
 

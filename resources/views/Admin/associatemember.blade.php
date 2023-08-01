@@ -2,6 +2,11 @@
 
 
 @section('content')
+@if(session('message'))
+    <div class="alert alert-{{ session('status') }}">
+        {{ session('message') }}
+    </div>
+@endif
 
 <div class="card">
             <div class="card-body">
@@ -18,45 +23,21 @@
                     <!-- Start Start -->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
+                            @foreach($associates as $associate)
                             <div class="col-3">
                                 <div class="card">
                                     <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                        <img src="{{asset($associate['photo']) }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="card-body p-3">
                                         <div class="row">
                                             <p class="col-6 label">Name:</p>
-                                            <p class="col-6">John Doe</p>
+                                            <p class="col-6">{{$associate['name'] }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-6 label">Name:</p>
-                                            <p class="col-6">John Doe</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-3 label">Name:</p>
-                                            <p class="col-9">John Doe</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
 
                         </div>
                 
@@ -69,23 +50,31 @@
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Gender</th>
                                     <th scope="col">Electoral Area</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Email Address</th>
+                                    <th scope="col text-danger">Clear</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($associates as $associate)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Antwi Brian</td>
-                                    <td>Male</td>
-                                    <td>Kwabenya Agyemankata</td>
-                                    <td>054 449 6780</td>
-                                    <td>info@camaghana.com</td>
+                                    <td>{{$associate['name'] }}</td>
+                                    <td>{{$associate['gender'] }}</td>
+                                    <td>{{$associate['electoral_area'] }}</td>
+                                    <td>{{$associate['telephone_number'] }}</td>
+                                    <td>{{$associate['email_address'] }}</td>
+                                    <td>
+                                        <form action="{{ route('associate_destroy', $associate['id']) }}" method="POST" class="assembly">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
+                            @endforeach
                             </tbody>
                         </table>
                         <div class="row">
