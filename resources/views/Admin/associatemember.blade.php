@@ -66,28 +66,36 @@
                     <!-- Counter Start -->
                     <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab">
                         
-                    <table class="table table-hover table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Full Name</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Electoral Area</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Email Address</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Antwi Brian</td>
-                                <td>Male</td>
-                                <td>Kwabenya Agyemankata</td>
-                                <td>054 449 6780</td>
-                                <td>info@camaghana.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Electoral Area</th>
+                                    <th scope="col">Phone Number</th>
+                                    <th scope="col">Email Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Antwi Brian</td>
+                                    <td>Male</td>
+                                    <td>Kwabenya Agyemankata</td>
+                                    <td>054 449 6780</td>
+                                    <td>info@camaghana.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="button-group">
+                                    <button class="btn btn-secondary">Move</button>
+                                    <button class="btn btn-danger">Danger</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
               </div>

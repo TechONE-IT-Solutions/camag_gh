@@ -23,7 +23,7 @@
                     <input type="text" name="galleryText" id="galleryText" class="form-control">
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary px-3">Add</button>
+                    <button type="submit" class="btn btn-success px-3">Add</button>
                 </div>
             </form>
         </div>

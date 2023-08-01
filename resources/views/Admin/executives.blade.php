@@ -30,7 +30,7 @@
                             <input type="text" class="form-control" name="executive_title" id="eventTitle">
                         </div>
 
-                        <button type="submit" class="btn btn-primary px-4 m-4">Add</button>
+                        <button type="submit" class="btn btn-success px-4 m-4">Add</button>
                     </form>
                 </div>
 
