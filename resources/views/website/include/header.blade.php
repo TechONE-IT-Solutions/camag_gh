@@ -8,7 +8,7 @@
     <meta content="" name="description">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link href="{{asset('CAMAG/img/favicon.ico') }}" rel="icon">
+    <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="favicon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,8 +38,6 @@
     </div>
     <!-- Spinner End -->
 
-
-    
 
     <!-- Navbar Start -->
     <div class="container-fluid bg-white sticky-top">

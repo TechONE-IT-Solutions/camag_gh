@@ -23,6 +23,8 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('CAMAGADMIN/assets/js/main.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 </body>
 
