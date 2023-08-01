@@ -25,7 +25,7 @@
   <link href="{{asset('CAMAGADMIN/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
   <link href="{{asset('CAMAGADMIN/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
   <link href="{{asset('CAMAGADMIN/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-  <link href="{{asset('CAMAGADMIN/img/icon/icon-7.png') }}" rel="stylesheet">
+  <!-- <link href="{{asset('CAMAGADMIN/img/icon/icon-7.png') }}" rel="stylesheet"> -->
   <link href="{{asset('CAMAGADMIN/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{asset('CAMAGADMIN/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 

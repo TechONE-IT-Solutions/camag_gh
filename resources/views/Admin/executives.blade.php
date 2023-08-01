@@ -2,49 +2,61 @@
 
 
 @section('content')
+        @if(session('message'))
+            <div class="alert alert-{{ session('status') }}">
+                {{ session('message') }}
+            </div>
+        @endif
 <div class="wrapper bg-white p-4 rounded">
     <div class="row">
         <h3 class="page-title">Executives</h3>
 
             <div class="row">
                 <div class="col-5">
-                    <form action="" class="form-control p-3">
+                    <form action="{{ route('post-executive') }}" class="form-control p-3" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="m-3">
-                            <label class="form-label"  for="executive">Executive's Image</label>
-                            <input type="file" class="form-control" name="executive" id="executive">
+                            <label class="form-label"  for="events">Executive's Image</label>
+                            <input type="file" class="form-control" name="executive_pic" id="events">
                         </div>
 
                         <div class="m-3">
                             <label class="form-label"  for="executiveName">Executive's Name</label>
-                            <input type="text" class="form-control" name="executivesName" id="executiveName">
+                            <input type="text" class="form-control" name="executive_name" id="executiveName">
                         </div>
 
                         <div class="m-3">
                             <label  class="form-label" for="executiveTitle">Executive's Title</label>
-                            <textarea name="executiveTitle" id="executiveTitle" class="form-control"></textarea>
+                            <input type="text" class="form-control" name="executive_title" id="eventTitle">
                         </div>
 
-                        <button type="button" class="btn btn-primary px-4 m-4">Add</button>
+                        <button type="submit" class="btn btn-primary px-4 m-4">Add</button>
                     </form>
                 </div>
 
     
                 <div class="col-7">
                     <div class="row">
+                        @foreach($executives as $executive)
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                    <img src="{{asset($executive['image']) }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center p-3">
-                                    <h4>Prem Kumar</h4>
-                                    <p>Facilitator</p>
+                                    <h4>{{$executive['text']}}</h4>
+                                    <p>{{$executive['textarea']}}</p>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary px-4 m-2">Delete</button>
+                                    <form method="post" class="delete_form" action="{{ route('executive.destroy', $executive['id']) }}">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-danger mb-2">Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

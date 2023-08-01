@@ -9,21 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('members', function (Blueprint $table) {
-            $table->string('membership_id')->default('NULL')->change();
-            $table->string('paid')->default('NULL')->change();
+            $table->string('paid')->nullable()->default(0)->change(); // Change '1' to your desired default value
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        Schema::table('column', function (Blueprint $table) {
-            //
+        Schema::table('members', function (Blueprint $table) {
+            $table->dropColumn('paid');
         });
     }
 };
