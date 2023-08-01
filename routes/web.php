@@ -83,6 +83,7 @@ Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index']
 Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
 //Admin Assembly member routes
 Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
+Route::get('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
 
 //HOME
 //Home GET Routes
