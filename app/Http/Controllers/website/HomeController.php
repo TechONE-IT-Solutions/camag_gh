@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
-use App\Models\website\homepage;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Models\website\homepage;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-         return view("website.index");
+        $h_banner = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
+        
+        $number = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hCounter')->get()->toArray();
+
+        $news = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hNews')->get()->toArray();
+
+        $teams = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hTeam')->get()->toArray();
+        
+         return view("website.index", ['h_banner' => $h_banner, 'number' => $number, 'news' => $news, 'teams'=> $teams]);
         //
     }
     /**
