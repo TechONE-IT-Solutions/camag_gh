@@ -249,6 +249,9 @@
     transition: .5s;
     z-index: 2;
 }
+.service-card {
+    max-height: 400px;
+}
 
 .service-item:hover .service-text {
     top: -1.5rem;
