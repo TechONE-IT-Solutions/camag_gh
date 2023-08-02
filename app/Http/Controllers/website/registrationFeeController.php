@@ -4,7 +4,7 @@ namespace App\Http\Controllers\website;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\website\registrationFeeController;
+
 
 class registrationFeeController extends Controller
 {
@@ -14,7 +14,6 @@ class registrationFeeController extends Controller
     public function index()
     {
         return view('website.registration');
-        //
     }
 
     /**

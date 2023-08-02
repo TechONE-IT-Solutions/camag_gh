@@ -66,7 +66,7 @@ Route::get('website-register', [registerController::class, 'register'])->name('w
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
 
-Route::get('website-registration_fee', [registrationFeeController::class, 'index'])->name('Website-registration_fee');
+Route::get('website-regfee', [registrationFeeController::class, 'index'])->name('Website-regfee');
 
 Route::get('success', [successController::class, 'success'])->name('success');
 
@@ -82,11 +82,11 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     //Admin Associate members routes
     Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
     Route::delete('associate_destroy/{id}', [adminAssociatememberController::class, 'destroy'])->name('associate_destroy');
-    
+
     //Admin Assembly member routes
     Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
     Route::delete('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
-    
+
     //HOME
     //Home GET Routes
     Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
@@ -103,33 +103,33 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::delete('homepage/clear/{id}', [adminHomepageController::class, 'clear'])->name('homepage.clear');
     Route::delete('homepage/cut/{id}', [adminHomepageController::class, 'cut'])->name('homepage.cut');
     Route::delete('homepage/eliminate/{id}', [adminHomepageController::class, 'eliminate'])->name('homepage.eliminate');
-    
-    
-    
+
+
+
     Route::get('about', [adminAboutController::class, 'index'])->name('about');
-    
+
     Route::get('contact', [adminContactController::class, 'index'])->name('contact');
-    
+
     Route::get('profile', [adminProfileController::class, 'index'])->name('profile');
-    
+
     Route::get('paydues', [adminPayduesController::class, 'index'])->name('paydues');
-    
+
     Route::get('donate', [adminDonateController::class, 'index'])->name('donate');
     //Admin Executive routes
     Route::get('executive', [adminExecutivesController::class, 'index'])->name('executive');
     Route::post('post-executive', [adminExecutivesController::class, 'store'])->name('post-executive');
     Route::delete('executive.destroy/{id}', [adminExecutivesController::class, 'destroy'])->name('executive.destroy');
-    
-    
+
+
     Route::get('payment', [adminPaymentController::class, 'index'])->name('payment');
-    
+
     // Admin Gallery routes
     Route::get('gallery', [adminGalleryController::class, 'index'])->name('gallery');
     Route::post('post-gallery', [adminGalleryController::class, 'store'])->name('post-gallery');
     Route::delete('gallery/destroy/{id}', [adminGalleryController::class, 'destroy'])->name('delete-gallery');
-    
+
     Route::get('charts', [adminChartsController::class, 'index'])->name('charts');
-    
+
     //Admin Events routes
     Route::get('events', [adminEventsController::class, 'index'])->name('events');
     Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
