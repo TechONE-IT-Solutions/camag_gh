@@ -17,7 +17,7 @@
                                     </p>
                                     <h3 class="display-1 text-white  animated slideInRight">Concerned Assembly</h3>
                                     <h4 class="display-1 text-white  animated slideInRight"> Members Association of Ghana</h4>
-                                    <a href="{{ route('website-register') }}"
+                                    <a href="{{ route('website-registration') }}"
                                         class="btn btn-primary  py-3 px-5 animated slideInRight">Register Now</a>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                     </p>
                                     <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
                                     <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                    <a href="{{ route('website-register') }}"
+                                    <a href="{{ route('website-registration') }}"
                                         class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                 </p>
                                 <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
                                 <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                <a href="{{ route('website-register') }}"
+                                <a href="{{ route('website-registration') }}"
                                     class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                             </div>
                         </div>
@@ -98,16 +98,16 @@
             </div> -->
         </div>
     </div>
-    
+
     <!-- End Stats Counter Section -->
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-               
+
                 <p class="fs-4 fw-bold ">CAMAG Seek to Achieve Its Objectives Through</p>
-               
+
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -159,7 +159,7 @@
                             <h5 class="mb-3">Public Education</h4>
                                 <p class="mb-2">CAMAG seek to provide equal education to all citizenship at free of cost on the concept of local governance. This education is provided regardless of race, ethnicity, socioeconomic status, or any other distinguishing feature. It is focused on the ideas of core content knowledge, citizenship, and the skills necessary for local governance concepts to be successful and properly serve its purpose.</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item position-relative">
                         <div class="service-text rounded p-5 mb-2">
@@ -185,7 +185,7 @@
                             </div>
                             <h5 class="mb-2">Organization of platforms for good governance</h4>
                                 <p class="mb-3">Concerned Assembly Members Association of Ghana (CAMAG) as part of its aims will consistently organize programs that seek to remodel and improve local governance concepts to achieve good governance.</p>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@
         <div class="container">
             <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-               
+
                 <h2 class=" mb-5 ">Current News and Posts</h2>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
@@ -272,7 +272,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                
+
                 <h1 class=" mb-5">Our Executive Members</h1>
             </div>
             <div class="row g-4">
@@ -309,13 +309,13 @@
     </div>
     <!-- Team End -->
 
-    
+
     <!-- Quote Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                   
+
                     <h1 class=" mb-4">For Any Eny Enquiries</h1>
                     <p>"Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="">
@@ -346,7 +346,7 @@
                                 <label for="mobile">Your Mobile</label>
                             </div>
                         </div>
-                       
+
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a message here" id="message"

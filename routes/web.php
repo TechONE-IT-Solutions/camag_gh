@@ -66,7 +66,7 @@ Route::get('website-register', [registerController::class, 'register'])->name('w
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
 
-Route::get('website-regfee', [registrationFeeController::class, 'index'])->name('Website-regfee');
+Route::get('website-registration', [registrationFeeController::class, 'index'])->name('website-registration');
 
 Route::get('success', [successController::class, 'success'])->name('success');
 
