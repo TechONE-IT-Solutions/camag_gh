@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class teamController extends Controller
 {
@@ -12,7 +13,8 @@ class teamController extends Controller
      */
     public function team()
     {
-         return view("website.team");
+        $executives = Admin::select('id','meta_key','text','number', 'textarea', 'image')->where('meta_key', 'AExecutive')->get()->toArray();
+         return view("website.team", ['executives'=>$executives]);
         //
     }
     /**

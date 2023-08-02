@@ -11,7 +11,7 @@
           <div class="card-body p-4">
             <div class="text-center ">
               <div class="h3 fw-light  ">Pay Dues</div>
-              
+
             </div>
     <form id="contactForm">
      <!-- Name Input -->
@@ -32,19 +32,22 @@
             <label for="phone">Phone Number</label>
             <div class="invalid-feedback" data-sb-feedback="phone:required">Phone Number is required.</div>
           </div>
-       
+
 
           <div class="form-floating mb-3">
             <select class="form-select" id="dropdown" data-sb-validations="required">
                <option value="option1">One Month</option>
                 <option value="option2">Three Months</option>
                 <option value="option3">Six Months</option>
-                <option value="option3">One Year</option>
+                <option value="option4">One Year</option>
+                <option value="option5">Two Years</option>
+                <option value="option6">Three Years</option>
+                <option value="option7">Four Years</option>
             </select>
             <label for="dropdown">Month To Pay</label>
             <div class="invalid-feedback" data-sb-feedback="dropdown:required">Please select an option.</div>
         </div>
-        
+
 
         <!-- Submit success message -->
         <div class="d-none" id="submitSuccessMessage">
@@ -63,7 +66,7 @@
           <button class="btn btn-primary btn-lg " id="submitButton" type="submit">Make Payment</button>
         </div>
       </form>
- 
+
         </div>
     </div>
     </div>

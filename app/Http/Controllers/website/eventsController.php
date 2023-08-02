@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class eventsController extends Controller
 {
@@ -12,7 +13,9 @@ class eventsController extends Controller
      */
     public function events()
     {
-         return view("website.events");
+        $events = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'AEvents')->orderBy('id', 'ASC')->get()->toArray();
+        //$events = Admin::orderBy('id', 'ASC');
+         return view("website.events",['events'=> $events]);
         //
     }
 
