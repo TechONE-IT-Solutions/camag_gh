@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminLoginController;
+use App\Http\Controllers\website\blogController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\teamController;
 use App\Http\Controllers\website\aboutController;
@@ -15,8 +16,8 @@ use App\Http\Controllers\website\payduesController;
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
 use App\Http\Controllers\website\registerController;
-use App\Http\Controllers\Admin\adminChartsController;
 
+use App\Http\Controllers\Admin\adminChartsController;
 use App\Http\Controllers\Admin\adminDonateController;
 use App\Http\Controllers\Admin\adminEventsController;
 use App\Http\Controllers\Admin\adminContactController;
@@ -51,6 +52,8 @@ use App\Http\Controllers\Admin\adminUnitcommitteememberController;
 Route::get('/', [HomeController::class, 'index'])->name('website-home');
 
 Route::get('website-about', [aboutController::class, 'about'])->name('website-about');
+
+Route::get('website-blog', [blogController::class, 'index'])->name('website-bog');
 
 Route::get('website-team', [teamController::class, 'team'])->name('website-team');
 

@@ -28,6 +28,9 @@
   <!-- <link href="{{asset('CAMAGADMIN/img/icon/icon-7.png') }}" rel="stylesheet"> -->
   <link href="{{asset('CAMAGADMIN/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{asset('CAMAGADMIN/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+  {{--summernote--}}
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('CAMAGADMIN/assets/css/style.css') }}" rel="stylesheet">

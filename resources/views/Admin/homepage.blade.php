@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                
+
                     </div>
                     <!-- 'Start' end -->
 
@@ -117,7 +117,7 @@
                                                     {{csrf_field()}}
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <button type="submit" class=" btn btn-danger">Delete</button>
-                                                </form>    
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -144,12 +144,12 @@
                                     </div>
                                     <div class="m-3">
                                         <label for="newsDescription" class="form-label">News Description</label>
-                                        <textarea name="newsBody" id="newsDescription" style="height: 120px;" class="form-control"></textarea>
+                                        <textarea name="newsBody" id="mysummernote" style="height: 400px;" class="form-control"></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary m-3 px-4">Add</button>
                                     </div>
-                                </form>    
+                                </form>
                             </div>
 
                             <div class="col-6">
@@ -174,7 +174,7 @@
                                         </div>
                                     </div>
                                     @endforeach
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
             </div>
         </div>
 
-        
+
 @endsection
 
 
