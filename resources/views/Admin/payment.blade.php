@@ -15,6 +15,9 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link rounded-5" id="pills-donations-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" data-bs-target="#pills-donations">Donations</button>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-5" id="pills-donations-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="false" data-bs-target="#pills-settings">Settings</button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,7 +45,7 @@
                     </tbody>
                 </table>
             </div>
-        
+
 
             <div class="tab-pane fade show" id="pills-donations" role="tabpanel" aria-labelledby="pills-donations-tab">
                 <table class="table table-hover table-striped">
@@ -61,6 +64,69 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="tab-pane fade show" id="pills-settings" role="tabpanel" aria-labelledby="pills-donations-tab">
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="card col">
+                            <div class="card-header text-center p-3">
+                                <div>CHANGE AMOUNT FOR DUES AND REGISTRATION</div>
+                            </div>
+                            <div class="card-body p-5">
+                                <form action="">
+                                    <div class="form-group">
+                                        <label for="amount">New amount in cedis</label>
+                                        <input type="number" class="form-control" id="amount" name="amount_dues">
+                                    </div>
+
+                                    <label>Choose what to update</label>
+                                    <div class="form-floating mb-4">
+                                        <select class="form-select" id="dropdown" data-sb-validations="required">
+                                           <option disabled>Registration or Dues</option>
+                                           <option value="option1">Registration</option>
+                                            <option value="option2">Dues</option>
+                                        </select>
+                                        <label for="dropdown"></label>
+                                        <div class="invalid-feedback" data-sb-feedback="dropdown:required">Please select an option.</div>
+                                    </div>
+                                    <div class="d-grid form-group mt-3">
+                                        <button class="btn btn-success" type="submit">Update</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div class="card col">
+                            <div class="card-header text-center p-3">
+                                <div>CURRENT AMOUNTS</div>
+                            </div>
+                            <div class="card-body p-5">
+                                <div class="d-flex">
+                                    <div class="col">
+                                        <div class="text-center">
+                                            <span style="font-size: 42px" class="text-success">₵789.00</span>
+                                        </div><hr>
+                                        <div class="text-center">
+                                            <span style="font-size: 18px;">Registration Current Amount</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col">
+                                        <div class="text-center">
+                                            <span style="font-size: 42px" class="text-success">₵789.00</span>
+                                        </div><hr>
+                                        <div class="text-center">
+                                            <span style="font-size: 18px;">Current Amount for dues</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
