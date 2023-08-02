@@ -74,18 +74,19 @@
                                 <div>CHANGE AMOUNT FOR DUES AND REGISTRATION</div>
                             </div>
                             <div class="card-body p-5">
-                                <form action="">
+                                <form action="{{ route('paymentpost')}}" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="amount">New amount in cedis</label>
-                                        <input type="number" class="form-control" id="amount" name="amount_dues">
+                                        <input type="number" step="0.01" class="form-control" id="amount" name="amount">
                                     </div>
 
                                     <label>Choose what to update</label>
                                     <div class="form-floating mb-4">
-                                        <select class="form-select" id="dropdown" data-sb-validations="required">
+                                        <select class="form-select" id="dropdown" data-sb-validations="required" name="regdues">
                                            <option disabled>Registration or Dues</option>
-                                           <option value="option1">Registration</option>
-                                            <option value="option2">Dues</option>
+                                           <option value="U_registration">Registration</option>
+                                            <option value="U_dues">Dues</option>
                                         </select>
                                         <label for="dropdown"></label>
                                         <div class="invalid-feedback" data-sb-feedback="dropdown:required">Please select an option.</div>
@@ -106,7 +107,7 @@
                                 <div class="d-flex">
                                     <div class="col">
                                         <div class="text-center">
-                                            <span style="font-size: 42px" class="text-success">₵789.00</span>
+                                            <span style="font-size: 42px" class="text-success">₵{{ $uregistration }}</span>
                                         </div><hr>
                                         <div class="text-center">
                                             <span style="font-size: 18px;">Registration Current Amount</span>
@@ -115,7 +116,7 @@
                                     </div>
                                     <div class="col">
                                         <div class="text-center">
-                                            <span style="font-size: 42px" class="text-success">₵789.00</span>
+                                            <span style="font-size: 42px" class="text-success">₵{{ $udues }}</span>
                                         </div><hr>
                                         <div class="text-center">
                                             <span style="font-size: 18px;">Current Amount for dues</span>

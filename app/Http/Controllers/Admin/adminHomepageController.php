@@ -15,7 +15,7 @@ class adminHomepageController extends Controller
     public function index()
     {
         $h_banner = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
-        
+
         $number = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hCounter')->get()->toArray();
 
         $news = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hNews')->get()->toArray();
@@ -113,7 +113,7 @@ class adminHomepageController extends Controller
         //
     }
     public function h_banner_show(){
-        
+
     }
 
     /**

@@ -122,6 +122,8 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 
 
     Route::get('payment', [adminPaymentController::class, 'index'])->name('payment');
+    //Route::get('paymentget1', [adminPaymentController::class, 'index'])->name('paymentget1');
+    Route::post('paymentpost', [adminPaymentController::class, 'store'])->name('paymentpost');
 
     // Admin Gallery routes
     Route::get('gallery', [adminGalleryController::class, 'index'])->name('gallery');
