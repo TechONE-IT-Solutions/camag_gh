@@ -13,7 +13,8 @@ class eventsController extends Controller
      */
     public function events()
     {
-        $events = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'AEvents')->get()->toArray();
+        $events = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'AEvents')->orderBy('id', 'ASC')->get()->toArray();
+        //$events = Admin::orderBy('id', 'ASC');
          return view("website.events",['events'=> $events]);
         //
     }

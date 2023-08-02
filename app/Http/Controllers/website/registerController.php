@@ -37,17 +37,39 @@ class registerController extends Controller
         $myimage = time() . '.' . $request->image->getClientOriginalName();
         $request->image->move(public_path($destinationPath),$myimage);
 
+        $rnum = random_int(10000, 99999);
+
         switch($request->input('pos')){
             case('AssemblyMember'):
-                $membershipid = 'ASM-'.random_int(10000, 99999);
+                $membershipid = 'ASM-'.$rnum;
+                if (homepage::where('membership_id', '=', $membershipid)->exists()) {
+                    //Membership_ID exist
+                    $membershipid = 'ASM-'.random_int(10000, 99999);
+                }else{
+                    //Membership_ID doesn't exist
+                }
                 Break;
             case('UnitCommiteeMember'):
-                $membershipid = 'UCM-'.random_int(10000, 99999);
+                $membershipid = 'UCM-'.$rnum;
+                if (homepage::where('membership_id', '=', $membershipid)->exists()) {
+                    //Membership_ID exist
+                    $membershipid = 'UCM-'.random_int(10000, 99999);
+                }else{
+                    //Membership_ID doesn't exist
+                }
                 Break;
             case('AssociateMember'):
-                $membershipid = 'ASS-'.random_int(10000, 99999);
+                $membershipid = 'ASS-'.$rnum;
+                if (homepage::where('membership_id', '=', $membershipid)->exists()) {
+                    //Membership_ID exist
+                    $membershipid = 'ASS-'.random_int(10000, 99999);
+                }else{
+                    //Membership_ID doesn't exist
+                }
                 Break;
         }
+
+
 
 
         $postData = [
