@@ -565,3 +565,9 @@
     border: 1px solid rgb(205, 201, 201);
 
 }
+.Halius
+{
+    max-height: 400px;
+    overflow-y: hidden;
+}
+

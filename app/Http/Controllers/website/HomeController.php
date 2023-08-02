@@ -14,15 +14,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $h_banner = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
-        
+        $banners = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
+
         $number = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hCounter')->get()->toArray();
 
         $news = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hNews')->get()->toArray();
 
         $teams = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hTeam')->get()->toArray();
-        
-         return view("website.index", ['h_banner' => $h_banner, 'number' => $number, 'news' => $news, 'teams'=> $teams]);
+
+         return view("website.index", ['banners' => $banners, 'number' => $number, 'news' => $news, 'teams'=> $teams]);
         //
     }
     /**
@@ -64,7 +64,7 @@ class HomeController extends Controller
         //
     }
     public function getassembly(){
-        // 
-        
+        //
+
     }
 }
