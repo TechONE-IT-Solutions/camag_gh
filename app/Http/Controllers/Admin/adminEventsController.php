@@ -14,7 +14,7 @@ class adminEventsController extends Controller
     public function index()
     {
         $events = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'AEvents')->get()->toArray();
-        return view('admin.events', ['events'=> $events]);
+        return view('admin/events', ['events'=> $events]);
         //
     }
 
@@ -44,7 +44,7 @@ class adminEventsController extends Controller
             'image'=> $destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('events')->with(['message' => 'Event added successfully!!', 'status'=> 'success']);
+        return redirect('admin/events')->with(['message' => 'Event added successfully!!', 'status'=> 'success']);
     }
 
     /**
@@ -79,6 +79,6 @@ class adminEventsController extends Controller
         //
         $event = Admin::find($id);
         $event->delete();
-        return redirect('events')->with(['message' => 'Event deleted successfully!!', 'status'=> 'danger']);
+        return redirect('admin/events')->with(['message' => 'Event deleted successfully!!', 'status'=> 'danger']);
     }
 }

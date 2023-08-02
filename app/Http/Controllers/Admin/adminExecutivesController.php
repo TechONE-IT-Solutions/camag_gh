@@ -44,7 +44,7 @@ class adminExecutivesController extends Controller
             'image'=> $destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('executive')->with(['message' => 'Executive added successfully!!', 'status'=> 'success']);
+        return redirect('admin/executive')->with(['message' => 'Executive added successfully!!', 'status'=> 'success']);
     }
 
     /**
@@ -78,6 +78,6 @@ class adminExecutivesController extends Controller
     {
         $executive = Admin::find($id);
         $executive->delete();
-        return redirect('executive')->with(['message'=> 'Executive member deleted', 'status' => 'danger' ]);
+        return redirect('admin/executive')->with(['message'=> 'Executive member deleted', 'status' => 'danger' ]);
     }
 }
