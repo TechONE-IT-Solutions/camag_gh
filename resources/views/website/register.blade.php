@@ -48,6 +48,7 @@
                               Enter your Place of Birth!
                             </div>
                         </div>
+                        
                         <div class="form-floating col-md-7">
                             <input type="date" class="form-control" id="dateofbirth" required name="date_of_birth" value="{{ old('date_of_birth') }}">
                             <label for="dateofbirth" class="form-label">Date Of Birth</label>

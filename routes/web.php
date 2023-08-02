@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
 use App\Http\Controllers\Admin\adminExecutivesController;
+use App\Http\Controllers\website\registrationFeeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
 use App\Http\Controllers\Admin\adminAssociatememberController;
 use App\Http\Controllers\Admin\adminUnitcommitteememberController;
@@ -64,6 +65,8 @@ Route::get('website-paydues', [payduesController::class, 'paydues'])->name('webs
 Route::get('website-register', [registerController::class, 'register'])->name('website-register');
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
+
+Route::get('website-registration_fee', [registrationFeeController::class, 'index'])->name('Website-registration_fee');
 
 Route::get('success', [successController::class, 'success'])->name('success');
 
