@@ -52,12 +52,7 @@
           <i class="bi bi-circle"></i><span>Gallery</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a href="{{ route('contact') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>Contact</span>
-        </a>
-      </li>
-    </ul>
+     </ul>
   </li>
   <!-- End Website -->
 
@@ -74,7 +69,7 @@
       </li>
       <li>
         <a href="{{ route('unitcommittee') }}">
-          <i class="bi bi-circle"></i><span>Unit Committe Members</span>
+          <i class="bi bi-circle"></i><span>Unit Committee Members</span>
         </a>
       </li>
       <li>
@@ -92,6 +87,11 @@
         <span>Payment</span>
       </a>
     </li>
+    <li class="nav-item">
+        <a href="{{ route('contact') }}" class="nav-link collapsed">
+        <i class="bi bi-bell"></i><span>Notifications</span>
+        </a>
+      </li>
 
 </ul>
 </aside><!-- End Sidebar-->

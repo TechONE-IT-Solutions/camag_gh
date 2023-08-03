@@ -47,7 +47,7 @@
                     <!-- Counter Start -->
                     <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab">
                         
-                        <table class="table table-hover table-striped">
+                        <table id="associateMember" class="table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">Full Name</th>

@@ -385,3 +385,29 @@ $(document).ready(function() {
       }
   });
 });
+
+// new DataTable('#assemblyMember');
+
+// new DataTable('#associateMember');
+
+// new DataTable('#unitCommitteeMember');
+
+$(document).ready(function() {
+  $('#assemblyMember').DataTable();
+});
+
+$(document).ready(function() {
+  $('#associateMember').DataTable();
+});
+
+$(document).ready(function() {
+  $('#unitCommitteeMember').DataTable();
+});
+
+// $(document).ready(function() {
+//   $('#assemblyMember').DataTable();
+// });
+
+// $(document).ready(function() {
+//   $('#assemblyMember').DataTable();
+// });

@@ -15,7 +15,7 @@
                 @endcomponent
 
                 <div class="tab-content" id="v-pills-tabContent">
-                    <!-- Start Start -->
+                    <!-- Grid view Start -->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
                             <div class="col-3">
@@ -76,12 +76,12 @@
                         </div>
                 
                     </div>
-                    <!-- 'Start' end -->
+                    <!-- Grid view end -->
 
-                    <!-- Counter Start -->
+                    <!-- Table Start -->
                     <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab">
                         
-                        <table class="table table-hover table-striped">
+                        <table id="unitCommitteeMember" class="table table-hover table-striped">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Counter end -->
+                    <!-- Table end -->
 
                 </div>
 

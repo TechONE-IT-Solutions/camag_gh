@@ -9,6 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="icon">
+
+    <!-- Datatable CSS-->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +65,7 @@
                     <div class="navbar-nav ms-auto me-0">
                        
                         
-                        <a href="{{ route('website-home') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ route('website-home') }}" class="nav-item nav-link">Home</a>
                         <a href="{{ route('website-about') }}" class="nav-item nav-link">About</a>
                         <a href="{{ route('website-team') }}" class="nav-item nav-link">Executive Members</a>
                         
