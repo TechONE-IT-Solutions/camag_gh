@@ -1234,3 +1234,7 @@ h6 {
   max-height: 50px;
   overflow-y: auto;
 }
+.news-card::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
