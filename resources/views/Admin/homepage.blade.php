@@ -162,7 +162,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <h4>{{$new['text']}}</h4>
-                                                <P>{{$new['textarea']}}</P>
+                                                <p>{!! $new['textarea'] !!}</p>
                                             </div>
                                             <div class="col-12 justify-content-center d-flex">
                                                 <form method="post" class="cut_form" action="{{ route('homepage.cut', $new['id']) }}">
