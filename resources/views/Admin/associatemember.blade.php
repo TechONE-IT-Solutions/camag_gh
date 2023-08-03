@@ -24,7 +24,7 @@
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
                             @foreach($associates as $associate)
-                            <div class="col-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="{{asset($associate['photo']) }}" alt="" class="img-fluid">
@@ -46,7 +46,7 @@
 
                     <!-- Counter Start -->
                     <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab">
-                        
+                    <div id="table">
                         <table id="associateMember" class="table table-hover table-striped">
                             <thead>
                                 <tr>
@@ -77,8 +77,9 @@
                             @endforeach
                             </tbody>
                         </table>
-                        <div class="row">
-                            <div class="col-4">
+                    </div>
+                        <div class="row justify-centent-end">
+                            <div class="col">
                                 <div class="button-group">
                                     <button class="btn btn-secondary">Move</button>
                                     <button class="btn btn-danger">Danger</button>

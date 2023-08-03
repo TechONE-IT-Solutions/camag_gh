@@ -456,3 +456,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#duesTable').DataTable();
 });
+
+$(document).ready(function() {
+  $('#notificationTable').DataTable();
+});

@@ -11,7 +11,7 @@
     <div class="row">
         <h3 class="page-title">Gallery</h3>
         <!-- Gallery Form start -->
-        <div class="col-5">
+        <div class="col-lg-6 col-md-6 col-sm-12">
             <form class="form-control p-3" action="{{ route('post-gallery') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
@@ -30,10 +30,10 @@
         <!-- Gallery Form End -->
 
         <!-- Gallery Image Start -->
-        <div class="col-7">
+        <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="row">
                 @foreach($Gallery as $image)
-                <div class="col">
+                <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-image">
                             <img src="{{asset($image['image']) }}" alt="" class="img-fluid">

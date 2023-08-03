@@ -18,7 +18,7 @@
                     <!-- Grid view Start -->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
@@ -31,7 +31,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="{{asset('CAMAGADMIN/assets/img/product-2.jpg') }}" alt="" class="img-fluid">
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="{{asset('CAMAGADMIN/assets/img/product-3.jpg') }}" alt="" class="img-fluid">
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="{{asset('CAMAGADMIN/assets/img/product-4.jpg') }}" alt="" class="img-fluid">
@@ -80,7 +80,7 @@
 
                     <!-- Table Start -->
                     <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab">
-                        
+                        <div id="table">
                         <table id="unitCommitteeMember" class="table table-hover table-striped">
                             <thead>
                                 <tr>
@@ -103,8 +103,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
                         <div class="row justify-content-end m-3">
-                            <div class="col-3">
+                            <div class="col">
                                 <div class="button-group">
                                     <button class="btn btn-secondary">Move</button>
                                     <button class="btn btn-danger">Delete</button>

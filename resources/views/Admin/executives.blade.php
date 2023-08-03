@@ -12,7 +12,7 @@
         <h3 class="page-title">Executives</h3>
 
             <div class="row">
-                <div class="col-5">
+                <div class="col-lg-7 col-md-6 col-sm-12 mb-2">
                     <form action="{{ route('post-executive') }}" class="form-control p-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="m-3">
@@ -35,10 +35,10 @@
                 </div>
 
     
-                <div class="col-7">
+                <div class="col-lg-7 col-md-6 col-sm-12">
                     <div class="row">
                         @foreach($executives as $executive)
-                        <div class="col-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="{{asset($executive['image']) }}" alt="" class="img-fluid">

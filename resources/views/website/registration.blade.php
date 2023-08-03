@@ -7,7 +7,7 @@
 
 <div class="container regform rounded">
     <div class="row">
-        <div class="form col-5 ms-3 hakim">
+        <div class="form col-lg-5 ms-3 hakim">
             <form id="registrationFeeForm">
                 <!-- Name Input -->
                     <div class="form-floating mb-2">

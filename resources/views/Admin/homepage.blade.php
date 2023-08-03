@@ -14,7 +14,7 @@
               <!-- Vertical Pills Tabs -->
                 <div class="">
                 <div class="row justify-content-end">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-success rounded-5 shadow-sm mb-4" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: #198754; --bs-nav-pills-link-active-bg: var(--bs-white); --bs-nav-link-hover-color: none;">
                         <li class="nav-item">
                             <button class="nav-link active rounded-5" id="pills-start-tab" data-bs-toggle="pill" type="button" role="tab" aria-selected="true" aria-controls="pills-start" data-bs-target="#pills-start">Banner</button>
@@ -37,7 +37,7 @@
                     <div class="tab-pane fade show active" id="pills-start" role="tabpanel" aria-labelledby="pills-start-tab">
                         <div class="row">
 
-                                <div class="col-6">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
                                     <form method="POST" action="{{ route('h_banner') }}" enctype="multipart/form-data" class="form-control p-3">
                                         @csrf
                                         <div class="my-3">
@@ -54,10 +54,10 @@
                                     </form>
                                 </div>
 
-                            <div class="col-6">
+                            <div class="col-lg-6 col-sm-12">
                                 <div class="row">
                                     @foreach($h_banner as $banner)
-                                    <div class="col-6">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="card">
                                             <div class="card-image">
                                                 <img src="{{ asset($banner['image']) }}" class="img-fluid" alt="">
@@ -86,7 +86,7 @@
                     <!-- Counter Start -->
                     <div class="tab-pane fade" id="pills-stats" role="tabpanel" aria-labelledby="pills-Stats-tab">
                         <div class="row">
-                            <div class="col-5">
+                            <div class="col-lg-5 col-md-6 col-sm-12 mb-2">
                                 <form class="form-control p-3" method="POST" action="{{ route('number') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="my-3">
@@ -103,10 +103,10 @@
                                 </form>
                             </div>
 
-                            <div class="col-7">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="row justify-content-end">
                                     @foreach($number as $numdata)
-                                    <div class="col-6 text-center">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                                         <div class="card p-4">
                                             <div class="card-body">
                                                 <h2>{{$numdata['number']}}</h2>
@@ -131,7 +131,7 @@
                     <!-- News Start -->
                     <div class="tab-pane fade" id="pills-news" role="tabpanel" aria-labelledby="pills-news-tab">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
                                 <form class="form-control" method="POST" action="{{ route('news') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="m-3">
@@ -152,24 +152,26 @@
                                 </form>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="row">
                                     @foreach($news as $new)
-                                    <div class="col-6">
-                                        <div class="card">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="card ">
                                             <div class="card-image">
                                                 <img src="{{ asset($new['image']) }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="card-body">
                                                 <h4>{{$new['text']}}</h4>
-                                                <P>{{$new['textarea']}}</P>
+                                                <P class="news-card">{{$new['textarea']}}</P>
                                             </div>
-                                            <div class="col-12 justify-content-center d-flex">
-                                                <form method="post" class="cut_form" action="{{ route('homepage.cut', $new['id']) }}">
-                                                    {{csrf_field()}}
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit" class=" btn btn-danger px-4">Delete</button>
-                                                </form>
+                                            <div class="card-footer">
+                                                <div class="col-12 justify-content-center d-flex">
+                                                    <form method="post" class="cut_form" action="{{ route('homepage.cut', $new['id']) }}">
+                                                        {{csrf_field()}}
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <button type="submit" class=" btn btn-danger px-4">Delete</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +185,7 @@
                     <!-- Team Start -->
                     <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <form class="form-control" method="POST" action="{{ route('team') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="m-3">
@@ -204,15 +206,15 @@
                                 </form>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="row">
                                     @foreach($teams as $team)
-                                    <div class="col-4">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="card">
                                             <div class="card-image">
                                                 <img src="{{ asset($team['image']) }}" alt="" class="img-fluid">
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body p-2">
                                                 <h3>{{$team['text']}}</h3>
                                                 <p>{{$team['textarea']}}</p>
                                             </div>

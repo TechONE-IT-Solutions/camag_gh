@@ -24,7 +24,7 @@
 
                         <div class="row">
                             @foreach($assemblymen as $assemblyman)    
-                            <div class="col-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <a href="{{ route('profile') }}">
                                     <div class="card">
                                         <div class="card-image">
@@ -47,7 +47,7 @@
 
                     <!-- Tables Start -->
                     <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab">
-
+                <div id="table">
                     <table id="assemblyMember" class="design table table-striped" style="width:100%">
                         <thead>
                             <tr>
@@ -78,8 +78,9 @@
                                 @endforeach
                         </tbody>
                     </table>
-                    <div class="row">
-                            <div class="col-4">
+                </div>
+                    <div class="row justify-content-end">
+                            <div class="col">
                                 <div class="button-group">
                                     <button class="btn btn-secondary">Move</button>
                                     <button class="btn btn-danger">Danger</button>

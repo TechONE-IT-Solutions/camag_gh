@@ -11,7 +11,7 @@
     <div class="row">
         <h3 class="page-title">Events</h3>
             <div class="row">
-                <div class="col-5">
+                <div class="col-lg-5 col-md-6 col-sm-12 mb-2">
                     <form action="{{ route('events_post') }}" method="POST" class="form-control p-3" enctype="multipart/form-data">
                         @csrf
                         <div class="m-3">
@@ -33,10 +33,10 @@
                     </form>
                 </div>
 
-                <div class="col-7">
+                <div class="col-lg-7 col-md-6 col-sm-12">
                     <div class="row">
                         @foreach($events as $event)
-                        <div class="col-6">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-image">
                                     <img src="{{asset($event['image']) }}" alt="" class="img-fluid">
