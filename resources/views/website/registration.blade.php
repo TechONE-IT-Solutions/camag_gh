@@ -7,7 +7,7 @@
 
 <div class="container regform rounded">
     <div class="row">
-        <div class="form col-5 ms-3 hakim">
+        <div class="form col-lg-5 col-sm-12 ms-3 hakim">
             <form accept-charset="UTF-8" id="registrationFeeForm" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" novalidate>
                 @csrf
                     <div class="form-floating mb-2">
