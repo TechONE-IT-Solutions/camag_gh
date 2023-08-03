@@ -32,7 +32,7 @@
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="col-7">
                     <div class="row">
                         @foreach($events as $event)

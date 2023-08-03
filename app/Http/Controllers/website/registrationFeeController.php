@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\website;
 
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\website\registrationFeeController;
+use Illuminate\Support\Facades\Http;
+
 
 class registrationFeeController extends Controller
 {
@@ -13,8 +15,9 @@ class registrationFeeController extends Controller
      */
     public function index()
     {
-        return view('website.registration');
-        //
+        $result['udues'] = Admin::get_regdues('U_dues');
+        $result['uregistration'] = Admin::get_regdues('U_registration');
+        return view('website.registration')->with($result);
     }
 
     /**
@@ -23,6 +26,29 @@ class registrationFeeController extends Controller
     public function create()
     {
         //
+
+    }
+
+    public function createSubAccount()
+    {
+        //
+    $response = Http::withToken('sk_test_465acf97eef2f0b681ee3ed07ed25cc9ad31f6b3')->post("https://api.paystack.co/subaccount", [
+        "business_name" => "CONCERNED ASSEMBLY MEMBERS ASSOCIATION OF GHANA LBG",
+      "bank_code" => "240100",
+      "account_number" => "0123456789",
+      "percentage_charge" => 0,
+    ]);
+    }
+
+    public function initializePayment()
+    {
+        //
+    $response = Http::withToken('sk_test_465acf97eef2f0b681ee3ed07ed25cc9ad31f6b3')->post("https://api.paystack.co/transaction/initialize", [
+        "business_name" => "CONCERNED ASSEMBLY MEMBERS ASSOCIATION OF GHANA LBG",
+        "email"=> "twumdavid86@gmail.com",
+        "amount"=>"20000",
+        "subaccount"=> "Acct"
+    ]);
     }
 
     /**

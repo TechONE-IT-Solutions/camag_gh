@@ -28,6 +28,9 @@
   <!-- <link href="{{asset('CAMAGADMIN/img/icon/icon-7.png') }}" rel="stylesheet"> -->
   <link href="{{asset('CAMAGADMIN/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{asset('CAMAGADMIN/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+  {{--summernote--}}
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('CAMAGADMIN/assets/css/style.css') }}" rel="stylesheet">
@@ -200,20 +203,20 @@
         </li>
 
       </ul>End Messages Dropdown Items -->
-<!-- 
+<!--
     </li>End Messages Nav  -->
 
     <li class="nav-item dropdown pe-3">
 
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <img src="{{asset('CAMAGADMIN/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
-        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
       </a><!-- End Profile Iamge Icon -->
 
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
-          <h6>Kevin Anderson</h6>
-          <span>Web Designer</span>
+          <h6>{{ Auth::user()->name }}</h6>
+          <span>Administrator</span>
         </li>
         <li>
           <hr class="dropdown-divider">

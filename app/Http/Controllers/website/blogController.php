@@ -1,26 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\website;
 
-use App\Models\Admin\Admin;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-
-class adminPaymentController extends Controller
+class blogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //$result['udues'] = Admin::where('meta_key', 'U_dues');
-        //$result['uregistration'] = Admin::where('meta_key', 'U_registration');
-        $result['udues'] = Admin::get_regdues('U_dues');
-        $result['uregistration'] = Admin::get_regdues('U_registration');
-
-        return view('admin.payment')->with($result);
-        //
+        
+        return view('website.blog');
     }
 
     /**
@@ -37,17 +30,6 @@ class adminPaymentController extends Controller
     public function store(Request $request)
     {
         //
-        //
-        Admin::updateOrCreate(['meta_key'=>$request->input('regdues')],
-        [
-            'meta_key'=>$request->input('regdues'),
-            'text'=>'',
-            'textarea'=>'',
-            'number'=>$request->input('amount'),
-            'image'=>''
-        ]);
-        //Admin::updateOrCreate($postdata);
-        return redirect('admin/payment')->with(['message'=> 'Updated', 'status'=>'success']);
     }
 
     /**

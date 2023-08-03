@@ -115,10 +115,10 @@
 
 @media (max-width: 991.98px) {
     .display-1 {
-        font-size: 25px !important;    
+        font-size: 25px !important;
     }
 
-   
+
 }
 @media (max-width: 991.98px) {
     .navbar .log {
@@ -127,7 +127,7 @@
       margin-bottom: 5px;
     }
 
-   
+
 }
 
 @media (max-width: 991.98px) {
@@ -193,7 +193,7 @@
         position: relative;
         min-height: 450px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
@@ -204,9 +204,9 @@
 
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/carousel-1.jpg)   no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-position: center !important;
-    
+
 }
 
 .page-header .breadcrumb-item+.breadcrumb-item::before {
@@ -540,4 +540,34 @@
 
 #registrationFee {
     background-image: url('../img/registration.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 800px;
+    padding: 30px;
 }
+.regform
+{
+    background-image: url('../img/registration.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    height:800px;
+}
+.hakim{
+    margin-top: 10%;
+    margin-left: 10%;
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 5px;
+    backdrop-filter: blur(7px);
+    border: 1px solid rgb(205, 201, 201);
+
+}
+.Halius
+{
+    max-height: 400px;
+    overflow-y: hidden;
+}
+

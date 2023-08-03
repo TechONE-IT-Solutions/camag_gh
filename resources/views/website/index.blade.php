@@ -6,8 +6,9 @@
 <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
+                @foreach($banners as $banner)
                 <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('CAMAG/img/back.jpg') }}" alt="Image">
+                    <img class="w-100" src="{{asset($banner['image']) }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -16,15 +17,16 @@
                                         <strong>CAMAG</strong>
                                     </p>
                                     <h3 class="display-1 text-white  animated slideInRight">Concerned Assembly</h3>
-                                    <h4 class="display-1 text-white  animated slideInRight"> Members Association of Ghana</h4>
-                                    <a href="{{ route('website-register') }}"
+                                    <h4 class="display-1 text-white  animated slideInRight"> {{$banner['text']}}</h4>
+                                    <a href="{{ route('website-registration') }}"
                                         class="btn btn-primary  py-3 px-5 animated slideInRight">Register Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                @endforeach
+                {{-- <div class="carousel-item">
                     <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
@@ -35,15 +37,15 @@
                                     </p>
                                     <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
                                     <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                    <a href="{{ route('website-register') }}"
+                                    <a href="{{ route('website-registration') }}"
                                         class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                                 </div>
                             </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="carousel-item">
+            {{-- <div class="carousel-item">
                 <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
@@ -54,14 +56,14 @@
                                 </p>
                                 <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
                                 <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                <a href="{{ route('website-register') }}"
+                                <a href="{{ route('website-registration') }}"
                                     class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                             </div>
                         </div>
                 </div>
             </div>
 
-        </div>
+        </div> --}}
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -98,16 +100,16 @@
             </div> -->
         </div>
     </div>
-    
+
     <!-- End Stats Counter Section -->
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-               
+
                 <p class="fs-4 fw-bold ">CAMAG Seek to Achieve Its Objectives Through</p>
-               
+
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -159,7 +161,7 @@
                             <h5 class="mb-3">Public Education</h4>
                                 <p class="mb-2">CAMAG seek to provide equal education to all citizenship at free of cost on the concept of local governance. This education is provided regardless of race, ethnicity, socioeconomic status, or any other distinguishing feature. It is focused on the ideas of core content knowledge, citizenship, and the skills necessary for local governance concepts to be successful and properly serve its purpose.</p>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -175,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item position-relative">
                         <div class="service-text rounded p-5 mb-2">
@@ -185,7 +187,7 @@
                             </div>
                             <h5 class="mb-2">Organization of platforms for good governance</h4>
                                 <p class="mb-3">Concerned Assembly Members Association of Ghana (CAMAG) as part of its aims will consistently organize programs that seek to remodel and improve local governance concepts to achieve good governance.</p>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,13 +201,14 @@
         <div class="container">
             <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
-               
+
                 <h2 class=" mb-5 ">Current News and Posts</h2>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="project-item mb-5">
+                @foreach($news as $new)
+                <div class="project-item mb-5 Halius">
                     <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-1.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{asset($new['image']) }}" alt="">
                         <div class="project-overlay">
                             <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-1.jpg') }}"
                                 data-lightbox="project"><i class="fa fa-eye"></i></a>
@@ -214,55 +217,13 @@
                         </div>
                     </div>
                     <div class="p-4">
-                        <a class="d-block h5" href="">Data Analytics & Insights</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
+                        <a class="d-block h5" href="">{{$new['text']}}</a>
+                        <span>{{$new['textarea']}}</span>
                     </div>
                 </div>
-                <div class="project-item mb-5">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-2.jpg') }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-2.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="d-block h5" href="">Marketing Content Strategy</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
-                    </div>
-                </div>
-                <div class="project-item mb-5">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-3.jpg') }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-3.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="d-block h5" href="">Business Target Market</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
-                    </div>
-                </div>
-                <div class="project-item mb-5">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-4.jpg') }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-4.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="d-block h5" href="">Social Marketing Strategy</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </div>
@@ -272,50 +233,32 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                
+
                 <h1 class=" mb-5">Our Executive Members</h1>
             </div>
             <div class="row g-4">
+                @foreach($teams as $team)
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item rounded overflow-hidden pb-4">
-                        <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-1.jpg') }}" alt="">
-                        <h5>Alex Robin</h5>
-                        <span class="text-primary">Founder & CEO</span>
+                        <img class="img-fluid mb-4" src="{{asset($team['image']) }}" alt="">
+                        <h5>{{$team['text']}}</h5>
+                        <span class="text-primary">{{$team['textarea']}}</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item rounded overflow-hidden pb-4">
-                        <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-2.jpg') }}" alt="">
-                        <h5>Adam Crew</h5>
-                        <span class="text-primary">Co Founder</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded overflow-hidden pb-4">
-                        <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-3.jpg') }}" alt="">
-                        <h5>Boris Johnson</h5>
-                        <span class="text-primary">Executive Manager</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item rounded overflow-hidden pb-4">
-                        <img class="img-fluid mb-4" src="{{asset('CAMAG/img/team-4.jpg') }}" alt="">
-                        <h5>Robert Jordan</h5>
-                        <span class="text-primary">Digital Marketer</span>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
     <!-- Team End -->
 
-    
+
     <!-- Quote Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                   
+
                     <h1 class=" mb-4">For Any Eny Enquiries</h1>
                     <p>"Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="">
@@ -346,7 +289,7 @@
                                 <label for="mobile">Your Mobile</label>
                             </div>
                         </div>
-                       
+
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a message here" id="message"
