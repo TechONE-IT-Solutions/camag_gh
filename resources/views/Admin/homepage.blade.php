@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="m-3">
                                         <label for="newsDescription" class="form-label">News Description</label>
-                                        <textarea name="newsBody" id="mysummernote" style="height: 400px;" class="form-control"></textarea>
+                                        <textarea name="newsBody" id="mysummernote" style="height: 200px;" class="form-control"></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary m-3 px-4">Add</button>
