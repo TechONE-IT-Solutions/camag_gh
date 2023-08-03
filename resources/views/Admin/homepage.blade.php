@@ -162,7 +162,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <h4>{{$new['text']}}</h4>
-                                                <P class="news-card">{{$new['textarea']}}</P>
+                                                <p>{!! $new['textarea'] !!}</p>
                                             </div>
                                             <div class="card-footer">
                                                 <div class="col-12 justify-content-center d-flex">
