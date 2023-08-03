@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class blogController extends Controller
 {
@@ -12,7 +13,7 @@ class blogController extends Controller
      */
     public function index()
     {
-        
+        $events = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'AEvents')->get()->toArray();
         return view('website.blog');
     }
 
