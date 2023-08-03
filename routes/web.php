@@ -75,9 +75,14 @@ Route::get('success', [successController::class, 'success'])->name('success');
 
 Route::post('post', [registerController::class, 'store'])->name('send');
 
+Route::post('/pay', [registrationFeeController::class, 'redirectToGateway'])->name('pay');
+
+//Route::get('/payment/callback', [registrationFeeController::class, 'handleGatewayCallback'])->name('pay');
+
+Route::get('/payment/callback', [registrationFeeController::class, 'handleGatewayCallback']);
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
-
 Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/dashboard', [webadminController::class, 'index'])->name('dashboard');
 

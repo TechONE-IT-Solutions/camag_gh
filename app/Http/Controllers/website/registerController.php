@@ -70,8 +70,6 @@ class registerController extends Controller
         }
 
 
-
-
         $postData = [
             'name' => $request->input('name'),
             'hometown' => $request->input('hometown'),
@@ -95,7 +93,6 @@ class registerController extends Controller
             'emergency_contact' => $request->input('emergency_contact'),
             'signature' => $request->input('signature'),
             'membership_id'=> $membershipid
-
 
         ];
         homepage::create($postData);

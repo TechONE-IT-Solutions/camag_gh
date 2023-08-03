@@ -37,7 +37,6 @@ class adminPaymentController extends Controller
     public function store(Request $request)
     {
         //
-        //
         Admin::updateOrCreate(['meta_key'=>$request->input('regdues')],
         [
             'meta_key'=>$request->input('regdues'),
