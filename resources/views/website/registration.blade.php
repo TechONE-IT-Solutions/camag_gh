@@ -5,7 +5,7 @@
 <!-- Registration fee Payment Form Start -->
 <!-- Registration Payment form -->
 
-<div class="container regform" style="">
+<div class="container regform rounded">
     <div class="row">
         <div class="form col-5 ms-3 hakim">
             <form id="registrationFeeForm">

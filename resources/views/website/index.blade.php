@@ -114,79 +114,79 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item position-relative h-100">
-                        <div class="service-text rounded px-4 pb-5 pt-2">
+                        <div class="service-text rounded p-4">
                             <div class="btn-square bg-light rounded-circle mx-auto mb-3"
                                 style="width: 64px; height: 64px;">
                                 <img class="img-fluid" src="{{asset('CAMAG/img/icon/icon-5.png') }}" alt="Icon">
                             </div>
                             <h5 class="mb-3">Advocacy and Lobbying</h4>
-                                <p class="mb-3">Concerned Assembly Members Association of Ghana (CAMAG) seeks to involves an attempts to influence specific legislation both at the local, and National level that seek to impact on local government concepts and also focused on educating people and stakeholders on a specific issue that will seek to improve local governance concepts through Lobbying and advocacy.</p>
+                                <p class="mb-2">CAMAG aims to influence legislation and educate stakeholders on local government concepts through lobbying and advocacy, aiming to improve governance concepts at both local and national levels.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item position-relative h-100">
-                        <div class="service-text rounded p-4">
-                            <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                        <div class="service-text rounded p-3">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-2"
                                 style="width: 64px; height: 64px;">
                                 <img class="img-fluid" src="{{asset('CAMAG/img/icon/icon-6.png') }}" alt="Icon">
                             </div>
                             <h5 class="mb-3">Research and Development</h4>
-                                <p class="mb-0">CAMAG seek to aim at generation or expansions of knowledge with regards to broaden and betterment of local governance concepts as well as using knowledge gain in developing others through our Research and Development plans.CAMAG the place to gain and share knowledge, empowering people to learn from others and better understand the world.</p>
+                                <p class="mb-3 p-2">CAMAG aims to expand knowledge on local governance concepts and develop others through research and development plans, empowering people to learn and understand the world.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item position-relative h-100">
-                        <div class="service-text rounded p-5">
-                            <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                        <div class="service-text rounded p-3">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-2"
                                 style="width: 64px; height: 64px;">
                                 <img class="img-fluid" src="{{asset('CAMAG/img/icon/icon-7.png') }}" alt="Icon">
                             </div>
                             <h5 class="mb-3">Training and Capacity Building Activities.</h4>
-                                <p class="mb-0">CAMAG empowers individuals and institutions through policy analysis, awareness building, and capacity training. They focus on driving positive change in local governments and welcome partnerships with like-minded institutions.</p>
+                                <p class="mb-0">CAMAG empowers individuals and institutions through policy analysis, awareness building, and capacity training, driving positive change in local governments and fostering partnerships.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item position-relative h-100">
-                        <div class="service-text rounded px-4 pb-3 pt-3 mb-2">
-                            <div class="btn-square bg-light rounded-circle mx-auto mb-2 "
+                        <div class="service-text rounded p-3">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-2"
                                 style="width: 64px; height: 64px;">
                                 <img class="img-fluid" src="{{asset('CAMAG/img/icon/icon-8.png') }}" alt="Icon">
                             </div>
                             <h5 class="mb-3">Public Education</h4>
-                                <p class="mb-2">CAMAG seek to provide equal education to all citizenship at free of cost on the concept of local governance. This education is provided regardless of race, ethnicity, socioeconomic status, or any other distinguishing feature. It is focused on the ideas of core content knowledge, citizenship, and the skills necessary for local governance concepts to be successful and properly serve its purpose.</p>
+                                <p class="mb-3 pb-2">CAMAG aims to offer free education on local governance, regardless of race, ethnicity, or socioeconomic status, focusing on core content knowledge, citizenship, and skills for successful implementation.</p>
                         </div>
 
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item position-relative h-100">
-                        <div class="service-text rounded pb-4 px-5 pt-3">
+                    <div class="service-item position-relative h-100 pb-2">
+                        <div class="service-text rounded p-3">
                             <div class="btn-square bg-light rounded-circle mx-auto mb-2"
                                 style="width: 64px; height: 64px;">
                                 <img class="img-fluid" src="{{asset('CAMAG/img/icon/icon-9.png') }}" alt="Icon">
                             </div>
                             <h5 class="mb-3">Networking and Collaboration work.</h4>
-                                <p class="mb-0">CAMAG foster the relationship or connection that exists between individuals within and or outside the Association, our Community and Country with the aim of improving local governance concepts. We are growing and so ready to Collaborate with any institution or agency to pursue a common goal.</p>
+                                <p class="mb-4">CAMAG promotes connections between individuals, communities, and countries to improve local governance concepts, collaborating with institutions and agencies for common goals.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item position-relative">
-                        <div class="service-text rounded p-5 mb-2">
-                            <div class="btn-square bg-light rounded-circle mx-auto mb-3"
+                        <div class="service-text rounded p-3">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-2"
                                 style="width: 64px; height: 64px;">
                                 <img class="img-fluid" src="{{asset('CAMAG/img/icon/icon-10.png') }}" alt="Icon">
                             </div>
                             <h5 class="mb-2">Organization of platforms for good governance</h4>
-                                <p class="mb-3">Concerned Assembly Members Association of Ghana (CAMAG) as part of its aims will consistently organize programs that seek to remodel and improve local governance concepts to achieve good governance.</p>
+                                <p class="mb-2">Concerned Assembly Members Association of Ghana (CAMAG) as part of its aims will consistently organize programs that seek to remodel and improve local governance concepts to achieve good governance.</p>
                         </div>
                     </div>
                 </div>

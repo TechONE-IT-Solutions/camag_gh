@@ -45,9 +45,9 @@
                 <p>Stay in the loop with our exciting updates, exclusive offers, and the latest trends by subscribing to our newsletter.</p>
                 <div class="position-relative w-100">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
+                        placeholder="Your email" disabled>
                     <button type="button"
-                        class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2" disabled>SignUp</button>
                 </div>
             </div>
         </div>

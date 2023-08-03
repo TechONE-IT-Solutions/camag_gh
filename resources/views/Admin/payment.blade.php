@@ -24,7 +24,7 @@
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-dues" role="tabpanel" aria-labelledby="pills-dues-tab">
-                <table class="table table-hover table-striped">
+                <table id="duesTable" class="table table-hover table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Membership ID</th>
@@ -48,7 +48,7 @@
 
 
             <div class="tab-pane fade show" id="pills-donations" role="tabpanel" aria-labelledby="pills-donations-tab">
-                <table class="table table-hover table-striped">
+                <table id="donationsTable" class="table table-hover table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Full Name</th>

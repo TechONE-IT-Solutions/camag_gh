@@ -386,12 +386,57 @@ $(document).ready(function() {
   });
 });
 
-// new DataTable('#assemblyMember');
 
-// new DataTable('#associateMember');
+// Membership Graphs
+document.addEventListener("DOMContentLoaded", () => {
+  new Chart(document.querySelector('#membershipGraph'), {
+    type: 'bar',
+    data: {
+      labels: [
+        'Greater Accra Region',
+        'Central Region',
+        'Eastern Region',
+        'Volta Region',
+        'Oti Region',
+        'Ashanti Region',
+        'Western Region',
+        'Western North',
+        'Bono Region',
+        'Bono East Region',
+        'Ahafo Region',
+        'Northern Region',
+        'North East Region',
+        'Upper East Region',
+        'Upper West Region'
+      ],
+      datasets: [{
+        label: 'Total Members',
+        data: [11, 16, 7, 3, 14, 9, 13, 8, 20, 17, 4, 6, 9, 5, 13, 16],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(75, 192, 192)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(54, 162, 235)',
+          'rgb(201, 203, 207)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(201, 203, 207)',
+          'rgb(255, 99, 132)',
+          'rgb(201, 203, 207)',
+          'rgb(255, 205, 86)',
+        ]
+      }]
+    }
+  });
+});
 
-// new DataTable('#unitCommitteeMember');
 
+// Data Tables
 $(document).ready(function() {
   $('#assemblyMember').DataTable();
 });
@@ -404,10 +449,10 @@ $(document).ready(function() {
   $('#unitCommitteeMember').DataTable();
 });
 
-// $(document).ready(function() {
-//   $('#assemblyMember').DataTable();
-// });
+$(document).ready(function() {
+  $('#donationsTable').DataTable();
+});
 
-// $(document).ready(function() {
-//   $('#assemblyMember').DataTable();
-// });
+$(document).ready(function() {
+  $('#duesTable').DataTable();
+});
