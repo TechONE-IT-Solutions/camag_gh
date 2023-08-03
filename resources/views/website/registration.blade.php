@@ -8,8 +8,8 @@
 <div class="container regform rounded">
     <div class="row">
         <div class="form col-5 ms-3 hakim">
-            <form id="registrationFeeForm">
-                <!-- Name Input -->
+            <form accept-charset="UTF-8" id="registrationFeeForm" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" novalidate>
+                @csrf
                     <div class="form-floating mb-2">
                         <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
                         <label for="name">Name</label>

@@ -77,8 +77,6 @@ Route::post('post', [registerController::class, 'store'])->name('send');
 
 Route::post('/pay', [registrationFeeController::class, 'redirectToGateway'])->name('pay');
 
-//Route::get('/payment/callback', [registrationFeeController::class, 'handleGatewayCallback'])->name('pay');
-
 Route::get('/payment/callback', [registrationFeeController::class, 'handleGatewayCallback']);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,7 +92,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     //Admin Assembly member routes
     Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
     Route::delete('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
-
     //HOME
     //Home GET Routes
     Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
