@@ -93,7 +93,6 @@ class registerController extends Controller
             'emergency_contact' => $request->input('emergency_contact'),
             'signature' => $request->input('signature'),
             'membership_id'=> $membershipid
-
         ];
         homepage::create($postData);
         return redirect('/success')->with(['message' => 'Registration successful!!', 'status'=> 'success']);
