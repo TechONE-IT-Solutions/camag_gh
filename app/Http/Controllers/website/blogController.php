@@ -11,10 +11,11 @@ class blogController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($id)
     {
-        $events = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'AEvents')->get()->toArray();
-        return view('website.blog');
+        $blog_post = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('id', $id)->get()->toArray();
+        // dd($blog_post);
+        return view('website.blog',['blog_post'=>$blog_post]);
     }
 
     /**

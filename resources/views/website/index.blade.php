@@ -3,6 +3,11 @@
 
 @section('content')
 <!-- Carousel Start -->
+@if(session('message'))
+            <div class="alert alert-{{ session('status') }}">
+                {{ session('message') }}
+            </div>
+        @endif
 <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -217,8 +222,9 @@
                         </div>
                     </div>
                     <div class="p-4">
-                        <a class="d-block h5" href="">{{$new['text']}}</a>
-                        <span>{{$new['textarea']}}</span>
+                        <a class="d-block h5" href="{{ route('website-blog', ['id' => $new['id']]) }}">{{$new['text']}}</a>
+
+                        <span style="background-color: white !important;">{!! $new['textarea'] !!}</span>
                     </div>
                 </div>
                 @endforeach
@@ -271,35 +277,40 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <h2 class="mb-4">Contact Us </h2>
                     <div class="row g-3">
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                                <label for="mail">Your Email</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                <label for="mobile">Your Mobile</label>
-                            </div>
-                        </div>
 
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 130px"></textarea>
-                                <label for="message">Message</label>
+                        <form action="{{ route('website-contactUs')}}" method="POST">
+                            @csrf
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="mail_name" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
-                        </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" name="mail_email" id="mail" placeholder="Your Email">
+                                    <label for="mail">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="mail_head" class="form-control" id="mobile" placeholder="Subject">
+                                    <label for="mobile">Subject</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="mail_body" placeholder="Leave a message here" id="message"
+                                        style="height: 130px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>
