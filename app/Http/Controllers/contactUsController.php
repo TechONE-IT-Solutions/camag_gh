@@ -24,6 +24,9 @@ class contactUsController extends Controller
         Mail::to('abdulhakim6490@gmail.com')->send(new ContactUsEmail($validatedData));
 
         // Redirect back with a success message or perform any other actions
-        return redirect()->back()->with('success', 'Message sent successfully!');
+        return redirect()->back()->with([
+            'status' => 'success',
+            'message' => 'Message sent successfully!'
+        ]);
     }
 }

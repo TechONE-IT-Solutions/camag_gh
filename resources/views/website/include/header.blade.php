@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('CAMAG/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.2/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
      <!-- Spinner Start -->
@@ -63,8 +64,8 @@
                 <div class="collapse navbar-collapse logo" id="navbarCollapse">
 
                     <div class="navbar-nav ms-auto me-0">
-                       
-                        
+
+
                         <a href="{{ route('website-home') }}" class="nav-item nav-link">Home</a>
                         <a href="{{ route('website-about') }}" class="nav-item nav-link">About</a>
                         <a href="{{ route('website-team') }}" class="nav-item nav-link">Executive Members</a>

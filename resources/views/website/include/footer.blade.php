@@ -88,5 +88,17 @@
     <!-- Template Javascript -->
     <script src="{{asset('CAMAG/js/main.js') }}"></script>
     <script src="{{asset('CAMAG/js/counter.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.2/sweetalert.min.js" integrity="sha512-bQTg0yQoJONPPP2GJpVEWYayw5y7LmCrN+VMCr3l3jl1mn8a2yjYLDBkvt4TkQCJjLaI3kprfiJ2ivEUOw63ow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if(session('message'))
+    <script>
+        Swal.fire({
+            icon: '{{ session('status') }}',
+            title: '{{ session('message') }}',
+            showConfirmButton: false,
+            timer: 1500 // The pop-up will automatically close after 1.5 seconds
+        });
+    </script>
+@endif
 </body>
 </html>
