@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +33,7 @@
   <link href="{{asset('CAMAGADMIN/assets/css/style.css') }}" rel="stylesheet">
 
 </head>
+<body>
 
  <div class="container mt-5 pt-5">
     <div class="row justify-content-center">

@@ -21,9 +21,12 @@ class contactUsController extends Controller
         // ...
 
         // Send the email using the ContactUsEmail Mailable class
-        Mail::to('abdulhakimaben@gmail.com')->send(new ContactUsEmail($validatedData));
+        Mail::to('abdulhakim6490@gmail.com')->send(new ContactUsEmail($validatedData));
 
         // Redirect back with a success message or perform any other actions
-        return redirect()->back()->with('success', 'Message sent successfully!');
+        return redirect()->back()->with([
+            'status' => 'success',
+            'message' => 'Message sent successfully!'
+        ]);
     }
 }

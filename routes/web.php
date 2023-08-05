@@ -60,6 +60,7 @@ Route::get('website-team', [teamController::class, 'team'])->name('website-team'
 
 Route::get('website-events', [eventsController::class, 'events'])->name('website-events');
 
+//Contact routes
 Route::get('website-contact', [contactController::class, 'contact'])->name('website-contact');
 Route::post('website-contactUs', [contactUsController::class, 'send'])->name('website-contactUs');
 
