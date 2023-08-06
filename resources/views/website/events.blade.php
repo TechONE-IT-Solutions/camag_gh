@@ -8,7 +8,7 @@
             <h1 class="display-2 text-white mb-4 animated slideInDown">Events & Programs.</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('website-home') }}">Home</a></li>
                     <li class="breadcrumb-item text-primary" aria-current="page">Events & Programs.</li>
                 </ol>
             </nav>
@@ -19,72 +19,32 @@
     <!-- Events section Start -->
     <div class="container-xxl pt-5">
         <div class="container">
-            <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
-                style="max-width: 500px;">
-                <p class="fs-5 fw-medium text-primary">Our Events</p>
-                <h1 class="display-7 mb-5">Explore our exciting lineup of upcoming events.</h1>
+            <div class="row justify-content-center">
+                <div class="text-center pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
+                    style="max-width: 500px;">
+                    <p class="fs-4 fw-medium text-primary">Our Events</p>
+                    <h1 class="display-7 mb-5">Explore our exciting lineup of upcoming events.</h1>
+                </div>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+                @foreach($events as $event)
                 <div class="project-item mb-5">
                     <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-1.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{asset($event['image']) }}" alt="">
                         <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-1.jpg') }}"
+                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset($event['image']) }}"
                                 data-lightbox="project"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
                                     class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="p-4">
-                        <a class="d-block h5" href="">Data Analytics & Insights</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
+                        <a class="d-block h5" href="">{{$event['text']}}</a>
+                        <span>{{$event['textarea']}}</span>
                     </div>
                 </div>
-                <div class="project-item mb-5">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-2.jpg') }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-2.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="d-block h5" href="">Marketing Content Strategy</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
-                    </div>
-                </div>
-                <div class="project-item mb-5">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-3.jpg') }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-3.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="d-block h5" href="">Business Target Market</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
-                    </div>
-                </div>
-                <div class="project-item mb-5">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="{{asset('CAMAG/img/project-4.jpg') }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-4.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <a class="d-block h5" href="">Social Marketing Strategy</a>
-                        <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem</span>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>

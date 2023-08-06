@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Models\website\homepage;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -12,60 +14,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-         return view("website.index");
+        $banners = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hBanner')->get()->toArray();
+
+        $number = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hCounter')->get()->toArray();
+
+        $news = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hNews')->get()->toArray();
+
+        $teams = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('meta_key', 'hTeam')->get()->toArray();
+
+         return view("website.index", ['banners' => $banners, 'number' => $number, 'news' => $news, 'teams'=> $teams]);
         //
     }
-
-    public function about()
-    {
-         return view("website.about");
-        //
-    }
-
-    public function team()
-    {
-         return view("website.team");
-        //
-    }
-
-    public function contact()
-    {
-         return view("website.contact");
-        //
-    }
-
-    public function donate()
-    {
-         return view("website.donate");
-        //
-    }
-
-    public function paydues()
-    {
-         return view("website.paydues");
-        //
-    }
-
-    public function register()
-    {
-         return view("website.register");
-        //
-    }
-
-    public function gallery()
-    {
-         return view("website.gallery");
-        //
-    }
-
-    public function events()
-    {
-         return view("website.events");
-        //
-    }
-
-
-
     /**
      * Show the form for creating a new resource.
      */
@@ -73,15 +32,6 @@ class HomeController extends Controller
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      */
@@ -112,5 +62,9 @@ class HomeController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function getassembly(){
+        //
+
     }
 }

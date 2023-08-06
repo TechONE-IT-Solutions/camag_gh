@@ -25,11 +25,11 @@
                 <div class="nav-item dropdown">
                     <a class="btn btn-link" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Donate/Pay Dues</a>
                     <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                        <a href="{{ route('donate') }}" class="dropdown-item">Donate</a>
-                        <a href="{{ route('pay-dues') }}" class="dropdown-item">Pay Dues</a>
-                        
+                        <a href="{{ route('website-donate') }}" class="dropdown-item">Donate</a>
+                        <a href="{{ route('website-pay-dues') }}" class="dropdown-item">Pay Dues</a>
                     </div>
                 </div>
+                <a class="btn btn-link" href="{{ route('login') }}">Login</a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Business Hours</h4>
@@ -42,12 +42,12 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Newsletter</h4>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <p>Stay in the loop with our exciting updates, exclusive offers, and the latest trends by subscribing to our newsletter.</p>
                 <div class="position-relative w-100">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
+                        placeholder="Your email" disabled>
                     <button type="button"
-                        class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2" disabled>SignUp</button>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
     <div class="container">
     <div class="row">
     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-        &copy; <a class="fw-medium text-light" href="#">CAMAG</a>, All Right Reserved.
+        &copy; <a class="fw-medium text-light" href="{{ route('website-home')}}">CAMAG</a>, All Right Reserved.
     </div>
     <div class="col-md-6 text-center text-md-end">
         Designed By <a class="fw-medium text-light" href="https://techoneitsolutions.com/">Techone IT Solutions</a>
@@ -88,5 +88,17 @@
     <!-- Template Javascript -->
     <script src="{{asset('CAMAG/js/main.js') }}"></script>
     <script src="{{asset('CAMAG/js/counter.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.2/sweetalert.min.js" integrity="sha512-bQTg0yQoJONPPP2GJpVEWYayw5y7LmCrN+VMCr3l3jl1mn8a2yjYLDBkvt4TkQCJjLaI3kprfiJ2ivEUOw63ow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @if(session('message'))
+    <script>
+        Swal.fire({
+            icon: '{{ session('status.icon') }}',
+            title: '{{ session('message.title') }}',
+            showConfirmButton: false,
+            timer: 1500 // The pop-up will automatically close after 1.5 seconds
+        });
+    </script>
+@endif
 </body>
 </html>

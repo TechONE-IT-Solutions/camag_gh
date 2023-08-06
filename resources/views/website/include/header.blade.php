@@ -1,17 +1,25 @@
+<Doctype html>
+<html>
 <head>
     <meta charset="utf-8">
     <title>CAMAG</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
-    <link href="{{asset('CAMAG/img/favicon.ico') }}" rel="icon">
+    <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="icon">
+
+    <!-- Datatable CSS-->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -27,6 +35,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('CAMAG/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.2/sweetalert.min.css" integrity="sha512-gOQQLjHRpD3/SEOtalVq50iDn4opLVup2TF8c4QPI3/NmUPNZOk2FG0ihi8oCU/qYEsw4P6nuEZT2lAG0UNYaw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
      <!-- Spinner Start -->
@@ -37,46 +46,45 @@
     <!-- Spinner End -->
 
 
-    
-
     <!-- Navbar Start -->
     <div class="container-fluid bg-white sticky-top">
-        <div class="container">
+        <div class="wrapper">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <div class="d-flex log">
-                    <img src="{{asset('CAMAG/img/logo.png') }}" alt="Image"  style="width: 210px; height: 70px;">
-                    <a href="index.html" class="nav-item nav-link fs-4 fw-bolder mt-3  "></a>
+                <div class=" log">
+                    <a href="{{ route('website-home') }}" class="nav-item nav-link fs-4 fw-bolder mt-lg-3">
+                        <img src="{{asset('CAMAG/img/logo.png') }}" alt="Image"  style="max-width: 210px; max-height: 70px;" class="img-fluid">
+                    </a>
                 </div>
-                
+
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse logo" id="navbarCollapse">
-                   
+
                     <div class="navbar-nav ms-auto me-0">
-                       
-                        
-                        <a href="{{ route('home') }}" class="nav-item nav-link active ">Home</a>
-                        <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ route('team') }}" class="nav-item nav-link">Executive Members</a>
-                        
+
+
+                        <a href="{{ route('website-home') }}" class="nav-item nav-link">Home</a>
+                        <a href="{{ route('website-about') }}" class="nav-item nav-link">About</a>
+                        <a href="{{ route('website-team') }}" class="nav-item nav-link">Executive Members</a>
+
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Donate/Pay Dues</a>
                             <div class="dropdown-menu bg-light rounded-0 rounded-bottom m-0">
-                                <a href="{{ route('register') }}" class="dropdown-item">Register</a>
-                                <a href="{{ route('donate') }}" class="dropdown-item">Donate</a>
-                                <a href="{{ route('pay-dues') }}" class="dropdown-item ">Pay Dues</a>
-                                
+                                <a href="{{ route('website-registration') }}" class="dropdown-item">Register</a>
+                                <a href="{{ route('website-donate') }}" class="dropdown-item">Donate</a>
+                                <a href="{{ route('website-pay-dues') }}" class="dropdown-item ">Pay Dues</a>
+
                             </div>
                         </div>
-                        <a href="{{ route('events') }}" class="nav-item nav-link">Events & Program</a>
-                        <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
-                        <a href="{{ route('contact') }}" class="nav-item nav-link">Contact </a>
+                        <a href="{{ route('website-events') }}" class="nav-item nav-link">Events & Program</a>
+                        <a href="{{ route('website-gallery') }}" class="nav-item nav-link">Gallery</a>
+                        <a href="{{ route('website-contact') }}" class="nav-item nav-link">Contact </a>
                     </div>
                     <div class="ms-auto d-none d-lg-block">
-                        <a href="{{ route('register') }}" class="btn btn-primary  py-2 px-3 fw-bold">Register Now</a>
+                        <a href="{{ route('website-registration') }}" class="btn btn-primary  py-2 px-3 fw-bold">Register Now</a>
                     </div>
                 </div>
             </nav>

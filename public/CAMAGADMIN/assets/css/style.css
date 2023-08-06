@@ -1225,3 +1225,16 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+#table {
+  overflow-y: auto;
+}
+
+.news-card {
+  max-height: 50px;
+  overflow-y: auto;
+}
+.news-card::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}

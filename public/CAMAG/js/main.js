@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,8 +24,8 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -82,17 +82,17 @@
             }
         }
     });
-    
-    
+
+
 })(jQuery);
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
-  
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
       form.addEventListener('submit', event => {
@@ -100,11 +100,27 @@
           event.preventDefault()
           event.stopPropagation()
         }
-  
+
         form.classList.add('was-validated')
       }, false)
     })
   })()
 
 
+  document.getElementById('passportPicture').addEventListener('change', function () {
+    var fileInput = this;
+    var imagePreview = document.getElementById('imagePreview');
+    var file = fileInput.files[0];
 
+    if (file) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        imagePreview.src = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      imagePreview.src = "#";
+    }
+  });
