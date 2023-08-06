@@ -12,6 +12,7 @@
                 @csrf
 
                 <input type="hidden" name="email" value="test@email.com"> {{-- required --}}
+                <input type="hidden" name="payment_type" value="registration">
                     <div class="form-floating mb-2">
                         <input class="form-control" id="name" type="text" name="name" placeholder=" Full Name" data-sb-validations="required"  required/>
                         <label for="name">Name</label>

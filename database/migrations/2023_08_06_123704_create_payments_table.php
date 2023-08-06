@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone');
+            $table->text('payment_type');
             $table->unsignedBigInteger('amount');
             $table->string('transaction_reference')->unique();
             $table->boolean('successful')->default(false);

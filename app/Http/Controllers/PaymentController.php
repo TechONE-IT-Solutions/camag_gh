@@ -11,6 +11,7 @@ use Paystack;
 use App\Models\Payment;
 use Illuminate\Support\Facades\Session;
 
+
 class PaymentController extends Controller
 {
     public function make_payment()
@@ -21,6 +22,7 @@ class PaymentController extends Controller
             'email' => request('email'),
             'name' => request('name'),
             'phone' => request('phone'),
+            'payment_type' => request('payment_type'),
             'amount' => request('amount') * 100,
             'currency' => 'GHS',
             'callback_url' => route('callback'),
@@ -51,12 +53,14 @@ class PaymentController extends Controller
                 $data = $response->data;
                 $name = isset($data->metadata->name) ? $data->metadata->name : '';
                 $phone = isset($data->metadata->phone) ? $data->metadata->phone : '';
+                $payment_type = isset($data->metadata->payment_type) ? $data->metadata->payment_type : '';
                 $amount = $data->amount / 100; // Convert back to the original amount
 
                 // Store payment information in the database using the Payment model
                 $payment = new Payment([
                     'name' => $name,
                     'phone' => $phone,
+                    'payment_type' => $payment_type, // 'website_registration', 'donation', 'dues'
                     'amount' => $amount,
                     'transaction_reference' => $data->reference,
                     'successful' => true,
@@ -65,16 +69,22 @@ class PaymentController extends Controller
                 // Set the session variable to indicate successful payment
                 Session::put('payment_successful', true);
 
-                // Perform the redirection based on the condition
-                if ($data->metadata->redirect_url === 'website-registration') {
-                    // Redirect to specific page 1
-                    return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'amount'));
-                } else {
-                    // Default redirection if no specific condition is met
-                    return view('success', compact('data', 'name', 'phone', 'amount'));
-                }
+                 // Perform the redirection based on the payment_type
+            if ($payment_type === 'registration') {
+                // Redirect to  website registration page
+                return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+            } elseif ($payment_type === 'donation') {
+                // Redirect to specific donation Thank you page
+                return redirect()->route('website-donate')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+            } elseif ($payment_type === 'dues') {
+                // Redirect to specific dues payment successful page
+                return redirect()->route('website-paydue')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
             } else {
-                // Payment not successful, redirect to the appropriate page (e.g., /not_successful_payment)
+                // Default redirection if no specific condition is met
+                return view('success', compact('data', 'name', 'phone', 'payment_type', 'amount'));
+            }
+        }  else {
+                // Payment not successful, redirect to the appropriate page ( /not_successful_payment)
                 Session::put('payment_successful', false); // Set session variable to false for unsuccessful payment
                 return redirect('/not_successful_payment')->withError($response->message);
             }
@@ -86,10 +96,11 @@ class PaymentController extends Controller
 
     public function initiate_payment($formData)
     {
-        // Add the user's full name to the metadata field
+        // Add the user's full name, phone number and payment type to the metadata field
         $metadata = [
             'name' => $formData['name'],
             'phone' => $formData['phone'],
+            'payment_type' => $formData['payment_type'],
             'redirect_url' => $formData['metadata']['redirect_url']
         ];
         $formData['metadata'] = json_encode($metadata);

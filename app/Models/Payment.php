@@ -11,7 +11,7 @@ class Payment extends Model
 {
     protected $table = 'payments';
 
-    protected $fillable = ['name', 'phone', 'amount', 'transaction_reference', 'successful'];
+    protected $fillable = ['name', 'phone', 'amount','payment_type', 'transaction_reference', 'successful'];
 
     // Add any relationships or other custom methods if needed
 }

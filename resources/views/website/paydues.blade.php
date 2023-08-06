@@ -9,10 +9,13 @@
       <div class="card-body p-5">
         <div class="row justify-content-center ">
           <div class="col-lg-5 m-3">
-            <form id="donationForm">
+            <form id="donationForm" method="POST" action="{{route ('pay')}}">
+                @csrf
+                <input type="hidden" name="payment_type" value="dues">
+                <input type="hidden" name="email" value="test@email.com">
               <!-- Name Input -->
                 <div class="form-floating mb-2">
-                  <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                  <input class="form-control" id="name" type="text" name='name' placeholder="Name" data-sb-validations="required" />
                   <label for="name">Name</label>
                   <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
                 </div>
@@ -20,11 +23,11 @@
                 <div class="form-floating mb-2">
                     <input class="form-control" id="memberid" type="text" placeholder="Member ID" data-sb-validations="required" />
                     <label for="Memberid">Member ID</label>
-                    <div class="invalid-feedback" data-sb-feedback="memberid:required">Member Id is required.</div>
+                    <div class="invalid-feedback" data-sb-feedback="memberid:required">Member ID is required.</div>
                   </div>
 
                   <div class="form-floating mb-2">
-                    <input class="form-control" id="phone" type="tel" placeholder="Phone Number" data-sb-validations="required" />
+                    <input class="form-control" id="phone" type="tel" name='phone' placeholder="Phone Number" data-sb-validations="required" />
                     <label for="phone">Phone Number</label>
                     <div class="invalid-feedback" data-sb-feedback="phone:required">Phone Number is required.</div>
                   </div>
