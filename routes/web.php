@@ -33,6 +33,9 @@ use App\Http\Controllers\Admin\adminAssemblymemberController;
 use App\Http\Controllers\Admin\adminAssociatememberController;
 use App\Http\Controllers\Admin\adminUnitcommitteememberController;
 
+use App\Http\Controllers\PaymentController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -145,6 +148,11 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
     Route::delete('events_destroy/{id}', [adminEventsController::class, 'destroy'])->name('events_destroy');
 });
+
+// payment routes
+Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
+Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
+Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process_payment');
 
 Auth::routes();
 

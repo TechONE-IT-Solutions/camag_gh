@@ -8,8 +8,9 @@
 <div class="container regform rounded">
     <div class="row">
         <div class="form col-lg-5 col-sm-12 ms-3 hakim">
-            <form accept-charset="UTF-8" id="registrationFeeForm" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" novalidate>
+            <form accept-charset="UTF-8" id="registrationFeeForm" method="POST" enctype="multipart/form-data" action="{{ route('pay') }}" novalidate>
                 @csrf
+                <input type="hidden" name="email" value="philip@techoneitsolutions.com"> {{-- required --}}
                     <div class="form-floating mb-2">
                         <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
                         <label for="name">Name</label>
@@ -25,17 +26,34 @@
                     </div>
 
                     <div class="form-floating mb-2">
-                        <input class="form-control" id="phone" step="0.01" type="number" placeholder="Amount" data-sb-validations="required" disabled value="{{ $uregistration }}" />
+                        <input class="form-control" id="amount" name="amount" type="number" placeholder="Amount" data-sb-validations="required"  value="{{ $uregistration }}" oninput="convertToPesewas()" required />
                         <label for="phone">Amount</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">Phone Number is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">Amount is required.</div>
                     </div>
-
+                    <input type="hidden" name="currency" value="GHS">
+                    <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
                     <!-- Make payment button -->
                     <div class="d-grid">
-                    <button class="btn btn-primary btn-lg " id="submitButton" type="submit">Make Payment</button>
+                        <p>
+                            <button class="btn btn-success btn-lg btn-block" type="submit" value="Pay Now!">
+                                <i class="fa fa-plus-circle fa-lg"></i> Pay to Register
+                            </button>
+                        </p>
                     </div>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    // Attach an event listener to the input field to handle user input
+    document.getElementById('amount').addEventListener('input', function() {
+        const userInput = parseFloat(this.value); // Get the amount entered by the user
+        if (!isNaN(userInput)) {
+            const amountInPesewas = userInput * 100; // Convert to pesewas (lowest currency unit for GHS)
+            this.dataset.pesewas = amountInPesewas; // Store the pesewas value in the "data-pesewas" attribute
+        }
+    });
+</script>
+
 @endsection
