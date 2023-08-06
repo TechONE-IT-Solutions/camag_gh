@@ -71,7 +71,7 @@ Route::get('website-gallery', [galleryController::class, 'gallery'])->name('webs
 
 Route::get('website-paydues', [payduesController::class, 'paydues'])->name('website-pay-dues');
 
-Route::get('website-register', [registerController::class, 'register'])->name('website-register');
+Route::get('website-register', [registerController::class, 'register'])->name('website-register')->middleware('payment.successful');
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
 
@@ -80,10 +80,6 @@ Route::get('website-registration', [registrationFeeController::class, 'index'])-
 Route::get('success', [successController::class, 'success'])->name('success');
 
 Route::post('post', [registerController::class, 'store'])->name('send');
-
-Route::post('/pay', [registrationFeeController::class, 'redirectToGateway'])->name('pay');
-
-Route::get('/payment/callback', [registrationFeeController::class, 'handleGatewayCallback']);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
@@ -150,9 +146,8 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 });
 
 // payment routes
-Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
-Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
-//Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process_payment');
+Route::post('/pay', [PaymentController::class, 'make_payment'])->name('pay');
+Route::get('/pay/callback', [PaymentController::class, 'payment_callback'])->name('callback');
 
 Auth::routes();
 
