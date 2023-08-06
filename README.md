@@ -138,3 +138,9 @@ You can then create a pull request on GitHub to merge your changes into the main
 - If you encounter any issues, refer to the project's documentation or seek help from the project team.
 
 ## Payment Model
+
+Update the .env file: In the root directory, and set the PAYSTACK_SECRET_KEY variable to your Paystack secret key
+
+```bash
+PAYSTACK_SECRET_KEY=xxxxxxxxxxxxxxxxxx
+```
