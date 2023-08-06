@@ -152,7 +152,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 // payment routes
 Route::post('/pay', [PaymentController::class, 'redirectToGateway'])->name('pay');
 Route::get('/payment/callback', [PaymentController::class, 'handleGatewayCallback']);
-Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process_payment');
+//Route::post('/process-payment', [PaymentController::class, 'processPayment'])->name('process_payment');
 
 Auth::routes();
 
