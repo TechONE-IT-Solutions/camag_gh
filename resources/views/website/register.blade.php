@@ -20,11 +20,11 @@
 <div class="container ">
     <div class="row justify-content-center container">
         <div class=" col-sm-11 col-lg-9">
-            
+
              <form class="row g-3 needs-validation shadow-lg rounded" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" novalidate>
               @csrf
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
-                       
+
                         <div class="form-floating col-md-12">
                           <input type="text" class="form-control" id="name" required name="name" value="{{ old('name') }}">
                           <label for="name" class="form-label"> Name</label>
@@ -32,7 +32,7 @@
                             Enter your Name!
                           </div>
                         </div>
-        
+
                         <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="hometown" required name="hometown" value="{{ old('hometown') }}">
                             <label for="hometown" class="form-label">Hometown</label>
@@ -40,7 +40,7 @@
                             Provide a valid town!
                           </div>
                         </div>
-        
+
                         <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="placeofbirth"  required name="place_of_birth" value="{{ old('place_of_birth') }}">
                             <label for="placeofbirth" class="form-label">Place Of Birth</label>
@@ -48,7 +48,7 @@
                               Enter your Place of Birth!
                             </div>
                         </div>
-                        
+
                         <div class="form-floating col-md-7">
                             <input type="date" class="form-control" id="dateofbirth" required name="date_of_birth" value="{{ old('date_of_birth') }}">
                             <label for="dateofbirth" class="form-label">Date Of Birth</label>
@@ -56,7 +56,7 @@
                                 Enter your Date of Birth!
                             </div>
                         </div>
-        
+
                         <div class="col-md-5 my-3">
                             <label for="sexRadioOptions">Sex:</label>
                             <div class="form-check form-check-inline">
@@ -71,8 +71,8 @@
                                 Please select your sex.
                             </div>
                         </div>
-        
-                          
+
+
                          <div class="form-floating col-md-4">
                             <input type="text" class="form-control" id="electoralArea" required name="electoral_area" value="{{ old('electoral_area') }}">
                             <label for="electoralArea" class="form-label">Electoral Area</label>
@@ -88,12 +88,12 @@
                             Insert Your Passport Picture
                           </div>
                         </div>
-                         
+
 
                         <div class="image-preview mt-2 col-md-4">
                             <img id="imagePreview" src="#" alt="Preview" style="max-width:150">
                          </div>
-        
+
                         <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="district" required name="district" value="{{ old('district') }}">
                             <label for="district" class="form-label">District</label>
@@ -101,7 +101,7 @@
                             Please provide a valid District.
                           </div>
                         </div>
-        
+
                         <div class="form-floating col-md-6">
                           <select class="form-select" name="region" id="region" required value="{{ old('region') }}">
 
@@ -122,12 +122,12 @@
                             <option>Savannah Region</option>
                             <option>North East Region</option>
                           </select>
-                          <label for="region" class="form-label">Region</label> 
+                          <label for="region" class="form-label">Region</label>
                             <div class="invalid-feedback">
                                 Please select Your Region.
                               </div>
                           </div>
-        
+
                         <div class="form-floating col-12">
                             <input type="text" class="form-control" id="validationCustom05" required name="nationality" value="{{ old('nationality') }}">
                             <label for="validationCustom05" class="form-label">Nationality</label>
@@ -135,7 +135,7 @@
                             Please provide your Nationality.
                           </div>
                         </div>
-        
+
                         <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="validationCustom02" required name="residential_address" value="{{ old('residential_address') }}">
                             <label for="validationCustom02" class="form-label">Residential Address</label>
@@ -143,7 +143,7 @@
                               Please enter your Residential Address!
                             </div>
                           </div>
-        
+
                           <div class="form-floating col-md-6">
                               <input type="text" class="form-control" id="validationCustom02" required name="digital_address" value="{{ old('digital_address') }}">
                               <label for="validationCustom02" class="form-label">Digital Address</label>
@@ -151,7 +151,7 @@
                               Please provide your valid Digital Address!
                             </div>
                           </div>
-                          
+
                           <div class="col-12">
                             <label for="">Marital Status:</label>
                             <div class="form-check form-check-inline">
@@ -167,8 +167,8 @@
                                 <label class="form-check-label" for="maritalRadio3">Divorced</label>
                             </div>
                           </div>
-        
-        
+
+
                             <div class="form-floating col-12">
                                 <input type="tel" class="form-control" id="validationCustom02" pattern="[0-9]{9,}" maxlength="15" required name="telephone_number"  value="{{ old('telephone_number') }}">
                                 <label for="validationCustom02" class="form-label">Telephone Number</label>
@@ -176,7 +176,7 @@
                                   Provide your Telephone number!
                                 </div>
                               </div>
-        
+
                               <div class="form-floating col-12">
                                   <input type="email" class="form-control" id="validationCustom02" name="email_address" value="{{ old('email_address') }}">
                                   <label for="validationCustom02" class="form-label">Email Address</label>
@@ -187,7 +187,7 @@
                                 <span style="color: red">{{ $errors->first('email_address') }}</span>
                                 @endif
                               </div>
-        
+
                               <div>
                                 <label for="">Educational Level:</label>
                                     <div class="form-check form-check-inline">
@@ -223,7 +223,7 @@
                                             <label class="form-check-label" for="associatemember">Associate Member</label>
                                           </div>
                                         </div>
-                                
+
                                     <p><b><i><u>IN CASE OF EMERGENCY</u></i></b></p>
                                     <div class="form-floating col-12">
                                         <input type="text" class="form-control" id="emergencyname" required name="emergency_name" value="{{ old('emergency_name') }}">
@@ -246,15 +246,15 @@
                                           Looks good!
                                         </div>
                                       </div>
-                                    
-                                    
+
+
                                    <span><b><u>DECLARATION</u></b></span>
-                                    <P class="col-12">I DECLARE THAT, ALL INFORMATION CONTAINED IN THIS APPLICATION IS 
-                                          TRUE AND CORRECT AND I SHALL BEAR ANY CONSEQUENCY AS A RESULT OF 
+                                    <P class="col-12">I DECLARE THAT, ALL INFORMATION CONTAINED IN THIS APPLICATION IS
+                                          TRUE AND CORRECT AND I SHALL BEAR ANY CONSEQUENCY AS A RESULT OF
                                           ANY MISLEADING INFORMATION PROVIDED HEREIN.
                                           </P>
-                                          
-              
+
+
                                               <div class="form-floating col-md-6">
                                                 <input type="text" class="form-control" id="validationCustom02" required name="signature" value="{{ old('signature') }}">
                                                 <label for="validationCustom02" class="form-label">Name</label>
@@ -262,11 +262,11 @@
                                                 <div class="invalid-feedback">
                                                   Please provide the Name!
                                                 </div>
-                                              </div> 
+                                              </div>
                                     <div class="col-12 d-flex justify-content-center">
                                 <button class="btn btn-primary m-3" type="submit">Submit form</button>
                             </div>
-                        
+
                         </div>
                       </form>
                     </div>

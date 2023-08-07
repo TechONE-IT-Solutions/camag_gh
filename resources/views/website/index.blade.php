@@ -280,26 +280,26 @@
 
                         <form action="{{ route('website-contactUs')}}" method="POST">
                             @csrf
-                            <div class="col-12">
+                            <div class="col-12 my-md-1">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="mail_name" id="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 my-md-1">
                                 <div class="form-floating">
                                     <input type="email" class="form-control" name="mail_email" id="mail" placeholder="Your Email">
                                     <label for="mail">Your Email</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 my-md-1">
                                 <div class="form-floating">
                                     <input type="text" name="mail_head" class="form-control" id="mobile" placeholder="Subject">
                                     <label for="mobile">Subject</label>
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-12 my-md-1">
                                 <div class="form-floating">
                                     <textarea class="form-control" name="mail_body" placeholder="Leave a message here" id="message"
                                         style="height: 130px"></textarea>
