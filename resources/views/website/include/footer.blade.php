@@ -84,6 +84,7 @@
     <script src="{{asset('CAMAG/lib/owlcarousel/owl.carousel.min.js') }}""></script>
     <script src="{{asset('CAMAG/lib/lightbox/js/lightbox.min.js') }}""></script>
     <script defer src="https://unpkg.com/vanilla-counter" onload="initializeCounterRANDOMID()"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="{{asset('CAMAG/js/main.js') }}"></script>
