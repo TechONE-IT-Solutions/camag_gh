@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\contact;
 use App\Mail\ContactUsEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -22,6 +23,7 @@ class contactUsController extends Controller
 
         // Send the email using the ContactUsEmail Mailable class
         Mail::to('abdulhakim6490@gmail.com')->send(new ContactUsEmail($validatedData));
+        contact::create($validatedData);
 
         // Redirect back with a success message or perform any other actions
         return redirect()->back()->with([

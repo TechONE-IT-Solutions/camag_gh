@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\duessuccessController;
+use App\Http\Controllers;
 
 class duessuccessController extends Controller
 {

@@ -3,11 +3,7 @@
 
 @section('content')
 <!-- Carousel Start -->
-@if(session('message'))
-            <div class="alert alert-{{ session('status') }}">
-                {{ session('message') }}
-            </div>
-        @endif
+
 <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
