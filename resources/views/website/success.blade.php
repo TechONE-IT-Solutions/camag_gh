@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <body>
     <div class="container">
         <!-- Your page content here -->
@@ -26,11 +26,11 @@
                             <img src="{{asset('CAMAG/img/logo.png') }}" style="max-width: 210px;" class="img-fluid" alt="">
                         </div>
                     </center><!--End InvoiceTop-->
-                
+
                     <div id="mid">
                         <div class="info d-flex">
                             <div>
-                                <p> 
+                                <p>
                                     Mem. ID : 000001</br>
                                     Trans Ref: 423522537<br>
                                     Email   : JohnDoe@gmail.com</br>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="ms-auto">
                                 <h3>Contact Info</h3>
-                                <p> 
+                                <p>
                                     Location : Labone, Accra<br>
                                     Email   : info@camaghana.com</br>
                                     Phone   : 02456778999</br>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div><!--End Invoice Mid-->
-            
+
                 <div id="bot">
                     <div id="table">
                         <table class="table">
@@ -70,7 +70,7 @@
                     </div><!--End Table-->
 
                     <div id="legalcopy">
-                        <p class="legal"><strong>Thank you for your business!</strong> 
+                        <p class="legal"><strong>Thank you for your business!</strong>
                         </p>
                     </div>
                 </div><!--End InvoiceBot-->
@@ -82,7 +82,7 @@
     </div>
 </div>
 
-@endsection        
+@endsection
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
