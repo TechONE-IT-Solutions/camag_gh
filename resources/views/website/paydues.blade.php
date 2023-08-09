@@ -75,4 +75,28 @@
   </div>
 <!-- Dues Payment form -->
 
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="h2 text-success"><i class="bi bi-check2-circle"></i>Payment Successful</p>
+        
+        <table class="table">
+          <tr>
+            <td>Trans. Ref.</td>
+            <td>35423657636</td>
+          </tr>
+          <tr>
+            
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @endsection
