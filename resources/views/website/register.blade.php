@@ -298,6 +298,7 @@ document.getElementById('register_form').addEventListener('submit', function(e){
         e.preventDefault();
         div1.innerHTML = `<p style='color:red;'>The name should match the name provided above</p>`;
         return false;
+        
     }
 })
 </script>
