@@ -14,7 +14,7 @@ class adminAssemblymemberController extends Controller
     public function index()
     {
         $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'AssemblyMember')->get()->toArray();
-        return view('admin.assemblymember', ['assemblymen'=> $assemblymen]);
+        return view('admin/assemblymember', ['assemblymen'=> $assemblymen]);
         //
     }
 
@@ -65,6 +65,6 @@ class adminAssemblymemberController extends Controller
     {
         $assemblyman = homepage::find($id);
         $assemblyman->delete();
-        return redirect('assemblymember')->with(['message'=> 'Assembly Member deleted', 'status'=> 'danger']);
+        return redirect('admin/assemblymember')->with(['message'=> 'Assembly Member deleted', 'status'=> 'danger']);
     }
 }

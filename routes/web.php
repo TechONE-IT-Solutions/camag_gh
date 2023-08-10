@@ -76,7 +76,7 @@ Route::get('website-gallery', [galleryController::class, 'gallery'])->name('webs
 
 Route::get('website-paydues', [payduesController::class, 'paydues'])->name('website-pay-dues');
 
-Route::get('website-register', [registerController::class, 'register'])->name('website-register')->middleware('payment.successful');
+Route::get('website-register', [registerController::class, 'register'])->name('website-register');
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
 
@@ -97,6 +97,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/dashboard', [webadminController::class, 'index'])->name('dashboard');
 
     Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
+    Route::delete('delete_assembly/{id}', [adminUnitcommitteememberController::class, 'delete_assembly'])->name('delete_assembly');
     //Admin Associate members routes
     Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
     Route::delete('associate_destroy/{id}', [adminAssociatememberController::class, 'destroy'])->name('associate_destroy');

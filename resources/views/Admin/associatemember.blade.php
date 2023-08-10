@@ -16,7 +16,7 @@
                 <div class="">
 
                    @component('components.members_view_button')
-                       
+
                    @endcomponent
 
                     <div class="tab-content" id="pills-tabContent">
@@ -40,7 +40,7 @@
                             @endforeach
 
                         </div>
-                
+
                     </div>
                     <!-- 'Start' end -->
 
@@ -82,7 +82,6 @@
                             <div class="col">
                                 <div class="button-group">
                                     <button class="btn btn-secondary">Move</button>
-                                    <button class="btn btn-danger">Danger</button>
                                 </div>
                             </div>
                         </div>
