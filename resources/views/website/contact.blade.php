@@ -94,15 +94,20 @@
         </div>
     </div>
     <!-- Contact End -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @if(session('message'))
+
     <script>
-        Swal.fire({
-            icon: '{{ session('status.icon') }}',
-            title: '{{ session('message.title') }}',
-            showConfirmButton: false,
-            timer: 1500 // The pop-up will automatically close after 1.5 seconds
+        document.getElementById('memberid').addEventListener('keyup', function() {
+            const memberID = this.value;
+
+            // Send an AJAX request to the backend to fetch member details
+            fetch(`/get-member/${memberID}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('name').value = data.member.name; // Update this line
+                    }
+                });
         });
     </script>
-    @endif
+    
 @endsection
