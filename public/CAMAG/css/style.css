@@ -609,3 +609,8 @@
     /* .logo {
         max-width: 250px;
     } */
+
+    .MemberBliss
+    {
+        pointer-events: none;
+    }

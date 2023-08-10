@@ -81,8 +81,8 @@
     <script src="{{asset('CAMAG/lib/wow/wow.min.js') }}"></script>
     <script src="{{asset('CAMAG/lib/easing/easing.min.js') }}"></script>
     <script src="{{asset('CAMAG/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{asset('CAMAG/lib/owlcarousel/owl.carousel.min.js') }}""></script>
-    <script src="{{asset('CAMAG/lib/lightbox/js/lightbox.min.js') }}""></script>
+    <script src="{{asset('CAMAG/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{asset('CAMAG/lib/lightbox/js/lightbox.min.js') }}"></script>
     <script defer src="https://unpkg.com/vanilla-counter" onload="initializeCounterRANDOMID()"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -100,6 +100,7 @@
             timer: 1500 // The pop-up will automatically close after 1.5 seconds
         });
     </script>
+
 @endif
 </body>
 </html>

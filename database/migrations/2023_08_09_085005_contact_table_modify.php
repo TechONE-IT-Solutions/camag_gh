@@ -15,11 +15,11 @@ return new class extends Migration
             $table->string('mail_name')->nullable()->after('name');
             $table->dropColumn('name');
             $table->string('mail_email')->nullable()->after('email');
-            $table->dropColumn('name');
-            $table->string('mail_name')->nullable()->after('name');
-            $table->dropColumn('name');
-            $table->string('mail_name')->nullable()->after('name');
-            $table->dropColumn('name');
+            $table->dropColumn('email');
+            $table->string('mail_head')->nullable()->after('subject');
+            $table->dropColumn('subject');
+            $table->string('mail_body')->nullable()->after('message_body');
+            $table->dropColumn('message_body');
         });
     }
 

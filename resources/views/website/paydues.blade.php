@@ -14,20 +14,20 @@
                 <input type="hidden" name="payment_type" value="dues">
                 <input type="hidden" name="email" value="test@email.com">
               <!-- Name Input -->
-                <div class="form-floating mb-2">
-                  <input class="form-control" id="name" type="text" name='name' placeholder="Name" data-sb-validations="required" />
-                  <label for="name">Name</label>
-                  <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
-                </div>
 
                 <div class="form-floating mb-2">
                     <input class="form-control" id="memberid" type="text" placeholder="Member ID" data-sb-validations="required" />
                     <label for="Memberid">Member ID</label>
                     <div class="invalid-feedback" data-sb-feedback="memberid:required">Member ID is required.</div>
-                  </div>
+                </div>
+                <div class="form-floating mb-2">
+                    <input class="form-control MemberBliss" id="name" type="text" name="name" placeholder="Name" data-sb-validations="required" />
+                    <label for="name">Name</label>
+                    <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+                </div>
 
                   <div class="form-floating mb-2">
-                    <input class="form-control" id="phone" type="tel" name='phone' placeholder="Phone Number" data-sb-validations="required" />
+                    <input class="form-control MemberBliss" id="phone" type="tel" name='phone' placeholder="Phone Number" data-sb-validations="required" />
                     <label for="phone">Phone Number</label>
                     <div class="invalid-feedback" data-sb-feedback="phone:required">Phone Number is required.</div>
                   </div>
@@ -35,13 +35,13 @@
 
                   <div class="form-floating mb-2">
                     <select class="form-select" id="dropdown" data-sb-validations="required">
-                      <option value="option1">One Month</option>
-                        <option value="option2">Three Months</option>
-                        <option value="option3">Six Months</option>
-                        <option value="option4">One Year</option>
-                        <option value="option5">Two Years</option>
-                        <option value="option6">Three Years</option>
-                        <option value="option7">Four Years</option>
+                      <option value="1">One Month</option>
+                        <option value="3">Three Months</option>
+                        <option value="6">Six Months</option>
+                        <option value="12">One Year</option>
+                        <option value="24">Two Years</option>
+                        <option value="36">Three Years</option>
+                        <option value="48">Four Years</option>
                     </select>
                     <label for="dropdown">Month To Pay</label>
                     <div class="invalid-feedback" data-sb-feedback="dropdown:required">Please select an option.</div>
@@ -80,14 +80,14 @@
     <div class="modal-content">
       <div class="modal-body">
         <p class="h2 text-success"><i class="bi bi-check2-circle"></i>Payment Successful</p>
-        
+
         <table class="table">
           <tr>
             <td>Trans. Ref.</td>
             <td>35423657636</td>
           </tr>
           <tr>
-            
+
           </tr>
         </table>
       </div>
@@ -99,4 +99,20 @@
   </div>
 </div>
 
+<script>
+    document.getElementById('memberid').addEventListener('keyup', function() {
+        console.log('key pressed')
+        const memberID = this.value;
+
+        // Send an AJAX request to the backend to fetch member details
+        fetch(`/get-member/${memberID}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('name').value = data.memberName;
+                    document.getElementById('phone').value = data.memberphone;
+                }
+            });
+    });
+</script>
 @endsection
