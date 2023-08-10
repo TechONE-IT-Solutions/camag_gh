@@ -94,5 +94,15 @@
         </div>
     </div>
     <!-- Contact End -->
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @if(session('message'))
+    <script>
+        Swal.fire({
+            icon: '{{ session('status.icon') }}',
+            title: '{{ session('message.title') }}',
+            showConfirmButton: false,
+            timer: 1500 // The pop-up will automatically close after 1.5 seconds
+        });
+    </script>
+    @endif
 @endsection
