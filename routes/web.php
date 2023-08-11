@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SoftController;
+use App\Http\Controllers\PaperController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\website\blogController;
@@ -10,13 +13,13 @@ use App\Http\Controllers\website\teamController;
 use App\Http\Controllers\website\aboutController;
 use App\Http\Controllers\Admin\webadminController;
 use App\Http\Controllers\website\donateController;
+
 use App\Http\Controllers\website\eventsController;
 use App\Http\Controllers\website\contactController;
 use App\Http\Controllers\website\galleryController;
 use App\Http\Controllers\website\payduesController;
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
-
 use App\Http\Controllers\website\registerController;
 use App\Http\Controllers\Admin\adminChartsController;
 use App\Http\Controllers\Admin\adminDonateController;
@@ -25,6 +28,7 @@ use App\Http\Controllers\Admin\adminContactController;
 use App\Http\Controllers\Admin\adminGalleryController;
 use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
+
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
 use App\Http\Controllers\Admin\adminExecutivesController;
@@ -32,8 +36,6 @@ use App\Http\Controllers\website\registrationFeeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
 use App\Http\Controllers\Admin\adminAssociatememberController;
 use App\Http\Controllers\Admin\adminUnitcommitteememberController;
-
-use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -71,6 +73,9 @@ Route::get('website-gallery', [galleryController::class, 'gallery'])->name('webs
 
 Route::get('website-paydues', [payduesController::class, 'paydues'])->name('website-pay-dues');
 
+Route::get('errorpage', [SoftController::class, 'index'])->name('errorpage');
+Route::get('notsuccess', [PaperController::class, 'index'])->name('notsuccess');
+
 Route::get('website-register', [registerController::class, 'register'])->name('website-register')->middleware('payment.successful');
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
@@ -78,6 +83,7 @@ Route::get('website-donate', [donateController::class, 'donate'])->name('website
 Route::get('website-registration', [registrationFeeController::class, 'index'])->name('website-registration');
 
 Route::get('success', [successController::class, 'success'])->name('success');
+
 
 Route::post('post', [registerController::class, 'store'])->name('send');
 

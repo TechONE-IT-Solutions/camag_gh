@@ -571,3 +571,20 @@
     overflow-y: hidden;
 }
 
+/* Print styles */
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .registerInvoice, .registerInvoice * {
+      visibility: visible;
+    }
+    .registerInvoice {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  
+  
+
