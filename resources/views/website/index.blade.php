@@ -267,7 +267,7 @@
 
                     <h1 class=" mb-4">For Any Eny Enquiries</h1>
                     <p>"Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
-                    <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="">
+                    <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="tel:+233 24 897 9400;">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </span>
