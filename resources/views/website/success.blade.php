@@ -1,26 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-
-<body>
-    <div class="container">
-        Your page content here -->
-
-        <!-- @if(session('message'))
-        <div class="alert alert-{{ session('status') }}">
-            {{ session('message') }}
-        </div>
-        @endif
-</body>
-
-</html>  -->
-
 @extends('layouts/website')
 
 
@@ -68,12 +45,12 @@
 
                             <tr class="service">
                                 <td class="tableitem"><p class="itemtext">Registration Fee</p></td>
-                                <td class="tableitem"><p class="itemtext">$375.00</p></td>
+                                <td class="tableitem"><p class="itemtext">₵375.00</p></td>
                             </tr>
 
                             <tr class="tabletitle">
                                 <td class="Rate"><h2>Total</h2></td>
-                                <td class="payment"><h2>$375.00</h2></td>
+                                <td class="payment"><h2>₵375.00</h2></td>
                             </tr>
                         </table>
                     </div>
@@ -93,8 +70,4 @@
 </div>
 
 @endsection        
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    

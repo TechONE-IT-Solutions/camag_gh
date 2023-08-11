@@ -1,17 +1,3 @@
-<!-- 
-<body>
-    <div class="container">
-        <!-- Your page content here -->
-
-        <!-- @if(session('message'))
-        <div class="alert alert-{{ session('status') }}">
-            {{ session('message') }}
-        </div>
-        @endif
-</body>
-
-</html> -->
-
 @extends('layouts/website')
 
 
@@ -23,6 +9,16 @@
             <h2 class="text-success">Payment Successful</h2>
             <i class="bi bi-check2-circle display-1 text-success"></i>
             <p class="text-lead mb-5 mt-3">Thank You so much for your generous donation.Your support means a lot to us and will make a positive impact.</p>
+            <table class="table">
+                <tr>
+                    <td>Trans. Ref.</td>
+                    <td>564773568774</td>
+                </tr>
+                <tr>
+                    <td>Amt. Paid</td>
+                    <td>GH₵ 200</td>
+                </tr>
+            </table>
             <a href="{{ route('website-home') }}" class="btn btn-outline-success">Go Back Home</a>
         </div>
     </div>

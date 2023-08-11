@@ -1,17 +1,3 @@
-<!-- 
-<body>
-    <div class="container">
-        <!-- Your page content here -->
-
-        <!-- @if(session('message'))
-        <div class="alert alert-{{ session('status') }}">
-            {{ session('message') }}
-        </div>
-        @endif
-</body>
-
-</html> -->
-
 @extends('layouts/website')
 
 
@@ -28,16 +14,16 @@
 
                         <table class="table table-borderless">
                             <tr>
-                                <td>Amt. Paid</td>
-                                <td>1234</td>
+                                <td>Mem. ID</td>
+                                <td>ASM12345</td>
                             </tr>
                             <tr>
                                 <td>Trans. Ref</td>
-                                <td>1234</td>
+                                <td>123464070</td>
                             </tr>
                             <tr>
-                                <td>Amount Paid</td>
-                                <td>1234</td>
+                                <td>Amt. Paid</td>
+                                <td>GH₵10</td>
                             </tr>
                             
                         </table>
@@ -49,8 +35,4 @@
     </div>
 
 @endsection        
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html> -->
+  

@@ -7,14 +7,16 @@ use App\Http\Controllers\PaperController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\adminLoginController;
+use App\Http\Controllers\DuessuccessController;
 use App\Http\Controllers\website\blogController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\teamController;
 use App\Http\Controllers\website\aboutController;
 use App\Http\Controllers\Admin\webadminController;
-use App\Http\Controllers\website\donateController;
 
+use App\Http\Controllers\website\donateController;
 use App\Http\Controllers\website\eventsController;
+use App\Http\Controllers\DonationsuccessController;
 use App\Http\Controllers\website\contactController;
 use App\Http\Controllers\website\galleryController;
 use App\Http\Controllers\website\payduesController;
@@ -26,9 +28,9 @@ use App\Http\Controllers\Admin\adminDonateController;
 use App\Http\Controllers\Admin\adminEventsController;
 use App\Http\Controllers\Admin\adminContactController;
 use App\Http\Controllers\Admin\adminGalleryController;
+
 use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
-
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
 use App\Http\Controllers\Admin\adminExecutivesController;
@@ -75,6 +77,8 @@ Route::get('website-paydues', [payduesController::class, 'paydues'])->name('webs
 
 Route::get('errorpage', [SoftController::class, 'index'])->name('errorpage');
 Route::get('notsuccess', [PaperController::class, 'index'])->name('notsuccess');
+Route::get('donationsuccess', [DonationsuccessController::class, 'index'])->name('donationsuccess');
+Route::get('duessuccess', [DuessuccessController::class, 'index'])->name('duessuccess');
 
 Route::get('website-register', [registerController::class, 'register'])->name('website-register')->middleware('payment.successful');
 
@@ -156,4 +160,3 @@ Route::post('/pay', [PaymentController::class, 'make_payment'])->name('pay');
 Route::get('/pay/callback', [PaymentController::class, 'payment_callback'])->name('callback');
 
 Auth::routes();
-
