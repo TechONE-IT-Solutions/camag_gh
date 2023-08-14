@@ -42,14 +42,14 @@
                                     <img src="{{asset($event['image']) }}" alt="" class="img-fluid">
                                 </div>
                                 <div class="card-body text-center">
-                                    <h4>{{( $event['text'] )}}</h4>
+                                    <p class="fw-bold">{{( $event['text'] )}}</p>
                                     <p>{{ $event['textarea']}}</p>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center">
                                     <form method="post" class="cut_form" action="{{ route('events_destroy', $event['id']) }}">
                                         {{csrf_field()}}
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class=" btn btn-danger px-4">Delete</button>
+                                        <button type="submit" class=" btn btn-danger px-2">Delete</button>
                                     </form>
                                 </div>
                             </div>
