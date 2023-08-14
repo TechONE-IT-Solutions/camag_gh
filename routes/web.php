@@ -169,5 +169,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 // payment routes
 Route::post('/pay', [PaymentController::class, 'make_payment'])->name('pay');
 Route::get('/pay/callback', [PaymentController::class, 'payment_callback'])->name('callback');
+Route::get('/get-data/{transactionReference}', [adminPaymentController::class, 'getData'])->name('getData');
+Auth::routes();
 
 Auth::routes();
