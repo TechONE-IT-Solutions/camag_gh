@@ -115,7 +115,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     //Admin Assembly member routes
     Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
     Route::delete('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
-    
+
     //HOME
     //Home GET Routes
     Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
