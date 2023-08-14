@@ -222,10 +222,10 @@
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li class="dropdown-item">
+       <!--  <li class="dropdown-item">
         <i class="bi bi-person-fill-add"></i>
             <a href="{{ route('register') }}" class="text-secondary">Register</a>
-        </li>
+        </li> -->
 
         <li class="dropdown-item">
           <i class="bi bi-person-fill-gear"></i>
