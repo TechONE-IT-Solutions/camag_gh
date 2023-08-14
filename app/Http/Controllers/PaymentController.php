@@ -55,7 +55,7 @@ class PaymentController extends Controller
                 $phone = isset($data->metadata->phone) ? $data->metadata->phone : '';
                 $payment_type = isset($data->metadata->payment_type) ? $data->metadata->payment_type : '';
                 $amount = $data->amount / 100; // Convert back to the original amount
-
+                $transaction_reference = $data->reference;
                 // Store payment information in the database using the Payment model
                 $payment = new Payment([
                     'name' => $name,
@@ -72,7 +72,7 @@ class PaymentController extends Controller
                  // Perform the redirection based on the payment_type
             if ($payment_type === 'registration') {
                 // Redirect to  website registration page
-                return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'payment_type', 'amount', 'transaction_reference'));
             } elseif ($payment_type === 'donation') {
                 // Redirect to specific donation Thank you page
                 return redirect()->route('website-donate')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));

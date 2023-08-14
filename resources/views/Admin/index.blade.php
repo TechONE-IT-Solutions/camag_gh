@@ -7,14 +7,8 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    Hello World!
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    Hello World!
+                    <p class="display-1 text-success">250</p>
+                    <p class="text">Assembly Members</p>
                 </div>
             </div>
         </div>
@@ -22,7 +16,17 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    Hello World!
+                    <p class="display-1 text-success">250</p>
+                    <p class="text">Unit Committee Members</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <p class="display-1 text-success">250</p>
+                    <p class="text">Associate Members</p>
                 </div>
             </div>
         </div>
@@ -32,7 +36,7 @@
         <div class="col-lg-10 col-md-12 col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Total Member In Every Region</h5>
+              <h5 class="card-title">Total Members In Every Region</h5>
 
               <!-- Polar Area Chart -->
               <canvas id="membershipGraph" style="max-height: 800px;"></canvas>

@@ -21,12 +21,12 @@
     <div class="row justify-content-center container">
         <div class=" col-sm-11 col-lg-9">
 
-             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" novalidate>
+             <form class="row g-3 needs-validation shadow-lg rounded" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" id="register_form" novalidate>
               @csrf
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
 
                         <div class="form-floating col-md-12">
-                          <input type="text" class="form-control" id="name" required name="name" value="{{ old('name') }}">
+                          <input type="text" class="form-control name_phone" id="name" required name="name" value="{{ old('name') }}">
                           <label for="name" class="form-label"> Name</label>
                           <div class="invalid-feedback">
                             Enter your Name!
@@ -170,8 +170,8 @@
 
 
                             <div class="form-floating col-12">
-                                <input type="tel" class="form-control" id="validationCustom02" pattern="[0-9]{9,}" maxlength="15" required name="telephone_number"  value="{{ old('telephone_number') }}">
-                                <label for="validationCustom02" class="form-label">Telephone Number</label>
+                                <input type="tel" class="form-control name_phone" id="phone" pattern="[0-9]{9,}" maxlength="15" required name="telephone_number"  value="{{ old('telephone_number') }}">
+                                <label for="phone" class="form-label">Telephone Number</label>
                                 <div class="invalid-feedback">
                                   Provide your Telephone number!
                                 </div>
@@ -256,12 +256,13 @@
 
 
                                               <div class="form-floating col-md-6">
-                                                <input type="text" class="form-control" id="validationCustom02" required name="signature" value="{{ old('signature') }}">
-                                                <label for="validationCustom02" class="form-label">Name</label>
-                                                <p>By typing your name you have signed.</p>
-                                                <div class="invalid-feedback">
-                                                  Please provide the Name!
-                                                </div>
+                                                    <input type="text" class="form-control" id="signature" required name="signature" value="{{ old('signature') }}">
+                                                    <label for="validationCustom02" class="form-label">Name</label>
+                                                    <p>By typing your name you have signed.</p>
+                                                    <div class="invalid-feedback">
+                                                    Please provide the Name!
+                                                    </div>
+                                                    <div id="div1"></div>
                                               </div>
                                     <div class="col-12 d-flex justify-content-center">
                                 <button class="btn btn-primary m-3" type="submit">Submit form</button>
@@ -274,5 +275,32 @@
                 </div>
     <!--Registration form end-->
 
+<script>
+   window.addEventListener('load', function(){
+        const transactionReference = "{{ session('transaction_reference') }}";
+        const fetchUrl = `/get-data/${transactionReference}`;
+
+        fetch(fetchUrl).then(response => response.json()).then(data => {
+            if(data.success){
+                document.getElementById('name').value = data.memberName;
+                document.getElementById('phone').value = data.memberPhone;
+            }
+        });
+   });
+</script>
+<script>
+document.getElementById('register_form').addEventListener('submit', function(e){
+
+    const name =  document.getElementById('name').value.toUpperCase();
+    const sign = document.getElementById('signature').value.toUpperCase();
+    const div1 = document.getElementById('div1');
+    if(name !== sign){
+        e.preventDefault();
+        div1.innerHTML = `<p style='color:red;'>The name should match the name provided above</p>`;
+        return false;
+        
+    }
+})
+</script>
 
 @endsection
