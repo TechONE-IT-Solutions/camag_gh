@@ -436,6 +436,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
 // Data Tables
 $(document).ready(function() {
   $('#assemblyMember').DataTable();
