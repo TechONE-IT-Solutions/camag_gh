@@ -10,16 +10,16 @@
                         <th scope="col">Full Name</th>
                         <th scope="col">Email Address</th>
                         <th scope="col">Subject</th>
-                        <th scope="col">Message</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($mails as $mail)
                     <tr>
-                        <td>Antwi Brian</td>
-                        <td>infocamaghana@gmail.com</td>
-                        <td>Acknowledgement</td>
-                        <td>You guys are doing a great work</td>
+                        <td>{{ $mail['mail_name']}}</td>
+                        <td>{{ $mail['mail_email']}}</td>
+                        <td>{{ $mail['mail_head']}}</td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

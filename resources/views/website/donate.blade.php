@@ -62,6 +62,4 @@
     </div>
   </div>
         <!-- End of Donation form -->
-
-
 @endsection

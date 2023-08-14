@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\SoftController;
 use App\Http\Controllers\PaperController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\DuessuccessController;
+
 use App\Http\Controllers\website\blogController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\teamController;
@@ -20,8 +22,11 @@ use App\Http\Controllers\DonationsuccessController;
 use App\Http\Controllers\website\contactController;
 use App\Http\Controllers\website\galleryController;
 use App\Http\Controllers\website\payduesController;
+
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
+
+
 use App\Http\Controllers\website\registerController;
 use App\Http\Controllers\Admin\adminChartsController;
 use App\Http\Controllers\Admin\adminDonateController;
@@ -33,6 +38,9 @@ use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
+use App\Http\Controllers\website\duessuccessController;
+
+
 use App\Http\Controllers\Admin\adminExecutivesController;
 use App\Http\Controllers\website\registrationFeeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
@@ -70,6 +78,7 @@ Route::get('website-events', [eventsController::class, 'events'])->name('website
 //Contact routes
 Route::get('website-contact', [contactController::class, 'contact'])->name('website-contact');
 Route::post('website-contactUs', [contactUsController::class, 'send'])->name('website-contactUs');
+Route::get('contactUs', [contactUsController::class, 'show'])->name('contactUs');
 
 Route::get('website-gallery', [galleryController::class, 'gallery'])->name('website-gallery');
 
@@ -89,7 +98,9 @@ Route::get('website-registration', [registrationFeeController::class, 'index'])-
 Route::get('success', [successController::class, 'success'])->name('success');
 
 
+
 Route::post('post', [registerController::class, 'store'])->name('send');
+Route::get('/get-member/{memberID}', [MemberController::class, 'getMember']);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {

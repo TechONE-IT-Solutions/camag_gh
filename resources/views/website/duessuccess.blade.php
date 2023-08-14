@@ -3,6 +3,7 @@
 
 @section('content')
 
+
     <div class="container">
         <div class="wrapper d-flex justify-content-center py-5">
             <div class="card col-6">
@@ -35,4 +36,3 @@
     </div>
 
 @endsection        
-  

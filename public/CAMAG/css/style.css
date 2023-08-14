@@ -571,6 +571,7 @@
     overflow-y: hidden;
 }
 
+
 /* Print styles */
 @media print {
     body * {
@@ -585,6 +586,3 @@
       top: 0;
     }
   }
-  
-  
-

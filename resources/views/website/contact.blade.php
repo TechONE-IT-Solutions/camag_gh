@@ -95,4 +95,19 @@
     </div>
     <!-- Contact End -->
 
+    <script>
+        document.getElementById('memberid').addEventListener('keyup', function() {
+            const memberID = this.value;
+
+            // Send an AJAX request to the backend to fetch member details
+            fetch(`/get-member/${memberID}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('name').value = data.member.name; // Update this line
+                    }
+                });
+        });
+    </script>
+    
 @endsection

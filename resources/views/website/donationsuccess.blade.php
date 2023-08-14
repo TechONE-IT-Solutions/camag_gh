@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 <div class="container d-flex justify-content-center my-5 ">
     <div class="card col-lg-6 p-5">
         <div class="card-body text-center">
@@ -24,9 +25,4 @@
     </div>
 </div>
 
-@endsection        
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html> -->
+@endsection
