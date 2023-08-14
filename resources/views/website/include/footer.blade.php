@@ -4,7 +4,9 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Our Office</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Labone, Accra, Ghana</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+233 24 897 9400</p>
+                <a class="text-white" href="tel:+233 24 897 9400">
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+233 24 897 9400</p>
+                </a>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@camaghana.org</p>
                 <div class="d-flex pt-3">
                     <a class="btn btn-square btn-light rounded-circle me-2" href=""><i

@@ -1,23 +1,8 @@
-<!--
-<body>
-    <div class="container">
-        <!-- Your page content here -->
-
-        <!-- @if(session('message'))
-        <div class="alert alert-{{ session('status') }}">
-            {{ session('message') }}
-        </div>
-        @endif
-</body>
-
-</html> -->
-
 @extends('layouts/website')
 
 
 @section('content')
-
-    <div class="container">
+ <div class="container d-flex justify-content-center">
         <div class="card border-1 registerInvoice col-10">
             <div class="card-body">
                 <div id="invoice-POS">
@@ -26,11 +11,11 @@
                             <img src="{{asset('CAMAG/img/logo.png') }}" style="max-width: 210px;" class="img-fluid" alt="">
                         </div>
                     </center><!--End InvoiceTop-->
-
-                    <div id="mid">
+                
+                     <div id="mid">
                         <div class="info d-flex">
                             <div>
-                                <p>
+                                <p> 
                                     Mem. ID : 000001</br>
                                     Trans Ref: 423522537<br>
                                     Email   : JohnDoe@gmail.com</br>
@@ -39,7 +24,7 @@
                             </div>
                             <div class="ms-auto">
                                 <h3>Contact Info</h3>
-                                <p>
+                                <p> 
                                     Location : Labone, Accra<br>
                                     Email   : info@camaghana.com</br>
                                     Phone   : 02456778999</br>
@@ -47,9 +32,10 @@
                             </div>
                         </div>
                     </div>
-                </div><!--End Invoice Mid-->
-
-                <div id="bot">
+                 </div>
+                 <!-- End Invoice Mid  -->
+            
+                 <div id="bot">
                     <div id="table">
                         <table class="table">
                             <tr class="tabletitle">
@@ -59,32 +45,28 @@
 
                             <tr class="service">
                                 <td class="tableitem"><p class="itemtext">Registration Fee</p></td>
-                                <td class="tableitem"><p class="itemtext">$375.00</p></td>
+                                <td class="tableitem"><p class="itemtext">₵375.00</p></td>
                             </tr>
 
                             <tr class="tabletitle">
                                 <td class="Rate"><h2>Total</h2></td>
-                                <td class="payment"><h2>$375.00</h2></td>
+                                <td class="payment"><h2>₵375.00</h2></td>
                             </tr>
                         </table>
-                    </div><!--End Table-->
+                    </div>
+                    <!-- End Table -->
 
-                    <div id="legalcopy">
-                        <p class="legal"><strong>Thank you for your business!</strong>
+                     <div id="legalcopy text-center">
+                        <p class="legal"><strong>Thank you!</strong> 
                         </p>
                     </div>
                 </div><!--End InvoiceBot-->
             </div><!--End Invoice-->
         </div>
-    </div>
+    </div> 
     <div class="col-12 d-flex justify-content-center mt-2">
-        <button type="button" onclick="window.print()" class="btn btn-success px-3 py-2">Print</button>
-    </div>
+        <button type="button" onclick="window.print()" class="btn btn-outline-success px-3 py-2">Print</button>
+    </div> 
 </div>
 
 @endsection
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html> -->
