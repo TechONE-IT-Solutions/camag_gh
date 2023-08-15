@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
 use App\Models\website\homepage;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class registerController extends Controller
      */
     public function register()
     {
-         return view("website.register");
+        return view("website.register");
         //
     }
 
@@ -31,42 +32,45 @@ class registerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email_address'=> 'required|email|unique:registers'
+            'email_address' => 'required|email|unique:registers'
         ]);
         $destinationPath = 'images/members/';
         $myimage = time() . '.' . $request->image->getClientOriginalName();
-        $request->image->move(public_path($destinationPath),$myimage);
+        $request->image->move(public_path($destinationPath), $myimage);
+
+        $transactionReference = $request->input('transaction_reference');
+        $email = $request->input('email_address');
 
         $rnum = random_int(10000, 99999);
 
-        switch($request->input('pos')){
-            case('AssemblyMember'):
-                $membershipid = 'ASM-'.$rnum;
+        switch ($request->input('pos')) {
+            case ('AssemblyMember'):
+                $membershipid = 'ASM-' . $rnum;
                 if (homepage::where('membership_id', '=', $membershipid)->exists()) {
                     //Membership_ID exist
-                    $membershipid = 'ASM-'.random_int(10000, 99999);
-                }else{
+                    $membershipid = 'ASM-' . random_int(10000, 99999);
+                } else {
                     //Membership_ID doesn't exist
                 }
-                Break;
-            case('UnitCommiteeMember'):
-                $membershipid = 'UCM-'.$rnum;
+                break;
+            case ('UnitCommiteeMember'):
+                $membershipid = 'UCM-' . $rnum;
                 if (homepage::where('membership_id', '=', $membershipid)->exists()) {
                     //Membership_ID exist
-                    $membershipid = 'UCM-'.random_int(10000, 99999);
-                }else{
+                    $membershipid = 'UCM-' . random_int(10000, 99999);
+                } else {
                     //Membership_ID doesn't exist
                 }
-                Break;
-            case('AssociateMember'):
-                $membershipid = 'ASS-'.$rnum;
+                break;
+            case ('AssociateMember'):
+                $membershipid = 'ASS-' . $rnum;
                 if (homepage::where('membership_id', '=', $membershipid)->exists()) {
                     //Membership_ID exist
-                    $membershipid = 'ASS-'.random_int(10000, 99999);
-                }else{
+                    $membershipid = 'ASS-' . random_int(10000, 99999);
+                } else {
                     //Membership_ID doesn't exist
                 }
-                Break;
+                break;
         }
 
 
@@ -92,19 +96,24 @@ class registerController extends Controller
             'emergency_relation' => $request->input('emergency_relation'),
             'emergency_contact' => $request->input('emergency_contact'),
             'signature' => $request->input('signature'),
-            'membership_id'=> $membershipid
+            'membership_id' => $membershipid
         ];
+        $members = Payment::where('transaction_reference', $transactionReference)->first();
         homepage::create($postData);
-        return redirect('/success')->with(['message' => 'Registration successful!!', 'status'=> 'success']);
-
+        return redirect('/success')->with([
+            'message' => 'Registration successful!!',
+            'status' => 'success',
+            'members' => $members,
+            'membershipid' => $membershipid,
+            'email' => $email
+        ]);
     }
 
     /**
      * Display the specified resource.
      */
     public function show()
-    {
-       ;
+    {;
     }
 
     /**
