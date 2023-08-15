@@ -11,20 +11,20 @@
                             <img src="{{asset('CAMAG/img/logo.png') }}" style="max-width: 210px;" class="img-fluid" alt="">
                         </div>
                     </center><!--End InvoiceTop-->
-                
+
                      <div id="mid">
                         <div class="info d-flex">
                             <div>
-                                <p> 
-                                    Mem. ID : 000001</br>
-                                    Trans Ref: 423522537<br>
-                                    Email   : JohnDoe@gmail.com</br>
-                                    Phone   : 555-555-5555</br>
+                                <p>
+                                    Mem. ID : {{ session('membershipid') }}</br>
+                                    Trans Ref:  {{ session('members')['transaction_reference'] }}<br>
+                                    Email   : {{ session('email') }}</br>
+                                    Phone   : {{ session('members')['phone'] }}</br>
                                 </p>
                             </div>
                             <div class="ms-auto">
                                 <h3>Contact Info</h3>
-                                <p> 
+                                <p>
                                     Location : Labone, Accra<br>
                                     Email   : info@camaghana.com</br>
                                     Phone   : 02456778999</br>
@@ -34,7 +34,7 @@
                     </div>
                  </div>
                  <!-- End Invoice Mid  -->
-            
+
                  <div id="bot">
                     <div id="table">
                         <table class="table">
@@ -45,28 +45,28 @@
 
                             <tr class="service">
                                 <td class="tableitem"><p class="itemtext">Registration Fee</p></td>
-                                <td class="tableitem"><p class="itemtext">₵375.00</p></td>
+                                <td class="tableitem"><p class="itemtext">₵{{ session('members')['amount'] }}</p></td>
                             </tr>
 
                             <tr class="tabletitle">
                                 <td class="Rate"><h2>Total</h2></td>
-                                <td class="payment"><h2>₵375.00</h2></td>
+                                <td class="payment"><h2>₵{{ session('members')['amount'] }}</td>
                             </tr>
                         </table>
                     </div>
                     <!-- End Table -->
 
                      <div id="legalcopy text-center">
-                        <p class="legal"><strong>Thank you!</strong> 
+                        <p class="legal"><strong>Thank you!</strong>
                         </p>
                     </div>
                 </div><!--End InvoiceBot-->
             </div><!--End Invoice-->
         </div>
-    </div> 
+    </div>
     <div class="col-12 d-flex justify-content-center mt-2">
         <button type="button" onclick="window.print()" class="btn btn-outline-success px-3 py-2">Print</button>
-    </div> 
+    </div>
 </div>
 
 @endsection
