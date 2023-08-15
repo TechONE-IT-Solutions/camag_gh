@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\userSettings;
 use App\Http\Controllers\SoftController;
 use App\Http\Controllers\PaperController;
 use App\Http\Controllers\PaymentController;
@@ -21,8 +22,8 @@ use App\Http\Controllers\website\eventsController;
 use App\Http\Controllers\DonationsuccessController;
 use App\Http\Controllers\website\contactController;
 use App\Http\Controllers\website\galleryController;
-use App\Http\Controllers\website\payduesController;
 
+use App\Http\Controllers\website\payduesController;
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
 
@@ -38,9 +39,9 @@ use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
+
+
 use App\Http\Controllers\website\duessuccessController;
-
-
 use App\Http\Controllers\Admin\adminExecutivesController;
 use App\Http\Controllers\website\registrationFeeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
@@ -59,10 +60,7 @@ use App\Http\Controllers\Admin\adminUnitcommitteememberController;
 |
 */
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 // FRONT-END ROUTES
 Route::get('/', [HomeController::class, 'index'])->name('website-home');
@@ -106,6 +104,7 @@ Route::get('/get-member/{memberID}', [MemberController::class, 'getMember']);
 //Admin Routes {
 Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/dashboard', [webadminController::class, 'index'])->name('dashboard');
+    Route::get('/polar_chart_data', [webadminController::class, 'getPolarChartData']);
 
     Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
     Route::delete('delete_assembly/{id}', [adminUnitcommitteememberController::class, 'delete_assembly'])->name('delete_assembly');
@@ -116,6 +115,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     //Admin Assembly member routes
     Route::get('assemblymember', [adminAssemblymemberController::class, 'index'])->name('assemblymember');
     Route::delete('assemblymember_destroy/{id}', [adminAssemblymemberController::class, 'destroy'])->name('assemblymember_destroy');
+    
     //HOME
     //Home GET Routes
     Route::get('homepage', [adminHomepageController::class, 'index'])->name('homepage');
@@ -132,8 +132,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::delete('homepage/clear/{id}', [adminHomepageController::class, 'clear'])->name('homepage.clear');
     Route::delete('homepage/cut/{id}', [adminHomepageController::class, 'cut'])->name('homepage.cut');
     Route::delete('homepage/eliminate/{id}', [adminHomepageController::class, 'eliminate'])->name('homepage.eliminate');
-
-
 
     Route::get('about', [adminAboutController::class, 'index'])->name('about');
 
@@ -165,6 +163,15 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('events', [adminEventsController::class, 'index'])->name('events');
     Route::post('events_post', [adminEventsController::class, 'store'])->name('events_post');
     Route::delete('events_destroy/{id}', [adminEventsController::class, 'destroy'])->name('events_destroy');
+
+    //Admin settings
+    Route::get('user_settings', [userSettings::class, 'index'])->name('user_settings');
+    Route::post('user_settings_profile_post', [userSettings::class, 'storeprofile'])->name('user_settings_profile_post');
+    Route::post('user_settings_password_post', [userSettings::class, 'storepassword'])->name('user_settings_password_post');
+
+    //
+    Route::post('add_admin', [userSettings::class, 'storeAdminReg'])->name('add_admin_post');
+
 });
 
 // payment routes
