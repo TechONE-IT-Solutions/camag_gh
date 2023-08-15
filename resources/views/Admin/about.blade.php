@@ -2,8 +2,8 @@
 
 
 @section('content')
-
-    <div class="row ">
+<div class="container bg-light">
+    <div class="row">
         <div class="col-lg-5 col-md-6 col-sm-12 mb-2">
             <form class="form-control p-5">
                     <label for="aboutImage">About Image</label>
@@ -46,5 +46,6 @@
             </div>
         </div>
     </div>
+</div>
 
 @endsection

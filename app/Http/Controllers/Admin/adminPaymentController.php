@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Payment;
 
 class adminPaymentController extends Controller
 {
@@ -26,9 +26,21 @@ class adminPaymentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function getData($transactionReference)
     {
-        //
+        $member = Payment::where('transaction_reference', $transactionReference )->first();
+        if($member){
+            return response()->json([
+                'success'=> true,
+                'memberName'=> $member->name,
+                'memberPhone'=> $member->phone,
+            ]);
+        }
+        else{
+            return response()->json([
+                'success'=> false,
+            ]);
+        }
     }
 
     /**

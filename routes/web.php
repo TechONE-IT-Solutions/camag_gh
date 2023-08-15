@@ -2,31 +2,39 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\userSettings;
+use App\Http\Controllers\SoftController;
+use App\Http\Controllers\PaperController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\adminLoginController;
-use App\Http\Controllers\Admin\MemberController;
+use App\Http\Controllers\DuessuccessController;
+
 use App\Http\Controllers\website\blogController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\teamController;
 use App\Http\Controllers\website\aboutController;
 use App\Http\Controllers\Admin\webadminController;
+
 use App\Http\Controllers\website\donateController;
 use App\Http\Controllers\website\eventsController;
+use App\Http\Controllers\DonationsuccessController;
 use App\Http\Controllers\website\contactController;
 use App\Http\Controllers\website\galleryController;
 
 use App\Http\Controllers\website\payduesController;
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
-use App\Http\Controllers\website\donationController;
+
+
 use App\Http\Controllers\website\registerController;
 use App\Http\Controllers\Admin\adminChartsController;
 use App\Http\Controllers\Admin\adminDonateController;
 use App\Http\Controllers\Admin\adminEventsController;
 use App\Http\Controllers\Admin\adminContactController;
 use App\Http\Controllers\Admin\adminGalleryController;
+
 use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
@@ -74,6 +82,11 @@ Route::get('website-gallery', [galleryController::class, 'gallery'])->name('webs
 
 Route::get('website-paydues', [payduesController::class, 'paydues'])->name('website-pay-dues');
 
+Route::get('errorpage', [SoftController::class, 'index'])->name('errorpage');
+Route::get('notsuccess', [PaperController::class, 'index'])->name('notsuccess');
+Route::get('donationsuccess', [DonationsuccessController::class, 'index'])->name('donationsuccess');
+Route::get('duessuccess', [DuessuccessController::class, 'index'])->name('duessuccess');
+
 Route::get('website-register', [registerController::class, 'register'])->name('website-register')->middleware('payment.successful');
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
@@ -82,9 +95,7 @@ Route::get('website-registration', [registrationFeeController::class, 'index'])-
 
 Route::get('success', [successController::class, 'success'])->name('success');
 
-Route::get('donationsuccess', [donationController::class, 'index'])->name('donation-success');
 
-Route::get('dues-success', [duessuccessController::class, 'index'])->name('dues-success');
 
 Route::post('post', [registerController::class, 'store'])->name('send');
 Route::get('/get-member/{memberID}', [MemberController::class, 'getMember']);
@@ -96,6 +107,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/polar_chart_data', [webadminController::class, 'getPolarChartData']);
 
     Route::get('unitcommittee', [adminUnitcommitteememberController::class, 'index'])->name('unitcommittee');
+    Route::delete('delete_assembly/{id}', [adminUnitcommitteememberController::class, 'delete_assembly'])->name('delete_assembly');
     //Admin Associate members routes
     Route::get('associatemember', [adminAssociatememberController::class, 'index'])->name('associatemember');
     Route::delete('associate_destroy/{id}', [adminAssociatememberController::class, 'destroy'])->name('associate_destroy');
@@ -165,6 +177,7 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 // payment routes
 Route::post('/pay', [PaymentController::class, 'make_payment'])->name('pay');
 Route::get('/pay/callback', [PaymentController::class, 'payment_callback'])->name('callback');
-
+Route::get('/get-data/{transactionReference}', [adminPaymentController::class, 'getData'])->name('getData');
 Auth::routes();
 
+Auth::routes();

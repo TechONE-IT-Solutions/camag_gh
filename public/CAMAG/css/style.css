@@ -571,22 +571,6 @@
     overflow-y: hidden;
 }
 
-/* @media print {
-    body * {
-        visibility: hidden;
-    }
-    #myTable, #myTable * {
-        visibility: visible;
-    }
-    #myTable {
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-    .brian {
-        display: block;
-    }
-} */
 
 /* Print styles */
 @media print {
@@ -602,15 +586,3 @@
       top: 0;
     }
   }
-
-    .brian {
-       max-width: 150px;
-    }
-    /* .logo {
-        max-width: 250px;
-    } */
-
-    .MemberBliss
-    {
-        pointer-events: none;
-    }

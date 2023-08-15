@@ -9,6 +9,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
+
                     <h2 style="font-size:40px; padding-top:25px" class="text-success text-center">{{ $count->total }}</h2>
                     @php
                             $type = $count->type_of_membership
@@ -42,6 +43,20 @@
                 
               </script>
               <!-- End Polar Area Chart -->
+
+                    <p class="display-1 text-success">250</p>
+                    <p class="text">Assembly Members</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <p class="display-1 text-success">250</p>
+                    <p class="text">Unit Committee Members</p>
+                </div>
+
             </div>
           </div>
         </div>
@@ -55,6 +70,12 @@
               <script>
               </script>
               <!-- End Polar Area Chart -->
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <p class="display-1 text-success">250</p>
+                    <p class="text">Associate Members</p>
+                </div>
             </div>
           </div>
         </div>
@@ -62,6 +83,7 @@
        <!--  <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="card">
             <div class="card-body">
+
               <h5 class="card-title">Age Statistics</h5>
               <canvas id="age-chart" style="max-height: 800px;"></canvas>
               <script>
@@ -69,6 +91,9 @@
             </div>
           </div>
         </div> -->
+
+              <h5 class="card-title">Total Members In Every Region</h5>
+
 
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="card">
