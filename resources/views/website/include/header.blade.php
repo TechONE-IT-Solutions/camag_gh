@@ -7,14 +7,17 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
     <!-- Favicon -->
     <link href="{{asset('CAMAGADMIN/assets/img/favicon.png') }}" rel="icon">
 
     <!-- Datatable CSS-->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +47,8 @@
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
+
+
 
 
     <!-- Navbar Start -->
@@ -91,3 +96,7 @@
         </div>
     </div>
     <!-- Navbar End -->
+
+
+
+

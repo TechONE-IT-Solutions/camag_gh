@@ -107,10 +107,10 @@
                                 <div class="row justify-content-end">
                                     @foreach($number as $numdata)
                                     <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                                        <div class="card p-4">
+                                        <div class="card py-2">
                                             <div class="card-body">
-                                                <h2>{{$numdata['number']}}</h2>
-                                                <p class="lead">{{$numdata['text']}}</p>
+                                                <h5>{{$numdata['number']}}</h5>
+                                                <p class="">{{$numdata['text']}}</p>
                                             </div>
                                             <div class="col-12">
                                                 <form method="post" class="clear_form" action="{{ route('homepage.clear', $numdata['id']) }}">
@@ -161,7 +161,7 @@
                                                 <img src="{{ asset($new['image']) }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="card-body">
-                                                <h4>{{$new['text']}}</h4>
+                                                <p class="fw-bold">{{$new['text']}}</p>
                                                 <p class="news-card">{!! $new['textarea'] !!}</p>
                                             </div>
                                             <div class="card-footer">
@@ -169,7 +169,7 @@
                                                     <form method="post" class="cut_form" action="{{ route('homepage.cut', $new['id']) }}">
                                                         {{csrf_field()}}
                                                         <input type="hidden" name="_method" value="DELETE">
-                                                        <button type="submit" class=" btn btn-danger px-4">Delete</button>
+                                                        <button type="submit" class=" btn btn-danger px-2">Delete</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -214,15 +214,15 @@
                                             <div class="card-image">
                                                 <img src="{{ asset($team['image']) }}" alt="" class="img-fluid">
                                             </div>
-                                            <div class="card-body p-2">
-                                                <h3>{{$team['text']}}</h3>
+                                            <div class="card-body p-2 pb-2 text-center">
+                                                <p>{{$team['text']}}</p>
                                                 <p>{{$team['textarea']}}</p>
                                             </div>
                                             <div class="col-12 justify-content-center d-flex">
                                                 <form method="post" class="eliminate_form" action="{{ route('homepage.eliminate', $team['id']) }}">
                                                     {{csrf_field()}}
                                                     <input type="hidden" name="_method" value="DELETE">
-                                                    <button type="submit" class=" btn btn-danger px-4">Delete</button>
+                                                    <button type="submit" class=" btn btn-danger px-2">Delete</button>
                                                 </form>
                                             </div>
                                         </div>

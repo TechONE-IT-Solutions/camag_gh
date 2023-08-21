@@ -4,7 +4,9 @@
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Our Office</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Labone, Accra, Ghana</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+233 24 897 9400</p>
+                <a class="text-white" href="tel:+233 24 897 9400">
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+233 24 897 9400</p>
+                </a>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@camaghana.org</p>
                 <div class="d-flex pt-3">
                     <a class="btn btn-square btn-light rounded-circle me-2" href=""><i
@@ -81,24 +83,14 @@
     <script src="{{asset('CAMAG/lib/wow/wow.min.js') }}"></script>
     <script src="{{asset('CAMAG/lib/easing/easing.min.js') }}"></script>
     <script src="{{asset('CAMAG/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{asset('CAMAG/lib/owlcarousel/owl.carousel.min.js') }}""></script>
-    <script src="{{asset('CAMAG/lib/lightbox/js/lightbox.min.js') }}""></script>
+    <script src="{{asset('CAMAG/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{asset('CAMAG/lib/lightbox/js/lightbox.min.js') }}"></script>
     <script defer src="https://unpkg.com/vanilla-counter" onload="initializeCounterRANDOMID()"></script>
+    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
 
     <!-- Template Javascript -->
     <script src="{{asset('CAMAG/js/main.js') }}"></script>
     <script src="{{asset('CAMAG/js/counter.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.2/sweetalert.min.js" integrity="sha512-bQTg0yQoJONPPP2GJpVEWYayw5y7LmCrN+VMCr3l3jl1mn8a2yjYLDBkvt4TkQCJjLaI3kprfiJ2ivEUOw63ow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    @if(session('message'))
-    <script>
-        Swal.fire({
-            icon: '{{ session('status.icon') }}',
-            title: '{{ session('message.title') }}',
-            showConfirmButton: false,
-            timer: 1500 // The pop-up will automatically close after 1.5 seconds
-        });
-    </script>
-@endif
 </body>
 </html>

@@ -11,70 +11,32 @@
                 <div class="">
 
                 @component('components.members_view_button')
-                       
+
                 @endcomponent
 
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- Grid view Start -->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
+                            @foreach($unitcommittee as $unit)
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-1.jpg') }}" alt="" class="img-fluid">
+                                        <img src="{{asset($unit['photo']) }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="card-body p-3">
                                         <div class="row">
                                             <p class="col-6 label">Name:</p>
-                                            <p class="col-6">John Doe</p>
+                                            <p class="col-6">{{ $unit['name']}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-2.jpg') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-6 label">Name:</p>
-                                            <p class="col-6">John Doe</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
 
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-3.jpg') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-6 label">Name:</p>
-                                            <p class="col-6">John Doe</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="{{asset('CAMAGADMIN/assets/img/product-4.jpg') }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-6 label">Name:</p>
-                                            <p class="col-6">John Doe</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
-                
+
                     </div>
                     <!-- Grid view end -->
 
@@ -84,23 +46,32 @@
                         <table id="unitCommitteeMember" class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Gender</th>
                                     <th scope="col">Electoral Area</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Email Address</th>
+                                    <th scope="col" style="color:red">CLEAR</th>
+
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($unitcommittee as $unit)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Antwi Brian</td>
-                                    <td>Male</td>
-                                    <td>Kwabenya Agyemankata</td>
-                                    <td>054 449 6780</td>
-                                    <td>info@camaghana.com</td>
+                                    <td>{{ $unit['name']}}</td>
+                                    <td>{{ $unit['gender']}}</td>
+                                    <td>{{ $unit['electoral_area']}}</td>
+                                    <td>{{ $unit['telephone_number']}}</td>
+                                    <td>{{ $unit['email_address']}}</td>
+                                    <td>
+                                        <form action="{{ route('delete_assembly', $unit['id']) }}" method="POST" id="delete_assembly" class="assembly">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <button type="submit" class="btn btn-danger me-2"><i class="bi bi-trash"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -108,7 +79,6 @@
                             <div class="col">
                                 <div class="button-group">
                                     <button class="btn btn-secondary">Move</button>
-                                    <button class="btn btn-danger">Delete</button>
                                 </div>
                             </div>
                         </div>

@@ -31,6 +31,7 @@
   {{--summernote--}}
   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="{{asset('CAMAGADMIN/assets/css/style.css') }}" rel="stylesheet">
@@ -221,9 +222,14 @@
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li class="dropdown-item">
+       <!--  <li class="dropdown-item">
         <i class="bi bi-person-fill-add"></i>
             <a href="{{ route('register') }}" class="text-secondary">Register</a>
+        </li> -->
+
+        <li class="dropdown-item">
+          <i class="bi bi-person-fill-gear"></i>
+          <a href="{{ route('user_settings') }}" class="text-secondary">Settings</a>
         </li>
 
         <li>
