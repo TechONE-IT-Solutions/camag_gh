@@ -2,11 +2,6 @@
 
 
 @section('content')
-    @if(session('transaction_reference'))
-        <div class="alert alert-success">
-            Transaction Reference: {{ session('transaction_reference') }}
-        </div>
-    @endif
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -63,7 +58,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="transaction_reference" value="{{ session('transaction_reference') }}">
-                        
+
                         <div class="col-md-5 my-3">
                             <label for="sexRadioOptions">Sex:</label>
                             <div class="form-check form-check-inline">
@@ -273,7 +268,6 @@
                                               </div>
                                     <div class="col-12 d-flex justify-content-center">
                                 <button class="btn btn-primary m-3" type="submit">Submit form</button>
-                                <h1>{{ session('name') }}</h1>
                             </div>
 
                         </div>

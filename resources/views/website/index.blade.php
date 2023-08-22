@@ -7,8 +7,26 @@
 <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach($banners as $banner)
                 <div class="carousel-item active">
+                    <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 text-start">
+                                    <p class="fs-4 text-white animated slideInRight">Welcome to
+                                        <strong>CAMAG</strong>
+                                    </p>
+                                    <h3 class="display-1 text-white  animated slideInRight">Concerned Assembly</h3>
+                                    <h4 class="display-1 text-white  animated slideInRight">Hello</h4>
+                                    <a href="{{ route('website-registration') }}"
+                                        class="btn btn-primary  py-3 px-5 animated slideInRight">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @foreach($banners as $banner)
+                <div class="carousel-item">
                     <img class="w-100" src="{{asset($banner['image']) }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
@@ -27,25 +45,6 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- <div class="carousel-item">
-                    <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 text-start">
-                                    <p class="fs-4 text-white animated slideInLeft">Welcome to
-                                        <strong>CAMAG</strong>
-                                    </p>
-                                    <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
-                                    <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                    <a href="{{ route('website-registration') }}"
-                                        class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div> --}}
-
             {{-- <div class="carousel-item">
                 <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
                 <div class="carousel-caption">

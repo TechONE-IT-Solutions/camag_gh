@@ -31,6 +31,7 @@ class PaymentController extends Controller
             ],
         ];
 
+
         $pay = json_decode($this->initiate_payment($formData));
         if ($pay) {
             if ($pay->status) {
@@ -69,21 +70,21 @@ class PaymentController extends Controller
                 // Set the session variable to indicate successful payment
                 Session::put('payment_successful', true);
 
-                 // Perform the redirection based on the payment_type
-            if ($payment_type === 'registration') {
-                // Redirect to  website registration page
-                return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'payment_type', 'amount', 'transaction_reference'));
-            } elseif ($payment_type === 'donation') {
-                // Redirect to specific donation Thank you page
-                return redirect()->route('website-donate')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
-            } elseif ($payment_type === 'dues') {
-                // Redirect to specific dues payment successful page
-                return redirect()->route('website-paydue')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                // Perform the redirection based on the payment_type
+                if ($payment_type === 'registration') {
+                    // Redirect to  website registration page
+                    return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'payment_type', 'amount', 'transaction_reference'));
+                } elseif ($payment_type === 'donation') {
+                    // Redirect to specific donation Thank you page
+                    return redirect()->route('website-donate')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                } elseif ($payment_type === 'dues') {
+                    // Redirect to specific dues payment successful page
+                    return redirect()->route('website-paydue')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                } else {
+                    // Default redirection if no specific condition is met
+                    return view('success', compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                }
             } else {
-                // Default redirection if no specific condition is met
-                return view('success', compact('data', 'name', 'phone', 'payment_type', 'amount'));
-            }
-        }  else {
                 // Payment not successful, redirect to the appropriate page ( /not_successful_payment)
                 Session::put('payment_successful', false); // Set session variable to false for unsuccessful payment
                 return redirect('/not_successful_payment')->withError($response->message);
