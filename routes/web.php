@@ -40,6 +40,8 @@ use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
 
+
+
 use App\Http\Controllers\Admin\adminExecutivesController;
 use App\Http\Controllers\website\registrationFeeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
@@ -97,12 +99,12 @@ Route::get('success', [successController::class, 'success'])->name('success');
 
 
 
-Route::post('post', [registerController::class, 'store'])->name('send');
+Route::post('/send', [registerController::class, 'store'])->name('send');
 Route::get('/get-member/{memberID}', [MemberController::class, 'getMember']);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
-Route::prefix('admin')->middleware('auth')->group(function() {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', [webadminController::class, 'index'])->name('dashboard');
     Route::get('/polar_chart_data', [webadminController::class, 'getPolarChartData']);
 
@@ -171,7 +173,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 
     //
     Route::post('add_admin', [userSettings::class, 'storeAdminReg'])->name('add_admin_post');
-
 });
 
 // payment routes
