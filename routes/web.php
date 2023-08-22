@@ -73,7 +73,9 @@ Route::get('website-events', [eventsController::class, 'events'])->name('website
 
 //Contact routes
 Route::get('website-contact', [contactController::class, 'contact'])->name('website-contact');
+
 Route::post('website-contactUs', [contactUsController::class, 'send'])->name('website-contactUs');
+
 Route::get('contactUs', [contactUsController::class, 'show'])->name('contactUs');
 
 Route::get('website-gallery', [galleryController::class, 'gallery'])->name('website-gallery');

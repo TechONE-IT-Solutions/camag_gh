@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Mail;
 
 class contactUsController extends Controller
 {
-    public function send(Request $request){
+    public function send(Request $request)
+    {
         // Validate the form data
         $validatedData = $request->validate([
             'mail_name' => 'required|string|max:255',
@@ -23,7 +24,7 @@ class contactUsController extends Controller
 
         // Send the email using the ContactUsEmail Mailable class
         Mail::to('abdulhakim6490@gmail.com')->send(new ContactUsEmail($validatedData));
-        contact::create($validatedData);
+        // contact::create($validatedData);
 
         // Redirect back with a success message or perform any other actions
         return redirect()->back()->with([
@@ -32,8 +33,9 @@ class contactUsController extends Controller
         ]);
     }
 
-    public function show(){
-        $mails = contact::select('id','mail_name','mail_email','mail_head', 'mail_body')->get()->toArray();
-        return view('admin.contact', ['mails'=>$mails]);
+    public function show()
+    {
+        $mails = contact::select('id', 'mail_name', 'mail_email', 'mail_head', 'mail_body')->get()->toArray();
+        return view('admin.contact', ['mails' => $mails]);
     }
 }
