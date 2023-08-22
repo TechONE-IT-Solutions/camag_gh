@@ -74,7 +74,6 @@
                             </div>
                         </div>
 
-
                          <div class="form-floating col-md-4">
                             <input type="text" class="form-control" id="electoralArea" required name="electoral_area" value="{{ old('electoral_area') }}">
                             <label for="electoralArea" class="form-label">Electoral Area</label>
@@ -106,7 +105,6 @@
 
                         <div class="form-floating col-md-6">
                           <select class="form-select" name="region" id="region" required value="{{ old('region') }}">
-
                             <option>Greater Accra Region</option>
                             <option>Central Region</option>
                             <option>Western North Region</option>
