@@ -52,9 +52,9 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid bg-white sticky-top">
+    <div class="container-fluid bg-light sticky-top">
         <div class="wrapper">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
+            <nav class="navbar navbar-expand-lg  p-lg-0">
                 <div class=" log">
                     <a href="{{ route('website-home') }}" class="nav-item nav-link fs-4 fw-bolder mt-lg-3">
                         <img src="{{asset('CAMAG/img/logo.png') }}" alt="Image"  style="max-width: 210px; max-height: 70px;" class="img-fluid">

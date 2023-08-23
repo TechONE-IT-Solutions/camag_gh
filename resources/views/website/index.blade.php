@@ -9,7 +9,7 @@
             <div class="carousel-inner">
                 @foreach($banners as $banner)
                 <div class="carousel-item active">
-                    <img class="w-100" src="{{asset($banner['image']) }}" alt="Image">
+                    <img class="w-100 img-fluid carousel-image" src="{{asset($banner['image']) }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -17,7 +17,7 @@
                                     <p class="fs-4 text-white animated slideInRight">Welcome to
                                         <strong>CAMAG</strong>
                                     </p>
-                                    <h3 class="display-1 text-white  animated slideInRight">Concerned Assembly</h3>
+                                    <!-- <h3 class="display-1 text-white  animated slideInRight">Concerned Assembly</h3> -->
                                     <h4 class="display-1 text-white  animated slideInRight"> {{$banner['text']}}</h4>
                                     <a href="{{ route('website-registration') }}"
                                         class="btn btn-primary  py-3 px-5 animated slideInRight">Register Now</a>
