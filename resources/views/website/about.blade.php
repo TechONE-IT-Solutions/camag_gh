@@ -33,9 +33,9 @@
                             concepts must keep evolving to address the welfare needs of assemble members and make strong
                             the units within the decentralization process. CAMAG Membership is subjected to application.
                             One must be willing to join the association by applying as such.
-                        </p> 
+                        </p>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                     <div class="col-md-6 px-sm-5 py-lg-4">
                         <h3 class=" m-3">OUR VISION</h3>
                         <p>Building a vibrant association that seek to promote the welfare needs and interest of Assembly
-                            members and best practices in local governance and decentralization.
+                            members and best practices in local governance and decentralization concept in Ghana.
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -73,7 +73,7 @@
 </div>
 <!--Organisational overview-->
 
-<!--Principal Aim Section start-->           
+<!--Principal Aim Section start-->
 <div class="container">
 <div class="row justify-content-center ">
 <div class="col-lg-10 bg-primary text-white border rounded mt-4 py-5 px-lg-5">
@@ -83,14 +83,14 @@
         National and International with identical objectives for the promotion of effective and efficient
         local governance.
     </li>
-    <li class="mx-lg-5 my-lg-3">Provide a platform for deliberation and exchange of ideas, experience and information on matters 
+    <li class="mx-lg-5 my-lg-3">Provide a platform for deliberation and exchange of ideas, experience and information on matters
         of mutual concern related to local governance and decentralization.</li>
-    <li class="mx-lg-5 my-lg-3">To help promote education and fight against illiteracy and ignorance on the part of citizens of the 
+    <li class="mx-lg-5 my-lg-3">To help promote education and fight against illiteracy and ignorance on the part of citizens of the
         country as a major step towards the achievement of a total emancipation of the people.</li>
-    <li class="mx-lg-5 my-lg-3">To help Promote the development of Local government administration and decentralization in 
+    <li class="mx-lg-5 my-lg-3">To help Promote the development of Local government administration and decentralization in
         Ghana through Advocacy and Lobbying.
         </li>
-    <li class="mx-lg-5 my-lg-3">To help promote the development and prosperity of the country through identifying potentials in 
+    <li class="mx-lg-5 my-lg-3">To help promote the development and prosperity of the country through identifying potentials in
         our localities and the organization of voluntary and other social services .
         </li>
 </ul>
