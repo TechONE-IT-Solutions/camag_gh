@@ -135,7 +135,7 @@
                                 <form class="form-control" method="POST" action="{{ route('news') }}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="m-3">
-                                        <label for="newsImage" class="form-label">News Image</label>
+                                        <label for="newsImage" class="form-label">Image</label>
                                         <input type="file" name="newsImage" id="newsImage" class="form-control">
                                     </div>
                                     <div class="m-3">

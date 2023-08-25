@@ -29,7 +29,6 @@
   <link href="{{asset('CAMAGADMIN/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{asset('CAMAGADMIN/assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
   {{--summernote--}}
-  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -210,7 +209,7 @@
     <li class="nav-item dropdown pe-3">
 
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="{{asset('CAMAGADMIN/assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+        <img src="{{asset('CAMAGADMIN/assets/img/user1.jpg') }}" alt="Profile" class="rounded-circle">
         <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
       </a><!-- End Profile Iamge Icon -->
 
@@ -221,6 +220,13 @@
         </li>
         <li>
           <hr class="dropdown-divider">
+        </li>
+        <li class="dropdown-item">
+            <i class="bi bi-folder-minus"></i>
+            <a href="{{ route('moveAll')}}" id="moveMembers" class="text-secondary">Move</a>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
         </li>
        <!--  <li class="dropdown-item">
         <i class="bi bi-person-fill-add"></i>

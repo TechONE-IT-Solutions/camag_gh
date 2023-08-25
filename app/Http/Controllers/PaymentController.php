@@ -30,8 +30,6 @@ class PaymentController extends Controller
                 'redirect_url' => 'website-registration'
             ],
         ];
-
-
         $pay = json_decode($this->initiate_payment($formData));
         if ($pay) {
             if ($pay->status) {
@@ -76,10 +74,11 @@ class PaymentController extends Controller
                     return redirect()->route('website-register')->with(compact('data', 'name', 'phone', 'payment_type', 'amount', 'transaction_reference'));
                 } elseif ($payment_type === 'donation') {
                     // Redirect to specific donation Thank you page
-                    return redirect()->route('website-donate')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                    return redirect()->route('donationsuccess')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
                 } elseif ($payment_type === 'dues') {
                     // Redirect to specific dues payment successful page
-                    return redirect()->route('website-paydue')->with(compact('data', 'name', 'phone', 'payment_type', 'amount'));
+                    $paymentInfo =Payment::where('transaction_reference',$data->reference)->get();
+                    return redirect('/duessuccess')->with($paymentInfo);
                 } else {
                     // Default redirection if no specific condition is met
                     return view('success', compact('data', 'name', 'phone', 'payment_type', 'amount'));
@@ -123,6 +122,7 @@ class PaymentController extends Controller
 
         $result = curl_exec($ch);
         curl_close($ch);
+
 
         return $result;
     }

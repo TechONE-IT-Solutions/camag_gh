@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class payduesController extends Controller
 {
@@ -12,7 +13,8 @@ class payduesController extends Controller
      */
     public function paydues()
     {
-         return view("website.paydues");
+        $result['udues'] = Admin::get_regdues('U_dues');
+         return view("website.paydues")->with($result);
         //
     }
 

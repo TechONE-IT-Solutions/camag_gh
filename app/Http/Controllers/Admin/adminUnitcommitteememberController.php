@@ -14,7 +14,7 @@ class adminUnitcommitteememberController extends Controller
      */
     public function index()
     {
-        $unitcommittee = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'AssociateMember')->get()->toArray();
+        $unitcommittee = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'UnitCommiteeMember')->get()->toArray();
         return view('admin.unitcommittee', ['unitcommittee'=>$unitcommittee]);
         //
     }
