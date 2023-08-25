@@ -45,7 +45,7 @@ class adminGalleryController extends Controller
             'image'=> $destinationPath . '/' . $myimage
         ];
         Admin::create($postdata);
-        return redirect('gallery')->with(['message' => 'Picture Inserted Successfully!!', 'status'=> 'success']);
+        return redirect()->back()->with(['message' => 'Picture Inserted Successfully!!', 'status'=> 'success']);
     }
 
     /**
@@ -79,6 +79,6 @@ class adminGalleryController extends Controller
     {
         $picture = Admin::find($id);
         $picture->delete();
-        return redirect('gallery')->with(['message' => 'Picture deleted', 'status'=> 'danger']);
+        return redirect()->back()->with(['message' => 'Picture deleted', 'status'=> 'danger']);
     }
 }
