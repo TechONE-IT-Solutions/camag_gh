@@ -78,13 +78,6 @@
                             </tbody>
                         </table>
                     </div>
-                        <div class="row justify-centent-end">
-                            <div class="col">
-                                <div class="button-group">
-                                    <button class="btn btn-secondary">Move</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
               </div>

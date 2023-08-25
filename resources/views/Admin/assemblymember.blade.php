@@ -15,7 +15,7 @@
             <div class="">
 
                     @component('components.members_view_button')
-                        
+
                     @endcomponent
 
                 <div class="tab-content" id="pills-tabContent">
@@ -23,7 +23,7 @@
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
 
                         <div class="row">
-                            @foreach($assemblymen as $assemblyman)    
+                            @foreach($assemblymen as $assemblyman)
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <a href="{{ route('profile') }}">
                                     <div class="card">
@@ -79,20 +79,12 @@
                         </tbody>
                     </table>
                 </div>
-                    <div class="row justify-content-end">
-                            <div class="col">
-                                <div class="button-group">
-                                    <button class="btn btn-secondary">Move</button>
-                                    <button class="btn btn-danger">Danger</button>
-                                </div>
-                            </div>
-                        </div> 
                     </div>
                      <!-- Tables end -->
 
                 </div>
             </div>
-            
+
               <!-- End Vertical Pills Tabs -->
 
 

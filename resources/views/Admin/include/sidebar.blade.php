@@ -22,26 +22,13 @@
           <i class="bi bi-circle"></i><span>Home</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a href="{{ route('about') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>About</span>
-        </a>
-      </li>
-      <!-- <li class="nav-item">
-        <a href="{{ route('charts') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>Charts</span>
-        </a>
-      </li> -->
+
       <li class="nav-item">
         <a href="{{ route('executive') }}" class="nav-link collapsed">
           <i class="bi bi-circle"></i><span>Executive members</span>
         </a>
       </li>
-      <!-- <li class="nav-item">
-        <a href="{{ route('contact') }}" class="nav-link collapsed">
-          <i class="bi bi-circle"></i><span>Contact</span>
-        </a>
-      </li> -->
+
       <li class="nav-item">
         <a href="{{ route('events') }}" class="nav-link collapsed">
           <i class="bi bi-circle"></i><span>Events</span>
@@ -80,7 +67,7 @@
     </ul>
   </li>
 
-  
+
     <li class="nav-item">
       <a href="{{ route('payment') }}" class="nav-link collapsed">
         <i class="bi bi-credit-card"></i>
@@ -91,7 +78,12 @@
         <a href="{{ route('contact') }}" class="nav-link collapsed">
         <i class="bi bi-bell"></i><span>Notifications</span>
         </a>
-      </li>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('composeForAll') }}" class="nav-link collapsed">
+            <i class="bi bi-envelope-at-fill"></i><span>Compose Email</span>
+        </a>
+    </li>
 
 </ul>
 </aside><!-- End Sidebar-->

@@ -11,7 +11,7 @@ class MemberController extends Controller
     public function getMember($memberID)
     {
         $member = homepage::where('membership_id', $memberID)->first();
-        // dd($member->name);
+        
         if ($member) {
             return response()->json([
                 'success' => true,

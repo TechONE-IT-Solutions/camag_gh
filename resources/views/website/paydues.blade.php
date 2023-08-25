@@ -16,7 +16,7 @@
               <!-- Name Input -->
 
                 <div class="form-floating mb-2">
-                    <input class="form-control" id="memberid" type="text" placeholder="Member ID" data-sb-validations="required" />
+                    <input class="form-control" id="memberid" name="memberId" type="text" placeholder="Member ID" data-sb-validations="required" />
                     <label for="Memberid">Member ID</label>
                     <div class="invalid-feedback" data-sb-feedback="memberid:required">Member ID is required.</div>
                 </div>
@@ -34,18 +34,19 @@
 
 
                   <div class="form-floating mb-2">
-                    <select class="form-select" id="dropdown" data-sb-validations="required">
-                      <option value="1">One Month</option>
-                        <option value="3">Three Months</option>
-                        <option value="6">Six Months</option>
-                        <option value="12">One Year</option>
-                        <option value="24">Two Years</option>
-                        <option value="36">Three Years</option>
-                        <option value="48">Four Years</option>
+                    <select class="form-select" id="dropdown" name="amount" data-sb-validations="required">
+                        <option value="{{ $udues }}">One Month</option>
+                        <option value="{{ 3 * $udues }}">Three Months</option>
+                        <option value="{{ 6 * $udues }}">Six Months</option>
+                        <option value="{{ 12 * $udues }}">One Year</option>
+                        <option value="{{ 24 * $udues }}">Two Years</option>
+                        <option value="{{ 36 * $udues }}">Three Years</option>
+                        <option value="{{ 48 * $udues }}">Four Years</option>
                     </select>
                     <label for="dropdown">Month To Pay</label>
                     <div class="invalid-feedback" data-sb-feedback="dropdown:required">Please select an option.</div>
                 </div>
+
 
 
                 <!-- Submit success message -->
@@ -103,7 +104,6 @@
     document.getElementById('memberid').addEventListener('keyup', function() {
         console.log('key pressed')
         const memberID = this.value;
-
         // Send an AJAX request to the backend to fetch member details
         fetch(`/get-member/${memberID}`)
             .then(response => response.json())

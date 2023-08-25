@@ -36,6 +36,19 @@
         $('.dropdown-toggle').dropdown();
     });
 </script>
+<script>
+    let move = document.getElementById('moveMembers');
+    move.addEventListener('click',function(e){
+        let confirmMember = confirm('Is the four years up, do you want to move all of the members?')
+        if(confirmMember){
+            return true;
+        }
+        else{
+            e.preventDefault();
+            return false;
+        }
+    });
+</script>
 </body>
 
 </html>
