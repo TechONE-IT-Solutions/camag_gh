@@ -64,6 +64,6 @@ class adminAssociatememberController extends Controller
     {
         $associateMember = homepage::find($id);
         $associateMember->delete();
-        return redirect('admin/associatemember')->with(['message'=> 'Associate Member deleted', 'status'=> 'danger']);
+        return redirect()->back()->with(['message'=> 'Associate Member deleted', 'status'=> 'danger']);
     }
 }
