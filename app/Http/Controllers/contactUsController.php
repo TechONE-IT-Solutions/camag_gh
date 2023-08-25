@@ -33,9 +33,4 @@ class contactUsController extends Controller
         ]);
     }
 
-    public function show()
-    {
-        $mails = contact::select('id', 'mail_name', 'mail_email', 'mail_head', 'mail_body')->get()->toArray();
-        return view('admin.contact', ['mails' => $mails]);
-    }
 }

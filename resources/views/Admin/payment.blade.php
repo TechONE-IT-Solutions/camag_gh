@@ -28,21 +28,19 @@
                 <table id="duesTable" class="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Membership ID</th>
                             <th scope="col">Full Name</th>
                             <th scope="col">Phone Number</th>
-                            <th scope="col">Email</th>
                             <th scope="col">Amount Paid</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($duesW as $dues)
                         <tr>
-                            <td>1</td>
-                            <td>Antwi Brian</td>
-                            <td>054 449 6780</td>
-                            <td>info@camaghana.com</td>
-                            <td>200</td>
+                            <td>{{ $dues['name']}}</td>
+                            <td>{{ $dues['phone']}}</td>
+                            <td>{{ $dues['amount']}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -60,11 +58,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Antwi Brian</td>
-                                <td>054 449 6780</td>
-                                <td>1000000</td>
-                            </tr>
+                            @foreach ($donations as $donation)
+                                <tr>
+                                    <td>{{ $donation['name']}}</td>
+                                    <td>{{ $donation['phone']}}</td>
+                                    <td>{{ $donation['amount']}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -111,7 +111,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="text-center">
-                                            <span style="font-size: 42px" class="text-success">₵{{ $uregistration }}</span>
+                                            <span style="font-size: 42px" class="text-success">₵{{$result['uregistration']}}</span>
                                         </div><hr>
                                         <div class="text-center">
                                             <span style="font-size: 18px;">Registration Current Amount</span>
@@ -120,7 +120,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="text-center">
-                                            <span style="font-size: 42px" class="text-success">₵{{ $udues }}</span>
+                                            <span style="font-size: 42px" class="text-success">₵{{ $result['udues'] }}</span>
                                         </div><hr>
                                         <div class="text-center">
                                             <span style="font-size: 18px;">Current Amount for dues</span>

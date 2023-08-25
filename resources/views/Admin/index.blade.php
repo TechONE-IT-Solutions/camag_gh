@@ -2,6 +2,12 @@
 
 
 @section('content')
+
+    @if(session('message'))
+    <div class="alert alert-{{ session('status') }}">
+        {{ session('message') }}
+    </div>
+    @endif
 <div class="container">
     <div class="row">
 
@@ -37,12 +43,12 @@
               <h5 class="card-title">Total Members In Every Region</h5>
               <!-- Polar Area Chart -->
               <!-- <canvas id="membershipGraph" style="max-height: 800px;"></canvas> -->
-              <canvas id="polar-area-chart" style="max-height: 800px;"></canvas> 
+              <canvas id="polar-area-chart" style="max-height: 800px;"></canvas>
             </div>
           </div>
         </div>
 
-       
+
 
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="card">
@@ -53,11 +59,11 @@
               <script>
               </script>
               <!-- End Polar Area Chart -->
-        
+
             </div>
           </div>
         </div>
-        
+
        <!--  <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="card">
             <div class="card-body">
@@ -70,7 +76,7 @@
           </div>
         </div> -->
 
-            
+
 
 
         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -82,7 +88,7 @@
               <canvas id="marital-chart" style="max-height: 800px;"></canvas>
 
               <script>
-                
+
               </script>
               <!-- End Polar Area Chart -->
             </div>
@@ -98,17 +104,17 @@
               <canvas id="education-chart" style="max-height: 800px;"></canvas>
 
               <script>
-                
+
               </script>
               <!-- End Polar Area Chart -->
             </div>
           </div>
         </div>
-        
+
 </div>
 </div>
 
-    
+
 
 <script>
         // Get data from the controller
@@ -174,7 +180,7 @@
             }
         }
     });
-  
+
           var genderData = @json($genders);
           var g_labels = genderData.map(item => item.gender);
           var g_data = genderData.map(item => item.total);
@@ -250,7 +256,7 @@
                     label: 'Gender Statistics',
                     data: m_data,
                     backgroundColor: [
-                    
+
                       'rgb(75, 192, 192)',
                       'rgb(54, 162, 235)',
                       'rgb(255, 99, 132)',
@@ -262,7 +268,7 @@
                       'rgb(255, 99, 132)',
                       'rgb(201, 203, 207)',
                       'rgb(255, 205, 86)',
-                    
+
                         // Add more colors as needed
                     ],
                     borderColor: [
@@ -294,7 +300,7 @@
           });
 
 
-        
+
 
           var educationData = @json($educations);
           var e_labels = educationData.map(item => item.educational_level);

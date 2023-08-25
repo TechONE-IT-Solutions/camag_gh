@@ -6,42 +6,46 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userSettings;
 use App\Http\Controllers\SoftController;
 use App\Http\Controllers\PaperController;
+use App\Http\Controllers\moveAllController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ActivateController;
 use App\Http\Controllers\contactUsController;
+
 use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\DuessuccessController;
-
+use App\Http\Controllers\Admin\MemberController;
+use App\Http\Controllers\composeEmailController;
 use App\Http\Controllers\website\blogController;
+
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\teamController;
 use App\Http\Controllers\website\aboutController;
 use App\Http\Controllers\Admin\webadminController;
-
 use App\Http\Controllers\website\donateController;
+
 use App\Http\Controllers\website\eventsController;
 use App\Http\Controllers\DonationsuccessController;
 use App\Http\Controllers\website\contactController;
-use App\Http\Controllers\website\galleryController;
 
+
+use App\Http\Controllers\website\galleryController;
 use App\Http\Controllers\website\payduesController;
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
-
-
 use App\Http\Controllers\website\registerController;
 use App\Http\Controllers\Admin\adminChartsController;
+
 use App\Http\Controllers\Admin\adminDonateController;
 use App\Http\Controllers\Admin\adminEventsController;
 use App\Http\Controllers\Admin\adminContactController;
 use App\Http\Controllers\Admin\adminGalleryController;
 
+
+
 use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
 use App\Http\Controllers\Admin\adminHomepageController;
-
-
-
 use App\Http\Controllers\Admin\adminExecutivesController;
 use App\Http\Controllers\website\registrationFeeController;
 use App\Http\Controllers\Admin\adminAssemblymemberController;
@@ -78,8 +82,6 @@ Route::get('website-contact', [contactController::class, 'contact'])->name('webs
 
 Route::post('website-contactUs', [contactUsController::class, 'send'])->name('website-contactUs');
 
-Route::get('contactUs', [contactUsController::class, 'show'])->name('contactUs');
-
 Route::get('website-gallery', [galleryController::class, 'gallery'])->name('website-gallery');
 
 Route::get('website-paydues', [payduesController::class, 'paydues'])->name('website-pay-dues');
@@ -100,7 +102,12 @@ Route::get('success', [successController::class, 'success'])->name('success');
 
 
 Route::post('/send', [registerController::class, 'store'])->name('send');
-Route::get('/get-member/{memberID}', [MemberController::class, 'getMember']);
+Route::get('/get-member/{memberID}', [MemberController::class, 'getMember'])->name('getMember');
+
+Route::get('/activate',[ActivateController::class, 'index'])->name('activate');
+Route::post('/activate',[ActivateController::class, 'store'])->name('activationPost');
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Admin Routes {
@@ -173,6 +180,13 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     //
     Route::post('add_admin', [userSettings::class, 'storeAdminReg'])->name('add_admin_post');
+
+    // Route::get('contactUs', [contactUsController::class, 'show'])->name('contactUs');
+    Route::get('moveAll', [moveAllController::class, 'index'])->name('moveAll');
+
+    // compose Email for all Routes
+    Route::get('/composeForAll',[composeEmailController::class, 'index'])->name('composeForAll');
+    Route::post('/composeForAll',[composeEmailController::class, 'store'])->name('composeForAllPost');
 });
 
 // payment routes

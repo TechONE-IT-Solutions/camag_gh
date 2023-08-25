@@ -14,12 +14,17 @@ class adminPaymentController extends Controller
      */
     public function index()
     {
-        //$result['udues'] = Admin::where('meta_key', 'U_dues');
-        //$result['uregistration'] = Admin::where('meta_key', 'U_registration');
+        $duesW = Payment::where('payment_type','dues')->get();
+        $donations = Payment::where('payment_type','donation')->get();
+
         $result['udues'] = Admin::get_regdues('U_dues');
         $result['uregistration'] = Admin::get_regdues('U_registration');
 
-        return view('admin.payment')->with($result);
+        return view('admin.payment', [
+            'result' => $result,
+            'duesW' => $duesW,
+            'donations' => $donations,
+        ]);
         //
     }
 

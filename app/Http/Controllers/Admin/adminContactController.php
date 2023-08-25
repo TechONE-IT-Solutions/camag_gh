@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +14,8 @@ class adminContactController extends Controller
      */
     public function index()
     {
-        return view('admin.contact');
+        $mails = contact::select('id', 'mail_name', 'mail_email', 'mail_head', 'mail_body')->get()->toArray();
+        return view('admin.contact',['mails' => $mails]);
         //
     }
 

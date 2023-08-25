@@ -26,7 +26,7 @@ class ContactUsEmail extends Mailable
     public function build()
     {
         return $this->view('email.contact_email')
-                    ->subject('New Contact Us Form Submission')
+                    ->subject('Action Required CAMAG')
                     ->with([
                         'mail_name' => $this->formData['mail_name'],
                         'mail_email' => $this->formData['mail_email'],

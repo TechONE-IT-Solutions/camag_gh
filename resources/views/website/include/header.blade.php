@@ -81,6 +81,7 @@
                                 <a href="{{ route('website-registration') }}" class="dropdown-item">Register</a>
                                 <a href="{{ route('website-donate') }}" class="dropdown-item">Donate</a>
                                 <a href="{{ route('website-pay-dues') }}" class="dropdown-item ">Pay Dues</a>
+                                <a href="{{ route('activate')}}" class="dropdown-item ">Acticate</a>
 
                             </div>
                         </div>
