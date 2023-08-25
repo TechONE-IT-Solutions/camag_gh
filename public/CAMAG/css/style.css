@@ -183,7 +183,7 @@ h1 {
 .carousel-caption {
     left: 0;
     right: 0;
-    bottom: 10%;
+    bottom: 5%;
     display: flex;
     align-items: center;
     background: rgba(0, 0, 0, .1);
@@ -219,8 +219,43 @@ h1 {
     }
 }
 
+.page-header-gallery {
+    background: linear-gradient(to top, #0000009e, transparent),url(../img/site-2.jpeg)   no-repeat;
+    background-size: cover;
+    background-position: center center !important;
+    background-blend-mode: multiply;
+}
+
+.page-header-contact {
+    background: linear-gradient(to top, #0000009e, transparent),url(../img/site-2.jpeg) no-repeat;
+    background-size: cover;
+    background-position: center !important;
+    background-blend-mode: multiply;
+}
+
+.page-header-members {
+    background: linear-gradient(to top, #000000c3, transparent),url(../img/site-7.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center !important;
+    background-blend-mode: multiply;
+}
+
+.page-header-events {
+    background: linear-gradient(to top, #0000009e, transparent),url(../img/site-5.webp)   no-repeat;
+    background-size: cover;
+    background-position: center !important;
+    background-blend-mode: multiply;
+}
+
+.page-header-about {
+    background: linear-gradient(to top, #0000009e, transparent),url(../img/back.jpg)   no-repeat;
+    background-size: cover;
+    background-position: center center !important;
+    background-blend-mode: multiply;
+}
+
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/carousel-1.jpg)   no-repeat;
+    background:  url(../img/carousel-1.jpg)   no-repeat;
     background-size: cover;
     background-position: center !important;
 
@@ -575,7 +610,7 @@ h1 {
     object-fit: cover;
     height:800px;
 }
-.hakim{
+.hakim {
     margin-top: 10%;
     margin-left: 10%;
     background-color: transparent;
@@ -585,12 +620,15 @@ h1 {
     border: 1px solid rgb(205, 201, 201);
 
 }
-.Halius
+.blog-card
 {
-    max-height: 400px;
+    max-height: 260px;
     overflow-y: hidden;
 }
 
+.recent-post {
+    max-height: 600px;
+}
 
 /* Print styles */
 @media print {

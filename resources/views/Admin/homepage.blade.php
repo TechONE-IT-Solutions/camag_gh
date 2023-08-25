@@ -42,11 +42,11 @@
                                         @csrf
                                         <div class="my-3">
                                             <label for="startImage" class="form-label">Start Image</label>
-                                            <input type="file" name="image" id="startImage" class="form-control">
+                                            <input type="file" name="image" id="startImage" class="form-control" required>
                                         </div>
                                         <div class="my-3">
                                             <label for="startText" class="form-label">Start Text</label>
-                                            <input type="text" name="text" class="form-control" id="startText">
+                                            <input type="text" name="text" class="form-control" id="startText" required>
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <button type="submit" class="px-4 btn btn-primary">Add</button>
@@ -91,11 +91,11 @@
                                     @csrf
                                     <div class="my-3">
                                         <label for="statsText" class="form-label">Counter Text</label>
-                                        <input type="text" name="text" id="statNumber" class="form-control">
+                                        <input type="text" name="text" id="statNumber" class="form-control" required>
                                     </div>
                                     <div class="my-3">
                                         <label for="statsNumber" class="form-label">Counter Number</label>
-                                        <input type="number" name="number" id="statsText" class="form-control">
+                                        <input type="number" name="number" id="statsText" class="form-control" required>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary px-3">Add</button>
@@ -136,15 +136,15 @@
                                     @csrf
                                     <div class="m-3">
                                         <label for="newsImage" class="form-label">News Image</label>
-                                        <input type="file" name="newsImage" id="newsImage" class="form-control">
+                                        <input type="file" name="newsImage" id="newsImage" class="form-control" required>
                                     </div>
                                     <div class="m-3">
                                         <label for="newsHeadline" class="form-label">News Headline</label>
-                                        <input type="text" name="newsHeadline" id="newsHeadline" class="form-control">
+                                        <input type="text" name="newsHeadline" id="newsHeadline" class="form-control" required>
                                     </div>
                                     <div class="m-3">
                                         <label for="newsDescription" class="form-label">News Description</label>
-                                        <textarea name="newsBody" id="mysummernote" style="height: 200px;" class="form-control"></textarea>
+                                        <textarea name="newsBody" id="mysummernote" style="height: 200px;" class="form-control" required></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary m-3 px-4">Add</button>
@@ -156,7 +156,7 @@
                                 <div class="row">
                                     @foreach($news as $new)
                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="card ">
+                                        <div class="card blog-card">
                                             <div class="card-image">
                                                 <img src="{{ asset($new['image']) }}" alt="" class="img-fluid">
                                             </div>
@@ -190,15 +190,15 @@
                                     @csrf
                                     <div class="m-3">
                                         <label for="teamImage" class="form-label">Team Member's Image</label>
-                                        <input type="file" name="teamImage" id="teamImage" class="form-control">
+                                        <input type="file" name="teamImage" id="teamImage" class="form-control" required>
                                     </div>
                                     <div class="m-3">
                                         <label for="teamName" class="form-label">Name</label>
-                                        <input type="text" name="teamName" id="teamName" class="form-control">
+                                        <input type="text" name="teamName" id="teamName" class="form-control" required>
                                     </div>
                                     <div class="m-3">
                                         <label for="teamTitle" class="form-label">Title</label>
-                                        <textarea name="teamTitle" id="teamTitle" style="height: 120px;" class="form-control"></textarea>
+                                        <textarea name="teamTitle" id="teamTitle" style="height: 120px;" class="form-control" required></textarea>
                                     </div>
                                     <div class="col-12 d-flex justify-content-center">
                                             <button type="submit" class="btn btn-primary m-3 px-4">Add</button>

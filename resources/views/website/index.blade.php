@@ -1,5 +1,5 @@
 @extends('layouts/website')
-
+ 
 
 @section('content')
 <!-- Carousel Start -->
@@ -7,8 +7,26 @@
 <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach($banners as $banner)
+
                 <div class="carousel-item active">
+                    <img class="w-100" src="{{asset('CAMAG/img/carousel-mahama.jpg') }}" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 text-start">
+                                    <p class="fs-4 text-white animated slideInLeft">Welcome to
+                                        <strong>CAMAG</strong>
+                                    </p>
+                                    <h4 class="display-1 text-white  animated slideInLeft">H.E John Dramani Mahama</h4>
+                                    <a href="{{ route('website-registration') }}"
+                                        class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @foreach($banners as $banner)
+                <div class="carousel-item">
                     <img class="w-100 img-fluid carousel-image" src="{{asset($banner['image']) }}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
@@ -27,26 +45,10 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- <div class="carousel-item">
-                    <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-7 text-start">
-                                    <p class="fs-4 text-white animated slideInLeft">Welcome to
-                                        <strong>CAMAG</strong>
-                                    </p>
-                                    <h3 class="display-1 text-white  animated slideInLeft">Concerned Assembly</h3>
-                                    <h4 class="display-1 text-white  animated slideInLeft"> Members Association of Ghana</h4>
-                                    <a href="{{ route('website-registration') }}"
-                                        class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div> --}}
 
-            {{-- <div class="carousel-item">
+                
+
+            <!-- {{-- <div class="carousel-item">
                 <img class="w-100" src="{{asset('CAMAG/img/back22.jpg') }}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
@@ -64,7 +66,7 @@
                 </div>
             </div>
 
-        </div> --}}
+        </div> --}} -->
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -207,15 +209,9 @@
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
                 @foreach($news as $new)
-                <div class="project-item mb-5 Halius">
+                <div class="project-item mb-5 blog-card">
                     <div class="position-relative">
                         <img class="img-fluid" src="{{asset($new['image']) }}" alt="">
-                        <div class="project-overlay">
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href="{{asset('CAMAG/img/project-1.jpg') }}"
-                                data-lightbox="project"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-light rounded-circle m-1" href=""><i
-                                    class="fa fa-link"></i></a>
-                        </div>
                     </div>
                     <div class="p-4">
                         <a class="d-block h5" href="{{ route('website-blog', ['id' => $new['id']]) }}">{{$new['text']}}</a>
@@ -263,7 +259,7 @@
 
                     <h1 class=" mb-4">For Any Eny Enquiries</h1>
 
-                    <p>"Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
+                    <p>Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="tel:+233 24 897 9400;">
 
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">

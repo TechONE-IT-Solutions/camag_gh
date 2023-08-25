@@ -48,9 +48,6 @@
     </div>
     <!-- Spinner End -->
 
-
-
-
     <!-- Navbar Start -->
     <div class="container-fluid bg-light sticky-top">
         <div class="wrapper">

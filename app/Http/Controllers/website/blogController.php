@@ -18,6 +18,7 @@ class blogController extends Controller
         return view('website.blog',['blog_post'=>$blog_post]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
