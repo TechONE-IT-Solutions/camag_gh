@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class galleryController extends Controller
 {
@@ -12,7 +13,9 @@ class galleryController extends Controller
      */
     public function gallery()
     {
-         return view("website.gallery");
+        $Gallery = Admin::select('id','meta_key', 'text', 'number', 'image')->where('meta_key', 'AGallery')->get()->toArray();
+
+         return view("website.gallery",['Gallery'=>$Gallery]);
         //
     }
 
