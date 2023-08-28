@@ -25,8 +25,30 @@
              <form class="row g-3 needs-validation shadow-lg rounded" method="POST" enctype="multipart/form-data" action="{{ route('send') }}" id="register_form" novalidate>
               @csrf
                 <div class="h3 fw-light text-center  my-3">Please Fill in The Form To Register</div>
+                {{-- first time --}}
+                <div class="col-12">
+                    <label for="">First time</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="firsttime" id="yes" value="yes" required>
+                        <label class="form-check-label" for="maritalRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="firsttime" id="no" value="no">
+                        <label class="form-check-label" for="maritalRadio2">No</label>
+                    </div>
+                </div>
 
-                        <div class="form-floating col-md-12">
+                <div class="form-floating col-md-12 init_mem_id" id="init">
+                    <input type="text" class="form-control" id="first_time" name="intiMemId">
+                    <label for="name" class="form-label"> Your Initial Membership ID:</label>
+                    <div class="invalid-feedback">
+                      Membership ID
+                    </div>
+                  </div>
+                <hr>
+                  {{-- first time end --}}
+
+                        <div class="form-floating col-md-12 mt-5">
                           <input type="text" class="form-control name_phone" id="name" required name="name" value="{{ old('name') }}">
                           <label for="name" class="form-label"> Name</label>
                           <div class="invalid-feedback">
@@ -62,7 +84,7 @@
                         <div class="col-md-5 my-3">
                             <label for="sexRadioOptions">Sex:</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="sex" id="sexRadio1" value="Male">
+                                <input class="form-check-input" type="radio" name="sex" id="sexRadio1" value="Male" required>
                                 <label class="form-check-label" for="sexRadio1">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
@@ -129,24 +151,24 @@
                           </div>
 
                         <div class="form-floating col-12">
-                            <input type="text" class="form-control" id="validationCustom05" required name="nationality" value="{{ old('nationality') }}">
-                            <label for="validationCustom05" class="form-label">Nationality</label>
+                            <input type="text" class="form-control" id="nationality" required name="nationality" value="{{ old('nationality') }}">
+                            <label for="nationality" class="form-label">Nationality</label>
                           <div class="invalid-feedback">
                             Please provide your Nationality.
                           </div>
                         </div>
 
                         <div class="form-floating col-md-6">
-                            <input type="text" class="form-control" id="validationCustom02" required name="residential_address" value="{{ old('residential_address') }}">
-                            <label for="validationCustom02" class="form-label">Residential Address</label>
+                            <input type="text" class="form-control" id="residentialAddress" required name="residential_address" value="{{ old('residential_address') }}">
+                            <label for="residentialAddress" class="form-label">Residential Address</label>
                             <div class="invalid-feedback">
                               Please enter your Residential Address!
                             </div>
                           </div>
 
                           <div class="form-floating col-md-6">
-                              <input type="text" class="form-control" id="validationCustom02" required name="digital_address" value="{{ old('digital_address') }}">
-                              <label for="validationCustom02" class="form-label">Digital Address</label>
+                              <input type="text" class="form-control" id="digitalAddress" required name="digital_address" value="{{ old('digital_address') }}">
+                              <label for="digitalAddress" class="form-label">Digital Address</label>
                             <div class="invalid-feedback">
                               Please provide your valid Digital Address!
                             </div>
@@ -155,16 +177,16 @@
                           <div class="col-12">
                             <label for="">Marital Status:</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ms" id="maritalRadio1" value="Single" required>
-                                <label class="form-check-label" for="maritalRadio1">Single</label>
+                                <input class="form-check-input" type="radio" name="ms" id="marital1" value="Single" required>
+                                <label class="form-check-label" for="marital1">Single</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="ms" id="sexRadio2" value="Married">
-                                <label class="form-check-label" for="maritalRadio2">Married</label>
+                                <label class="form-check-label" for="marital2">Married</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="ms" id="maritalRadio3" value="Divorced">
-                                <label class="form-check-label" for="maritalRadio3">Divorced</label>
+                                <input class="form-check-input" type="radio" name="ms" id="marital3" value="Divorced">
+                                <label class="form-check-label" for="marital3">Divorced</label>
                             </div>
                           </div>
 
@@ -178,8 +200,8 @@
                               </div>
 
                               <div class="form-floating col-12">
-                                  <input type="email" class="form-control" id="validationCustom02" name="email_address" value="{{ old('email_address') }}">
-                                  <label for="validationCustom02" class="form-label">Email Address</label>
+                                  <input type="email" class="form-control" id="email" name="email_address" value="{{ old('email_address') }}">
+                                  <label for="email" class="form-label">Email Address</label>
                                 <div class="invalid-feedback">
                                   Please provide your Email Address!
                                 </div>
@@ -257,7 +279,7 @@
 
                                               <div class="form-floating col-md-6">
                                                     <input type="text" class="form-control" id="signature" required name="signature" value="{{ old('signature') }}">
-                                                    <label for="validationCustom02" class="form-label">Name</label>
+                                                    <label for="signature" class="form-label">Name</label>
                                                     <p>By typing your name you have signed.</p>
                                                     <div class="invalid-feedback">
                                                     Please provide the Name!
@@ -274,6 +296,14 @@
                     </div>
                 </div>
     <!--Registration form end-->
+
+
+
+
+    {{-- modal --}}
+
+
+      {{-- modal end --}}
 
 <script>
    window.addEventListener('load', function(){
@@ -301,6 +331,55 @@ document.getElementById('register_form').addEventListener('submit', function(e){
 
     }
 })
+</script>
+<script>
+    const yes = document.getElementById('yes');
+    yes.addEventListener('click', function(){
+        let init = document.getElementById('init');
+        init.style.display = "none";
+        init.required = false;
+    })
+    const no = document.getElementById('no');
+    no.addEventListener('click', function(){
+        let init = document.getElementById('init');
+        init.style.display = "block";
+        inti.required = true;
+    });
+</script>
+<script>
+    const firstTimeInput = document.getElementById('first_time');
+    firstTimeInput.addEventListener('keyup', function(){
+        const firstTimeInputValue = document.getElementById('first_time').value.toUpperCase();
+        const fetchUrl = `/get-formData/${firstTimeInputValue}`;
+
+        fetch(fetchUrl).then(response => response.json()).then(data => {
+            if (data.success) {
+                // Access the properties of the member object and set the values of HTML elements
+                document.getElementById('name').value = data.member.name;
+                document.getElementById('phone').value = data.member.telephone_number;
+                document.getElementById('hometown').value = data.member.hometown;
+                document.getElementById('placeofbirth').value = data.member.place_of_birth;
+                document.getElementById('dateofbirth').value = data.member.date_of_birth;
+                document.getElementById('electoralArea').value = data.member.electoral_area;
+                document.getElementById('district').value = data.member.district;
+                document.getElementById('region').value = data.member.region;
+                document.getElementById('nationality').value = data.member.nationality;
+                document.getElementById('residentialAddress').value = data.member.residential_address;
+                document.getElementById('digitalAddress').value = data.member.digital_address;
+                document.getElementById('email').value = data.member.email_address;
+                document.getElementById('signature').value = data.member.name;
+                document.getElementById('emergencyname').value = data.member.emergency_name;
+                document.getElementById('emergencyrelation').value = data.member.emergency_relation;
+                document.getElementById('emergencynumber').value = data.member.emergency_contact;
+            } else {
+                // Handle the case where the member is not found
+                console.log('Member Not Found');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
 </script>
 
 @endsection

@@ -103,6 +103,7 @@ Route::get('success', [successController::class, 'success'])->name('success');
 
 Route::post('/send', [registerController::class, 'store'])->name('send');
 Route::get('/get-member/{memberID}', [MemberController::class, 'getMember'])->name('getMember');
+Route::get('/get-formData/{memberID}', [MemberController::class, 'getAll'])->name('getAll');
 
 Route::get('/activate',[ActivateController::class, 'index'])->name('activate');
 Route::post('/activate',[ActivateController::class, 'store'])->name('activationPost');
