@@ -634,6 +634,8 @@ h1 {
 
 .recent-post {
     max-height: 600px;
+    position: sticky;
+    top: 100px;
 }
 
 /* Print styles */

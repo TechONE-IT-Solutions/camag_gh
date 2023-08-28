@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container d-flex gap-3 justify-content-center mt-5">
+<div class="container d-flex gap-3 justify-content-center mt-5" style="position:relative">
     <div class="card col-lg-9 ">
         <div class="card-image d-flex justify-content-center">
             <img class="img-fluid " src="{{ asset($blog_post[0]['image']) }}" class="blog-image" alt="Image">
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="card recent-post">
+    <div class="card recent-post d-lg-block d-none">
         <div class="card-body">
             <div class="c">
                 <h3>RECENT POSTS</h3>
