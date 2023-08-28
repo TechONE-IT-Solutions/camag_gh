@@ -14,8 +14,12 @@ class blogController extends Controller
     public function index($id)
     {
         $blog_post = Admin::select('id','meta_key', 'text', 'textarea', 'number', 'image')->where('id', $id)->get()->toArray();
-        // dd($blog_post);
-        return view('website.blog',['blog_post'=>$blog_post]);
+        $recentPosts = Admin::select('text','id')
+                            ->where('meta_key', 'hNews')
+                            ->orderBy('created_at', 'desc')
+                            ->get()
+                            ->toArray();
+        return view('website.blog',['blog_post'=>$blog_post, 'recentPosts'=> $recentPosts]);
     }
 
 

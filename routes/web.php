@@ -72,6 +72,7 @@ Route::get('/', [HomeController::class, 'index'])->name('website-home');
 Route::get('website-about', [aboutController::class, 'about'])->name('website-about');
 
 Route::get('/website-blog/{id}', [blogController::class, 'index'])->name('website-blog');
+Route::get('/recentPost', [blogController::class, 'index'])->name('recentPost');
 
 Route::get('website-team', [teamController::class, 'team'])->name('website-team');
 

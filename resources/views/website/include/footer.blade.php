@@ -21,8 +21,8 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
-                <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
+                <a class="btn btn-link" href="{{ route('website-about') }}">About Us</a>
+                <a class="btn btn-link" href="{{ route('website-contact') }}">Contact Us</a>
                 <a class="btn btn-link" href="">Terms & Condition</a>
                 <div class="nav-item dropdown">
                     <a class="btn btn-link" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Donate/Pay Dues</a>
