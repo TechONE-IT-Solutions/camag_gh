@@ -4,8 +4,8 @@
 
 <div class="container d-flex gap-3 justify-content-center mt-5">
     <div class="card col-lg-9 ">
-        <div class="card-image">
-            <img class="img-fluid" src="{{ asset($blog_post[0]['image']) }}" alt="Image">
+        <div class="card-image d-flex justify-content-center">
+            <img class="img-fluid " src="{{ asset($blog_post[0]['image']) }}" class="blog-image" alt="Image">
         </div>
         <div class="card-body p-5">
             <h1 class="text-center">
@@ -18,6 +18,7 @@
             </div>
         </div>
     </div>
+    
     <div class="card recent-post">
         <div class="card-body">
             <div class="c">

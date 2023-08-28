@@ -66,8 +66,6 @@
                 <div class="collapse navbar-collapse logo" id="navbarCollapse">
 
                     <div class="navbar-nav ms-auto me-0">
-
-
                         <a href="{{ route('website-home') }}" class="nav-item nav-link">Home</a>
                         <a href="{{ route('website-about') }}" class="nav-item nav-link">About</a>
                         <a href="{{ route('website-team') }}" class="nav-item nav-link">Executive Members</a>
@@ -78,8 +76,7 @@
                                 <a href="{{ route('website-registration') }}" class="dropdown-item">Register</a>
                                 <a href="{{ route('website-donate') }}" class="dropdown-item">Donate</a>
                                 <a href="{{ route('website-pay-dues') }}" class="dropdown-item ">Pay Dues</a>
-                                <a href="{{ route('activate')}}" class="dropdown-item ">Acticate</a>
-
+                                <a href="{{ route('activate')}}" class="dropdown-item ">Activate</a>
                             </div>
                         </div>
                         <a href="{{ route('website-events') }}" class="nav-item nav-link">Events & Program</a>
