@@ -4,7 +4,7 @@
 @section('content')
 
  <!-- Page Header Start -->
- <div class="container-fluid page-header-gallery py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header-gallery py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5">
             <h1 class="display-2 text-white mb-4 animated slideInDown">Gallery</h1>
             <nav aria-label="breadcrumb animated slideInDown">
@@ -40,11 +40,16 @@
         </div>
     </div>
     <div class="video-wrapper d-block">
-        <div class="caption">
-            <p>CAMAG had chance to meet JM  on his proposal to pay monthly allowance for assembly members </p>
-        </div>
+        
         <div class="video d-flex justify-content-center align-items-center">
         <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0RTQoYtNqtR4duBP3xrWoQK521ZKPE5z3GBzctsBpMfyLMXBRxh6bPGb2KQ8WtP78l%26id%3D106345241196398&show_text=true&width=500" width="1000" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="caption  d-flex justify-content-center align-items-center">
+            <div class="card border-0">
+                <div class="card-body">
+                    <h5>CAMAG had chance to meet JM  on his proposal to pay monthly allowance for assembly members</h5>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Gallery End -->
