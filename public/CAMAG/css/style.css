@@ -651,6 +651,12 @@ h1 {
     }
   }
 
+
   .activation-card {
     gap: 30px;
   }
+
+.init_mem_id{
+    display: none;
+}
+
