@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
-        <div class="row g-5">
+        <div class="row g-5 justify-content-around">
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Our Office</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Labone, Accra, Ghana</p>
@@ -42,16 +42,7 @@
                 <p class="mb-1">Sunday</p>
                 <h6 class="text-light">Closed</h6>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-4">Newsletter</h4>
-                <p>Stay in the loop with our exciting updates, exclusive offers, and the latest trends by subscribing to our newsletter.</p>
-                <div class="position-relative w-100">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email" disabled>
-                    <button type="button"
-                        class="btn btn-light py-2 position-absolute top-0 end-0 mt-2 me-2" disabled>SignUp</button>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
