@@ -622,9 +622,15 @@ h1 {
 }
 .blog-card
 {
-    max-height: 260px;
+    max-height: 303px;
     overflow-y: hidden;
+    padding: 4px;
 }
+
+/* .blog-image {
+    width: 1000px;
+    height: auto;
+} */
 
 .recent-post {
     max-height: 600px;
@@ -643,4 +649,8 @@ h1 {
       left: 0;
       top: 0;
     }
+  }
+
+  .activation-card {
+    gap: 30px;
   }

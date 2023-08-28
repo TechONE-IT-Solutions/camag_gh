@@ -1240,6 +1240,6 @@ h6 {
 }
 
 .blog-card {
-  max-height: 260px;
+  max-height: 100px;
   overflow: hidden;
 }

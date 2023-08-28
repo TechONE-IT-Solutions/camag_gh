@@ -23,7 +23,7 @@
                 <div class="text-center pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
                     style="max-width: 500px;">
                     <p class="fs-4 fw-medium text-primary">Our Events</p>
-                    <h1 class="display-7 mb-5">Explore our exciting lineup of upcoming events.</h1>
+                    <h3 class="mb-5">Explore our exciting lineup of upcoming events.</h3>
                 </div>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">

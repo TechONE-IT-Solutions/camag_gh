@@ -156,11 +156,11 @@
                                 <div class="row">
                                     @foreach($news as $new)
                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="card blog-card">
+                                        <div class="card">
                                             <div class="card-image">
                                                 <img src="{{ asset($new['image']) }}" alt="" class="img-fluid">
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body blog-card">
                                                 <p class="fw-bold">{{$new['text']}}</p>
                                                 <p class="news-card">{!! $new['textarea'] !!}</p>
                                             </div>
