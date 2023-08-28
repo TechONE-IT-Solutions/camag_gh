@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="card recent-post">
         <div class="card-body">
             <div class="c">
@@ -27,27 +27,16 @@
             <div class="container">
                 <hr>
             </div>
+            @foreach( $recentPosts as $recentPost)
             <div>
-                Ghost (Nonexistent) Projects Listed By Dr.Bawumia And Government Delivery Tracker As Achievements.
+                <a href="{{ route('website-blog', ['id' => $recentPost['id']]) }}">
+                    {{ $recentPost['text']}}
+                </a>
             </div>
             <div class="container">
                 <hr>
             </div>
-            <div>
-                Ghost (Nonexistent) Projects Listed By Dr.Bawumia And Government Delivery Tracker As Achievements.
-            </div>
-            <div class="container">
-                <hr>
-            </div>
-            <div>
-                Ghost (Nonexistent) Projects Listed By Dr.Bawumia And Government Delivery Tracker As Achievements.
-            </div>
-            <div class="container">
-                <hr>
-            </div>
-            <div>
-                Ghost (Nonexistent) Projects Listed By Dr.Bawumia And Government Delivery Tracker As Achievements.
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
