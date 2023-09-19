@@ -1,4 +1,4 @@
-@extends('layouts/Admin')
+@extends('layouts/admin')
 
 
 @section('content')
@@ -24,18 +24,19 @@
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
                             @foreach($associates as $associate)
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="card">
-                                    <div class="card-image">
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <a href="{{ route('profile', ['id' => $associate['id']]), 'memberId' => $associate['membership_id']]) }}">
+                                    <div class="card">
+                                        <div class="card-image">
                                         <img src="{{asset($associate['photo']) }}" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-6 label">Name:</p>
-                                            <p class="col-6">{{$associate['name'] }}</p>
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="text-center">
+                                                <p class="col">{{$associate['name'] }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             @endforeach
 
@@ -52,6 +53,7 @@
                                 <tr>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Gender</th>
+                                    <th scope="col">Membership ID</th>
                                     <th scope="col">Electoral Area</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Email Address</th>
@@ -63,6 +65,7 @@
                                 <tr>
                                     <td>{{$associate['name'] }}</td>
                                     <td>{{$associate['gender'] }}</td>
+                                    <td>{{$associate['membership_id']}}</td>
                                     <td>{{$associate['electoral_area'] }}</td>
                                     <td>{{$associate['telephone_number'] }}</td>
                                     <td>{{$associate['email_address'] }}</td>

@@ -30,6 +30,12 @@
                       <div class="invalid-feedback" data-sb-feedback="phone:required">Phone Number is required.</div>
                     </div>
 
+                    <div class="form-floating mb-3">
+                      <input class="form-control" id="nationality" type="text" name="nationality" placeholder="Nationality" data-sb-validations="required" />
+                      <label for="nationality">Nationality</label>
+                      <div class="invalid-feedback" data-sb-feedback="nationality:required">Please enter your nationality.</div>
+                    </div>
+
 
                   <div class="form-floating mb-3">
                       <input class="form-control" type="number" id="amount" name="amount" step="1.0" min="0" placeholder="Enter amount" required>

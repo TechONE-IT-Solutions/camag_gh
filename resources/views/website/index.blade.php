@@ -8,7 +8,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('CAMAG/img/carousel-mahama.jpg') }}" alt="Image">
+                    <img class="w-100" src="{{asset('CAMAG/img/bg-house.jpg') }}" alt="Image">
                       <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -16,7 +16,7 @@
                                     <p class="fs-4 text-white animated slideInLeft">Welcome to
                                         <strong>CAMAG</strong>
                                     </p>
-                                    <h4 class="display-1 text-white  animated slideInLeft">H.E John Dramani Mahama</h4>
+                                    <h4 class="display-1 text-white  animated slideInLeft">Concerned Assembly Members Association Of Ghana</h4>
                                     <a href="{{ route('website-registration') }}"
                                         class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
                                 </div>
@@ -24,6 +24,26 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="carousel-item">
+                    <img class="w-100" src="{{asset('CAMAG/img/carousel-boss.jpg') }}" alt="Image">
+                      <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7 text-start">
+                                    <p class="fs-4 text-white animated slideInLeft">Welcome to
+                                        <strong>CAMAG</strong>
+                                    </p>
+                                    <h4 class="display-1 text-white  animated slideInLeft">Hon. David Atta Twum</h4>
+                                    <h5 class="text-white">Founder And National Coordinator</h5>
+                                    <a href="{{ route('website-registration') }}"
+                                        class="btn btn-primary  py-3 px-5 animated slideInLeft">Register Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 @foreach($banners as $banner)
                 <div class="carousel-item">
 
@@ -89,7 +109,7 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
 
-                <p class="fs-4 fw-bold ">CAMAG Seek to Achieve Its Objectives Through</p>
+                <p class="fs-4 fw-bold ">CAMAG Seeks to Achieve Its Objectives Through</p>
 
             </div>
             <div class="row g-4">
@@ -177,7 +197,7 @@
     </div>
     <!-- Service End -->
 
-    <!-- Project Start -->
+    <!-- Blog Start -->
     <div class="container-xxl pt-5">
         <div class="container">
             <div class="text-center text-md-start pb-5 pb-md-0 wow fadeInUp" data-wow-delay="0.1s"
@@ -187,16 +207,16 @@
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
                 @foreach($news as $new)
-                <div class="project-item mb-5 blog-card">
+                <a class="d-block h5" href="{{ route('website-blog', ['id' => $new['id']]) }}">
+                <div class="project-item mb-5">
                     <div class="position-relative">
                         <img class="img-fluid" src="{{asset($new['image']) }}" alt="">
                     </div>
                     <div class="p-4">
-                        <a class="d-block h5" href="{{ route('website-blog', ['id' => $new['id']]) }}">{{$new['text']}}</a>
-
-                        <span style="background-color: white !important;">{!! $new['textarea'] !!}</span>
+                        <p>{{$new['text']}}</p>
                     </div>
                 </div>
+                </a>
                 @endforeach
 
 
@@ -235,8 +255,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
 
-                    <h1 class=" mb-4">For Any Eny Enquiries</h1>
-
+                    <h1 class=" mb-4">For Any Enquiries</h1>
                     <p>Got a question or looking for more information? We'd love to hear from you! Our team is here to assist with anything you need. Whether it's a partnership opportunity, or just a friendly hello, don't hesitate to reach out. Drop us a line using the contact form below, and we'll get back to you promptly.</p>
                     <a class="d-inline-flex align-items-center rounded overflow-hidden border border-primary" href="tel:+233 24 897 9400;">
 

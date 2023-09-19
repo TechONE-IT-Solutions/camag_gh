@@ -11,37 +11,38 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ActivateController;
 use App\Http\Controllers\contactUsController;
 
+use App\Http\Controllers\DistrictsController;
 use App\Http\Controllers\adminLoginController;
 use App\Http\Controllers\DuessuccessController;
 use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\composeEmailController;
-use App\Http\Controllers\website\blogController;
 
+use App\Http\Controllers\website\blogController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\teamController;
 use App\Http\Controllers\website\aboutController;
 use App\Http\Controllers\Admin\webadminController;
-use App\Http\Controllers\website\donateController;
 
+use App\Http\Controllers\website\donateController;
 use App\Http\Controllers\website\eventsController;
 use App\Http\Controllers\DonationsuccessController;
+
+
 use App\Http\Controllers\website\contactController;
-
-
 use App\Http\Controllers\website\galleryController;
 use App\Http\Controllers\website\payduesController;
 use App\Http\Controllers\website\successController;
 use App\Http\Controllers\Admin\adminAboutController;
 use App\Http\Controllers\website\registerController;
-use App\Http\Controllers\Admin\adminChartsController;
 
+use App\Http\Controllers\Admin\adminChartsController;
 use App\Http\Controllers\Admin\adminDonateController;
 use App\Http\Controllers\Admin\adminEventsController;
 use App\Http\Controllers\Admin\adminContactController;
+
+
+
 use App\Http\Controllers\Admin\adminGalleryController;
-
-
-
 use App\Http\Controllers\Admin\adminPayduesController;
 use App\Http\Controllers\Admin\adminPaymentController;
 use App\Http\Controllers\Admin\adminProfileController;
@@ -92,7 +93,7 @@ Route::get('notsuccess', [PaperController::class, 'index'])->name('notsuccess');
 Route::get('donationsuccess', [DonationsuccessController::class, 'index'])->name('donationsuccess');
 Route::get('duessuccess', [DuessuccessController::class, 'index'])->name('duessuccess');
 
-Route::get('website-register', [registerController::class, 'register'])->name('website-register')->middleware('payment.successful');
+Route::get('website-register', [registerController::class, 'register'])->name('website-register');
 
 Route::get('website-donate', [donateController::class, 'donate'])->name('website-donate');
 
@@ -148,7 +149,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('contact', [adminContactController::class, 'index'])->name('contact');
 
-    Route::get('profile', [adminProfileController::class, 'index'])->name('profile');
+    Route::get('profile/{id}/{memberId}', [adminProfileController::class, 'index'])->name('profile');
 
     Route::get('paydues', [adminPayduesController::class, 'index'])->name('paydues');
 
@@ -195,6 +196,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 Route::post('/pay', [PaymentController::class, 'make_payment'])->name('pay');
 Route::get('/pay/callback', [PaymentController::class, 'payment_callback'])->name('callback');
 Route::get('/get-data/{transactionReference}', [adminPaymentController::class, 'getData'])->name('getData');
+Route::get('/get-districts/{selectedOption}', [DistrictsController::class, 'getDistricts'])->name('getDistricts');
 Auth::routes();
 
 Auth::routes();

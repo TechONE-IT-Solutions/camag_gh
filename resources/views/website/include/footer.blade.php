@@ -9,10 +9,10 @@
                 </a>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@camaghana.org</p>
                 <div class="d-flex pt-3">
+                    <a class="btn btn-square btn-light rounded-circle me-2" href="https://web.facebook.com/profile.php?id=100064548741821"><i
+                            class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-light rounded-circle me-2" href=""><i
                             class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-light rounded-circle me-2" href=""><i
-                            class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-light rounded-circle me-2" href=""><i
                             class="fab fa-youtube"></i></a>
                     <a class="btn btn-square btn-light rounded-circle me-2" href=""><i
@@ -42,14 +42,13 @@
                 <p class="mb-1">Sunday</p>
                 <h6 class="text-light">Closed</h6>
             </div>
-            
         </div>
     </div>
 </div>
 <!-- Footer End -->
 
    <!-- Copyright Start -->
-<div class="container-fluid copyright py-4">
+    <div class="container-fluid copyright py-4">
     <div class="container">
     <div class="row">
     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
@@ -57,7 +56,7 @@
     </div>
     <div class="col-md-6 text-center text-md-end">
         Designed By <a class="fw-medium text-light" href="https://techoneitsolutions.com/">Techone IT Solutions</a>
-      </div>
+    </div>
     </div>
     </div>
     </div>

@@ -1243,3 +1243,18 @@ h6 {
   max-height: 100px;
   overflow: hidden;
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .brian, .brian * {
+    visibility: visible;
+  }
+  .brian {
+    position: absolute;
+    right: 30%;
+    bottom: 0;
+   
+  }
+}

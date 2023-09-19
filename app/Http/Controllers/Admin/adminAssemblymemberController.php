@@ -13,7 +13,7 @@ class adminAssemblymemberController extends Controller
      */
     public function index()
     {
-        $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'AssemblyMember')->get()->toArray();
+        $assemblymen = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo','membership_id')->where('type_of_membership', 'AssemblyMember')->get()->toArray();
         return view('admin/assemblymember', ['assemblymen'=> $assemblymen]);
         //
     }

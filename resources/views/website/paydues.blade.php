@@ -27,7 +27,7 @@
                 </div>
 
                   <div class="form-floating mb-2">
-                    <input class="form-control MemberBliss" id="phone" type="tel" name='phone' placeholder="Phone Number" data-sb-validations="required" />
+                    <input class="form-control MemberBliss" id="phone" type="tel" name="phone" placeholder="Phone Number" data-sb-validations="required" />
                     <label for="phone">Phone Number</label>
                     <div class="invalid-feedback" data-sb-feedback="phone:required">Phone Number is required.</div>
                   </div>

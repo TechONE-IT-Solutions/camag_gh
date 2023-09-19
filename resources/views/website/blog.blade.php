@@ -7,9 +7,9 @@
         <div class="card-image d-flex justify-content-center">
             <img class="img-fluid " src="{{ asset($blog_post[0]['image']) }}" class="blog-image" alt="Image">
         </div>
-        <div class="card-body p-5">
+        <div class="card-body p-lg-5">
             <h1 class="text-center">
-                <u>{{$blog_post[0]['text']}}</u>
+                {{$blog_post[0]['text']}}
             </h1>
             <div>
                 <div class="news_new">
@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="card recent-post">
+    <div class="card recent-post d-lg-block d-none">
         <div class="card-body">
             <div class="c">
                 <h3>RECENT POSTS</h3>

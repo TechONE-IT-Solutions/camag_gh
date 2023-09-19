@@ -13,7 +13,7 @@ class adminAssociatememberController extends Controller
      */
     public function index()
     {
-        $associates = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo')->where('type_of_membership', 'AssociateMember')->get()->toArray();
+        $associates = homepage::select('id','name', 'gender', 'electoral_area', 'telephone_number', 'email_address','photo', 'membership_id')->where('type_of_membership', 'AssociateMember')->get()->toArray();
         return view('admin.associatemember',['associates'=>$associates]);
     }
 

@@ -1,4 +1,4 @@
-@extends('layouts/Admin')
+@extends('layouts/admin')
 
 
 @section('content')
@@ -18,22 +18,37 @@
                     <!-- Grid view Start -->
                     <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab">
                         <div class="row">
-                            @foreach($unitcommittee as $unit)
-                            <div class="col-lg-6 col-md-6 col-sm-12">
+                            <!-- @foreach($unitcommittee as $unit)
+                            <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
                                     <div class="card-image">
                                         <img src="{{asset($unit['photo']) }}" alt="" class="img-fluid">
                                     </div>
                                     <div class="card-body p-3">
-                                        <div class="row">
-                                            <p class="col-6 label">Name:</p>
-                                            <p class="col-6">{{ $unit['name']}}</p>
+                                        <div class="text-center">
+                                            <p class="col">{{ $unit['name']}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
+                            @endforeach -->
 
+                            @foreach($unitcommittee as $unit)
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                                <a href="{{ route('profile', ['id' => $unit['id']]), 'memberId' => $unit['membership_id']]) }}">
+                                    <div class="card">
+                                        <div class="card-image">
+                                        <img src="{{asset($unit['photo']) }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="card-body p-3">
+                                            <div class="text-center">
+                                                <p class="col">{{ $unit['name']}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
 
                         </div>
 
@@ -48,11 +63,11 @@
                                 <tr>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Gender</th>
+                                    <th scope="col">Member ID</th>
                                     <th scope="col">Electoral Area</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Email Address</th>
                                     <th scope="col" style="color:red">CLEAR</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,6 +75,7 @@
                                 <tr>
                                     <td>{{ $unit['name']}}</td>
                                     <td>{{ $unit['gender']}}</td>
+                                    <td>{{ $unit['membership_id']}}</td>
                                     <td>{{ $unit['electoral_area']}}</td>
                                     <td>{{ $unit['telephone_number']}}</td>
                                     <td>{{ $unit['email_address']}}</td>

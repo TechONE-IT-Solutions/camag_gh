@@ -96,7 +96,7 @@
                             </div>
                         </div>
 
-                         <div class="form-floating col-md-4">
+                        <div class="form-floating col-md-4">
                             <input type="text" class="form-control" id="electoralArea" required name="electoral_area" value="{{ old('electoral_area') }}">
                             <label for="electoralArea" class="form-label">Electoral Area</label>
                             <div class="invalid-feedback">
@@ -117,16 +117,25 @@
                             <img id="imagePreview" src="#" alt="Preview" style="max-width:150">
                          </div>
 
-                        <div class="form-floating col-md-6">
+                        <!-- <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="district" required name="district" value="{{ old('district') }}">
                             <label for="district" class="form-label">District</label>
                           <div class="invalid-feedback">
                             Please provide a valid District.
                           </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-floating col-md-6">
+                          <input type="text" class="form-control" id="nationality" required name="nationality" value="{{ old('nationality') }}">
+                          <label for="nationality" class="form-label">Nationality</label>
+                          <div class="invalid-feedback">
+                            Please provide your Nationality.
+                          </div>
+                        </div>
+                        
+                        <div class="form-floating col-md-6">
                           <select class="form-select" name="region" id="region" required value="{{ old('region') }}">
+                            <option class="text-danger"></option>
                             <option>Greater Accra Region</option>
                             <option>Central Region</option>
                             <option>Western North Region</option>
@@ -145,20 +154,24 @@
                             <option>North East Region</option>
                           </select>
                           <label for="region" class="form-label">Region</label>
-                            <div class="invalid-feedback">
-                                Please select Your Region.
-                              </div>
-                          </div>
-
-                        <div class="form-floating col-12">
-                            <input type="text" class="form-control" id="nationality" required name="nationality" value="{{ old('nationality') }}">
-                            <label for="nationality" class="form-label">Nationality</label>
                           <div class="invalid-feedback">
-                            Please provide your Nationality.
+                            Please select Your Region.
                           </div>
                         </div>
-
-                        <div class="form-floating col-md-6">
+                        
+                        
+                        
+                          
+                          <div class="form-floating col-md-12">
+                            <select class="form-select" name="district" id="district" required value="{{ old('district') }}">
+                            </select>
+                            <label for="district" class="form-label">District</label>
+                              <div class="invalid-feedback">
+                                  Please select Your District.
+                              </div>
+                          </div>
+                        
+                          <div class="form-floating col-md-6">
                             <input type="text" class="form-control" id="residentialAddress" required name="residential_address" value="{{ old('residential_address') }}">
                             <label for="residentialAddress" class="form-label">Residential Address</label>
                             <div class="invalid-feedback">
@@ -191,7 +204,7 @@
                           </div>
 
 
-                            <div class="form-floating col-12">
+                              <div class="form-floating col-12">
                                 <input type="tel" class="form-control name_phone" id="phone" pattern="[0-9]{9,}" maxlength="15" required name="telephone_number"  value="{{ old('telephone_number') }}">
                                 <label for="phone" class="form-label">Telephone Number</label>
                                 <div class="invalid-feedback">
@@ -210,9 +223,9 @@
                                 @endif
                               </div>
 
-                              <div>
-                                <label for="">Educational Level:</label>
-                                    <div class="form-check form-check-inline">
+                                  <div>
+                                      <label for="">Educational Level:</label>
+                                      <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="edu" id="eduLevel1" value="None" required>
                                         <label class="form-check-label" for="eduLevel1">None</label>
                                       </div>
@@ -228,11 +241,11 @@
                                         <input class="form-check-input" type="radio" name="edu" id="eduLevel4" value="Tertiary">
                                         <label class="form-check-label" for="eduLevel4">Tertiary</label>
                                       </div>
-                                </div>
+                                  </div>
 
-                                <div>
-                                    <label for="">Type Of Membership:</label>
-                                        <div class="form-check form-check-inline">
+                                        <div>
+                                          <label for="">Type Of Membership:</label>
+                                          <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="pos" id="assemblymember" value="AssemblyMember" required>
                                             <label class="form-check-label" for="assemblymember">Assembly Member</label>
                                           </div>
@@ -247,7 +260,7 @@
                                         </div>
 
                                     <p><b><i><u>IN CASE OF EMERGENCY</u></i></b></p>
-                                    <div class="form-floating col-12">
+                                      <div class="form-floating col-12">
                                         <input type="text" class="form-control" id="emergencyname" required name="emergency_name" value="{{ old('emergency_name') }}">
                                         <label for="emergencyname" class="form-label">Name</label>
                                         <div class="invalid-feedback">
@@ -304,7 +317,53 @@
 
 
       {{-- modal end --}}
+<script>
+  // document.getElementById('region').addEventListener('input', function(){
+  //   const selectElement = document.getElementById('region');
+  //   const DistrictField = document.getElementById('district');
+  //   const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+  //   const fetchEndPoint = `/get-districts/${selectedOption}`;
+  //   fetch(fetchEndPoint).then(response => response.json()).then(data => {
+  //         if (data.success) {
+  //               // Clear existing options
+  //               console.log(data);
 
+  //               // Add new options based on the data
+  //               for (let i = 0; i < data.length; i++) {
+  //                   const option = document.createElement('option');
+  //                   option.text = data[i];
+  //                   DistrictField.add(option);
+  //               }
+  //           }
+  //       });
+  // });
+
+
+  document.getElementById('region').addEventListener('change', function() {
+    const selectElement = document.getElementById('region');
+    const DistrictField = document.getElementById('district');
+    const selectedOption = selectElement.value;
+    const fetchEndPoint = `/get-districts/${selectedOption}`;
+    
+    fetch(fetchEndPoint)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Clear existing options
+                DistrictField.innerHTML = '';
+                console.log(data.Districts);
+
+                // Add new options based on the data
+                for (let i = 0; i < data.length; i++) {
+                    const option = document.createElement('option');
+                    option.text = data.Districts[i];
+                    DistrictField.add(option);
+                }
+            }
+        });
+});
+
+</script>
 <script>
    window.addEventListener('load', function(){
         const transactionReference = "{{ session('transaction_reference') }}";

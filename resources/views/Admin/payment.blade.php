@@ -1,4 +1,4 @@
-@extends('layouts/Admin')
+@extends('layouts/admin')
 
 
 @section('content')
@@ -24,12 +24,15 @@
 
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-dues" role="tabpanel" aria-labelledby="pills-dues-tab">
-                <div id="table">
+            <div id="table">
                 <table id="duesTable" class="table table-hover table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Full Name</th>
                             <th scope="col">Phone Number</th>
+                            <th scope="col">Membership ID</th>
+                            <th scope="col">Region</th>
+                            <th scope="col">District</th>
                             <th scope="col">Amount Paid</th>
                         </tr>
                     </thead>
@@ -38,6 +41,9 @@
                         <tr>
                             <td>{{ $dues['name']}}</td>
                             <td>{{ $dues['phone']}}</td>
+                            <td>{{ $dues['member_id']}}</td>
+                            <td>{{ $dues['region']}}</td>
+                            <td>{{ $dues['district']}}</td>
                             <td>{{ $dues['amount']}}</td>
                         </tr>
                         @endforeach
@@ -54,6 +60,7 @@
                             <tr>
                                 <th scope="col">Full Name</th>
                                 <th scope="col">Phone Number</th>
+                                <th scope="col">Nationality</th>
                                 <th scope="col">Amount</th>
                             </tr>
                         </thead>
@@ -62,6 +69,7 @@
                                 <tr>
                                     <td>{{ $donation['name']}}</td>
                                     <td>{{ $donation['phone']}}</td>
+                                    <td>{{ $donation['nationality']}}</td>
                                     <td>{{ $donation['amount']}}</td>
                                 </tr>
                             @endforeach

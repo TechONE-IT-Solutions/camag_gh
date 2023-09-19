@@ -1,4 +1,4 @@
-@extends('layouts/Admin')
+@extends('layouts/admin')
 
 
 @section('content')
@@ -9,13 +9,14 @@
     </div>
     @endif
 <div class="container">
+  <div class="card">
+    <div class="card-body p-3">
     <div class="row">
 
     @foreach ($counts as $count)
         <div class="col">
             <div class="card">
                 <div class="card-body">
-
                     <h2 style="font-size:40px; padding-top:25px" class="text-success text-center">{{ $count->total }}</h2>
                     @php
                             $type = $count->type_of_membership
@@ -102,16 +103,13 @@
               <!-- Polar Area Chart -->
               <!-- <canvas id="membershipGraph" style="max-height: 800px;"></canvas> -->
               <canvas id="education-chart" style="max-height: 800px;"></canvas>
-
-              <script>
-
-              </script>
               <!-- End Polar Area Chart -->
             </div>
           </div>
         </div>
-
-</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

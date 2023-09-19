@@ -1,4 +1,4 @@
-@extends('layouts/Admin')
+@extends('layouts/admin')
 
 
 @section('content')
@@ -24,15 +24,14 @@
 
                         <div class="row">
                             @foreach($assemblymen as $assemblyman)
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <a href="{{ route('profile') }}">
+                            <div class="col-lg-3 col-md-6 col-sm-12">
+                            <a href="{{ route('profile', ['id' => $assemblyman['id'], 'memberId' => $assemblyman['membership_id']]) }}">
                                     <div class="card">
                                         <div class="card-image">
                                         <img src="{{ asset($assemblyman['photo']) }}" alt="" class="img-fluid">
                                         </div>
                                         <div class="card-body p-3">
-                                            <div class="row">
-                                                <p class="col label">Name:</p>
+                                            <div class="text-center">
                                                 <p class="col">{{ $assemblyman['name'] }}</p>
                                             </div>
                                         </div>
@@ -56,6 +55,7 @@
                                 <th scope="col">Electoral Area</th>
                                 <th scope="col">Phone Number</th>
                                 <th scope="col">Email Address</th>
+                                <th scope="col">Membership ID</th>
                                 <th scope="col" style="color:red">CLEAR</th>
                             </tr>
                         </thead>
@@ -67,6 +67,8 @@
                                 <td>{{ $assemblyman['electoral_area'] }}</td>
                                 <td>{{ $assemblyman['telephone_number'] }}</td>
                                 <td>{{ $assemblyman['email_address'] }}</td>
+                                <td>{{ $assemblyman['membership_id'] }}</td>  
+                                <!-- Membership ID -->
                                 <td>
                                     <form action="{{ route('assemblymember_destroy', $assemblyman['id']) }}" method="POST" id="delete_assembly" class="assembly">
                                         {{csrf_field()}}

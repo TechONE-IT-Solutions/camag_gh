@@ -21,6 +21,10 @@ class PaymentController extends Controller
         $formData = [
             'email' => request('email'),
             'name' => request('name'),
+
+            'memberId' => request('memberId'),// added
+            'nationality' => request('nationality'),// added
+
             'phone' => request('phone'),
             'payment_type' => request('payment_type'),
             'amount' => request('amount') * 100,
@@ -51,20 +55,52 @@ class PaymentController extends Controller
                 // Payment successful, store payment information in the database
                 $data = $response->data;
                 $name = isset($data->metadata->name) ? $data->metadata->name : '';
+                $memberId = isset($data->metadata->memberId) ? $data->metadata->memberId : ''; //added
+                $nationality = isset($data->metadata->nationality) ? $data->metadata->nationality : ''; //added
                 $phone = isset($data->metadata->phone) ? $data->metadata->phone : '';
                 $payment_type = isset($data->metadata->payment_type) ? $data->metadata->payment_type : '';
                 $amount = $data->amount / 100; // Convert back to the original amount
                 $transaction_reference = $data->reference;
                 // Store payment information in the database using the Payment model
-                $payment = new Payment([
-                    'name' => $name,
-                    'phone' => $phone,
-                    'payment_type' => $payment_type, // 'website_registration', 'donation', 'dues'
-                    'amount' => $amount,
-                    'transaction_reference' => $data->reference,
-                    'successful' => true,
-                ]);
-                $payment->save();
+
+
+                //store into Payment model if payment type is dues
+                if($payment_type === 'dues'){
+                    $payment = new Payment([
+                        'name' => $name,
+                        'phone' => $phone,
+                        'payment_type' => $payment_type, // 'website_registration', 'donation', 'dues'
+                        'amount' => $amount,
+                        'memberId' => $memberId,
+                        'transaction_reference' => $data->reference,
+                        'successful' => true,
+                    ]);
+                    $payment->save();
+                }
+                elseif($payment_type === 'donation'){
+                    $payment = new Payment([
+                        'name' => $name,
+                        'nationality' => $nationality,
+                        'phone' => $phone,
+                        'payment_type' => $payment_type, // 'website_registration', 'donation', 'dues'
+                        'amount' => $amount,
+                        'transaction_reference' => $data->reference,
+                        'successful' => true,
+                    ]);
+                    $payment->save();
+                }
+                else{
+                    $payment = new Payment([
+                        'name' => $name,
+                        'phone' => $phone,
+                        'payment_type' => $payment_type, // 'website_registration', 'donation', 'dues'
+                        'amount' => $amount,
+                        'transaction_reference' => $data->reference,
+                        'successful' => true,
+                    ]);
+                    $payment->save();
+                }
+
                 // Set the session variable to indicate successful payment
                 Session::put('payment_successful', true);
 
@@ -123,7 +159,7 @@ class PaymentController extends Controller
         $result = curl_exec($ch);
         curl_close($ch);
 
-
+        dd($result);
         return $result;
     }
 

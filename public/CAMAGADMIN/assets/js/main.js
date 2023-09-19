@@ -462,3 +462,11 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#notificationTable').DataTable();
 });
+
+$(document).ready(function() {
+  $('#profileDonations').DataTable();
+});
+
+$(document).ready(function() {
+  $('#profileDues').DataTable();
+});
