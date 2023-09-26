@@ -102,6 +102,7 @@ class registerController extends Controller
                 'membership_id' => $membershipid,
                 'paid'=>"1"
             ];
+            
             $members = Payment::where('transaction_reference', $transactionReference)->first();
             $Member->update($postData);
             return redirect('/success')->with([

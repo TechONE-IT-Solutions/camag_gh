@@ -190,6 +190,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     // compose Email for all Routes
     Route::get('/composeForAll',[composeEmailController::class, 'index'])->name('composeForAll');
     Route::post('/composeForAll',[composeEmailController::class, 'store'])->name('composeForAllPost');
+    Route::post('/composeForSMS',[composeEmailController::class, 'sms'])->name('composeForAllSMS');
+
 });
 
 // payment routes
