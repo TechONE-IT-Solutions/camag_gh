@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactUsEmail;
-use App\Models\website\homepage;
 use Illuminate\Http\Request;
+use App\Models\website\homepage;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class composeEmailController extends Controller
@@ -80,6 +81,24 @@ class composeEmailController extends Controller
             'message' => 'Message sent to all members of CAMAG'
         ]);
      }
+
+    /**
+     * SMS
+     */
+    public function sms(Request $request)
+    {
+       // $reciepeints = homepage::select('telephone_number')->pluck('telephone_number')->all();
+        $response = Http::post('
+            https://apps.mnotify.net/smsapi?key=zN94QZppofKK1Qd7kEIn1WA1Y&to=0544496780&msg=hi&sender_id=Symp
+            '
+        );
+
+        return redirect()->back()->with([
+            'status' => 'success',
+            'message' => 'Message sent to all members of CAMAG'
+        ]);
+        //https://apps.mnotify.net/smsapi?key=xxxxxxxxxx&to=xxxxxxx&msg=xxxxxxxx&sender_id=xxxxx
+    }
 
     /**
      * Display the specified resource.
