@@ -188,9 +188,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('moveAll', [moveAllController::class, 'index'])->name('moveAll');
 
     // compose Email for all Routes
-    Route::get('/composeForAll',[composeEmailController::class, 'index'])->name('composeForAll');
-    Route::post('/composeForAll',[composeEmailController::class, 'store'])->name('composeForAllPost');
-    Route::post('/composeForSMS',[composeEmailController::class, 'sms'])->name('composeForAllSMS');
+    Route::get('composeForAll',[composeEmailController::class, 'index'])->name('composeForAll');
+    Route::post('composeForAll',[composeEmailController::class, 'store'])->name('composeForAllPost');
+    Route::post('composeForSMS',[composeEmailController::class, 'sms'])->name('composeForAllSMS');
 
 });
 

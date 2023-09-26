@@ -62,14 +62,14 @@
                     </div>
                     <div class="tab-pane fade show" id="pills-sms" role="tabpanel" aria-labelledby="pills-sms-tab">
                         <div class="flex justify-content-center">
-                            <form method="POST" action="{{ route('composeForAllSMS')}}">
-                                        @csrf
+                            <form method="POST" action="{{route('composeForAllSMS')}}">
+                                @csrf
                                 <div class="card col-lg-7 col-md-7 col-sm-12 p-5">
                                     <div class="mb-3">
-                                        <textarea name="sms" id="sms" type="text" placeholder="SMS Body" data-sb-validations="required" cols="30" rows="5" class="form-control"></textarea>
+                                        <textarea name="sms" id="sms" type="text" placeholder="SMS Body"  cols="30" rows="5" class="form-control"></textarea>
                                     </div>
                                     <div class="d-grid">
-                                        <button type="button" class="btn btn-success">Send Message</button>
+                                        <button type="submit" class="btn btn-success">Send Message</button>
                                     </div>
                                 </div>
                             </form>

@@ -47,20 +47,21 @@ class composeEmailController extends Controller
     /**
      * Display the specified resource.
      */
-     public function sms()
+     public function sms(Request $request)
      {
         $validatedData = $request->validate([
             'sms' => 'required|string'
         ]);
-        $reciepeints = homepage::select('telephone_number')->pluck('telephone_number')->all();
-        /*
+        $reciepeints = homepage::select('telephone_number')->pluck('telephone_number')->flatten()->all();
+        $msg = $request->input('sms');
+        
         $endPoint = 'https://api.mnotify.com/api/sms/quick';
         $apiKey = 'QgmO4mdr0ey27sYELg2nCXIBcD1vD5DumZjrmwSmKrpSU';
-        $url = $endPoint . '?key=' . $apiKey;
+        $url = $endPoint.'?key='.$apiKey;
         $data = [
-          'recipient' => ['0544496780', '0596746385'],
+          'recipient' => $reciepeints,
           'sender' => 'CAMAG',
-          'message' => 'API messaging is fun!',
+          'message' => $msg,
           'is_schedule' => 'false',
           'schedule_date' => ''
         ];
@@ -75,16 +76,14 @@ class composeEmailController extends Controller
         $result = curl_exec($ch);
         $result = json_decode($result, TRUE);
         curl_close($ch);
-        */
+
         return redirect()->back()->with([
             'status' => 'success',
-            'message' => 'Message sent to all members of CAMAG'
+            'message' => 'SMS Message Sent'
         ]);
      }
 
-    /**
-     * SMS
-     */
+    /* 
     public function sms(Request $request)
     {
        // $reciepeints = homepage::select('telephone_number')->pluck('telephone_number')->all();
@@ -98,7 +97,7 @@ class composeEmailController extends Controller
             'message' => 'Message sent to all members of CAMAG'
         ]);
         //https://apps.mnotify.net/smsapi?key=xxxxxxxxxx&to=xxxxxxx&msg=xxxxxxxx&sender_id=xxxxx
-    }
+    } */
 
     /**
      * Display the specified resource.
